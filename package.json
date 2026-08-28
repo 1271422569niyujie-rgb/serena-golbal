@@ -1,0 +1,16 @@
+{
+  "name": "nini-personal-radar",
+  "version": "3.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check app.js && node --check scripts/update-radar.mjs && node --check scripts/update-market.mjs && node --check scripts/build-fallback.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "update": "node scripts/update-radar.mjs",
+    "update:market": "node scripts/update-market.mjs",
+    "build:fallback": "node scripts/build-fallback.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

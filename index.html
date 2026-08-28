@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#b8cad7">
+  <meta name="description" content="倪倪专属雷达：每天 5–10 分钟看清真正与你有关的世界、投资与职业变化。">
+  <title>倪倪专属雷达</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div>
+        <div class="kicker">PRIVATE WORLD RADAR · DAILY</div>
+        <h1>倪倪专属雷达</h1>
+        <div class="motto">希望你走得越远，离自己越近</div>
+      </div>
+      <div class="date"><span id="today"></span><br>V3.3 · Personal</div>
+    </header>
+
+    <section class="hero">
+      <div class="heroRow">
+        <div>
+          <h2>今天，外面的世界走到哪里了？</h2>
+          <p>不追逐所有热点。只保留真正影响你的世界、财富、银行、职业与能力变化。</p>
+        </div>
+        <button class="btn primary" id="refreshBtn" type="button">检查更新</button>
+      </div>
+      <div class="status" id="status" role="status" aria-live="polite">正在读取今日雷达…</div>
+      <div class="freshness" id="freshness" hidden></div>
+    </section>
+
+    <nav class="nav" aria-label="新闻优先级筛选">
+      <button class="btn on" data-filter="all" type="button">全部</button>
+      <button class="btn" data-filter="must" type="button">🔴 必须关注</button>
+      <button class="btn" data-filter="know" type="button">🟡 建议了解</button>
+      <button class="btn" data-filter="expand" type="button">🟢 拓展视野</button>
+    </nav>
+
+    <div class="section">🌍 今日外部世界</div>
+    <div class="balance" id="balance"></div>
+    <main id="news"><section class="card skeleton">正在读取已验证的今日信息…</section></main>
+
+    <div class="section">🏙️ 外面的人已经走到哪里了</div>
+    <div id="outside"><section class="card mutedCard">今日数据加载后显示 2–4 个能力、观念与生活趋势信号。</section></div>
+
+    <div class="section">💼 我的资产底盘</div>
+    <section class="card">
+      <div class="privacyHead">
+        <div>
+          <div class="tag blue">隐私模式</div>
+          <div class="privacyHint">每天打开时默认隐藏金额</div>
+        </div>
+        <button class="btn compact eyeBtn" id="assetVisibilityBtn" type="button" aria-expanded="false" aria-controls="assetSensitive">👁 显示</button>
+      </div>
+      <div class="assetPrivacyMask" id="assetPrivacyMask">金额和配置比例已隐藏，点右上角小眼睛查看。</div>
+
+      <div id="assetSensitive" hidden>
+        <div class="grid assetSummary">
+          <div class="metric">
+            <span class="pill">可计入总资产</span>
+            <div class="v" id="totalAssets">¥0</div>
+            <div class="note">不含公积金；按当前录入的人民币市值汇总</div>
+          </div>
+          <div class="metric">
+            <span class="pill">公积金</span>
+            <div class="v" id="providentShow">¥85,000</div>
+            <div class="note">单独展示，不计入可投资总资产</div>
+          </div>
+        </div>
+
+        <div id="assetEditor" class="assetEditor" aria-label="可编辑资产"></div>
+        <div class="portfolio" id="portfolioBars" aria-label="资产配置占比"></div>
+        <div class="concentration" id="concentration"></div>
+
+        <div class="buttonRow">
+          <button class="btn primary" id="assetEditBtn" type="button">编辑全部</button>
+          <button class="btn" id="assetResetBtn" type="button">恢复当前基准</button>
+        </div>
+        <div class="note">点击任一金额即可单项修改，离开输入框后自动保存。实物金暂按 V3.2 的估值 ¥26,861 作为可编辑基准。</div>
+        <div class="note">保险未来仍需继续缴费两年，所以总资产是存量视图，不等于全部可自由投资资金。</div>
+      </div>
+    </section>
+
+    <div class="section">💰 投资雷达</div>
+    <section class="card">
+      <div class="marketGrid" id="marketGrid">
+        <div class="metric"><span class="pill">市场数据</span><div class="v smallV">正在读取</div><div class="note">失败时不会用旧数据冒充今日</div></div>
+      </div>
+      <div class="marketStamp" id="marketStamp"></div>
+
+      <div class="settings">
+        <div class="field">
+          <label for="cashMonths">现金安全垫（月）</label>
+          <input id="cashMonths" type="number" min="0" step="1" value="8" inputmode="numeric">
+        </div>
+        <div class="field readonlyField">
+          <label>长期纪律</label>
+          <div class="inputLike">工作日纳指 ¥100</div>
+        </div>
+      </div>
+      <label class="check"><input id="riskFlag" type="checkbox"> 当前仍有我没搞懂的重大宏观、政策或地缘风险</label>
+
+      <div class="verdict">
+        <div class="tag blue">组合约束后的今日判断 · 非自动交易建议</div>
+        <div class="big" id="investVerdict">数据暂不可用</div>
+        <div class="reason" id="investReason">等待今日市场与新闻数据。</div>
+        <div class="verdictDetail" id="investDetail"></div>
+      </div>
+    </section>
+
+    <div class="section">🧠 今日三条认知更新</div>
+    <div id="cognitions"><section class="card mutedCard">今日数据加载后显示可验证的认知更新。</section></div>
+
+    <div class="section">🧭 三年职业成长计划</div>
+    <section class="card">
+      <div class="cardHead">
+        <div>
+          <div class="tag blue">本周任务 · 可勾选、可修改</div>
+          <div class="title">把“想离开”变成每周新增的可迁移证据</div>
+        </div>
+        <button class="btn compact" id="careerResetBtn" type="button">重置</button>
+      </div>
+      <div id="weeklyTasks" class="taskList"></div>
+    </section>
+
+    <section class="card">
+      <div class="tag blue">本月进度</div>
+      <div class="progressList" id="monthlyProgress"></div>
+    </section>
+
+    <section class="card">
+      <div class="tag blue">每季度 · 职业竞争力体检</div>
+      <label class="quarterCheck"><input id="quarterDone" type="checkbox"> 本季度已完成一次岗位与能力对照</label>
+      <textarea id="quarterNote" rows="3" placeholder="记录：对照了哪些岗位、低于 70 分的能力缺口是什么…"></textarea>
+      <div class="action quarterGuide">
+        用 5 个真实目标岗位 JD 检查：高净值/企业客户案例、财富管理、合规风控、AI 工作流、英语与可量化业绩。缺口只进入下一季度任务，不拿来制造焦虑。
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="tag blue">12 / 24 / 36 个月节点</div>
+      <div class="timeline">
+        <div><b>12 个月</b><span>10 个客户/项目案例 + 3 个真实 AI 工作流 + AFP 学习证据 + 正式简历。</span></div>
+        <div><b>24 个月</b><span>具备城区优秀客户经理或财富管理岗的可迁移证据，开始真实投递与面谈校准。</span></div>
+        <div><b>36 个月</b><span>至少拥有内部迁移、外部平台、留任但能力显著升级三条现实路径，把决定权拿回来。</span></div>
+      </div>
+    </section>
+
+    <div class="section">⭐ 今日只做一件事</div>
+    <section class="card"><div class="action" id="oneThing">今日数据准备好后，这里只留下一个 20–60 分钟能完成的动作。</div></section>
+
+    <details class="card dataNote">
+      <summary>数据真实性与更新说明</summary>
+      <div class="txt">
+        新闻标题、来源、发布时间和链接来自公开信息源；逐条分析由每日自动任务基于当天候选新闻生成。网页不会直接保存任何 API Key。若自动任务失败，会保留最后一次成功结果并明确标记日期；超过时效后不再把它称为“今日判断”。
+      </div>
+    </details>
+
+    <footer class="footer">不要制造焦虑，只制造提前量。投资雷达用于辅助纪律与风险判断，不替代持牌投资建议，也不会自动下单。</footer>
+  </div>
+
+  <script src="./data/radar-fallback.js"></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
