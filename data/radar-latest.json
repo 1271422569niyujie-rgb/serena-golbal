@@ -125,6 +125,7 @@
   "outside": [
     {
       "evidenceCandidateId": "seed-google-financial-ai-20260825",
+      "trendKey": "金融AI从聊天工具进入可审计工作流",
       "kind": "career",
       "placeOrSector": "头部金融机构 / AI 工作流",
       "signal": "可验证、可审计的流程能力正在比单纯提示词更贵",
@@ -136,6 +137,7 @@
     },
     {
       "evidenceCandidateId": "seed-shanghai-digital-projects-20260826",
+      "trendKey": "大城市金融岗位重视流程协同与项目交付",
       "kind": "career",
       "placeOrSector": "上海 / 金融科技与城市数字化",
       "signal": "业务流程协同、项目交付和标准化正在变成城市岗位的共同语言",
@@ -147,6 +149,7 @@
     },
     {
       "evidenceCandidateId": "seed-citic-wealth-20260827",
+      "trendKey": "银行客户经理从单品销售转向客户总资产经营",
       "kind": "career",
       "placeOrSector": "银行业 / 财富管理",
       "signal": "客户总资产经营能力比单品销售能力更重要",
@@ -158,6 +161,7 @@
     },
     {
       "evidenceCandidateId": "seed-google-financial-ai-20260825",
+      "trendKey": "白领工作从空白起步转向AI打底人工判断",
       "kind": "life",
       "placeOrSector": "大城市白领 / 新工作习惯",
       "signal": "先让 AI 打底、再由人做判断，正在取代从空白开始",
@@ -168,24 +172,52 @@
       "publishedAt": "2026-08-25"
     }
   ],
+  "outsideUpdatedAt": "2026-08-27",
+  "marketStories": [
+    {
+      "candidateId": "seed-nvidia-q2-fy27-20260826",
+      "market": "美股",
+      "title": "英伟达业绩继续强化 AI 投资主线",
+      "whatHappened": "英伟达季度营收与数据中心收入继续高速增长，并给出更高的下一季度指引。",
+      "whyMarketCares": "它仍是市场检验 AI 资本开支能否转化为真实收入的核心样本。",
+      "relation": "你已经通过纳指基金持有这条主线，不需要因为一份强财报再追买单一个股。",
+      "source": "NVIDIA Investor Relations",
+      "publishedAt": "2026-08-26",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx"
+    },
+    {
+      "candidateId": "seed-us-inflation-markets-20260826",
+      "market": "黄金 / 宏观",
+      "title": "美国通胀略超预期，利率预期重新摇摆",
+      "whatHappened": "最新通胀略高于预期，美债收益率随之上行，美股整体接近持平。",
+      "whyMarketCares": "如果利率在高位停留更久，高估值科技股和黄金都会重新定价。",
+      "relation": "先看后续 PCE、就业与收益率是否形成同方向趋势，不拿一天的数据当加仓信号。",
+      "source": "Associated Press",
+      "publishedAt": "2026-08-26T20:31:10Z",
+      "url": "https://apnews.com/article/b1704f7dffb77bc3166f4485e8d89532"
+    }
+  ],
   "cognitions": [
     {
       "domain": "世界 / 科技",
       "cognition": "真正值钱的 AI，是能帮你干活的。",
       "why": "英伟达说明 AI 需求还很强，但 Google 的金融方案更接近现实：工具得接得上资料、说得清来源，还得让人复核。光会聊天，已经不够了。",
-      "meaning": "以后再看到一个新 AI，先别急着学。你只问一句：它能不能安全地帮我省下一段真实工作？不能，就先放过自己。"
+      "meaning": "以后再看到一个新 AI，先别急着学。你只问一句：它能不能安全地帮我省下一段真实工作？不能，就先放过自己。",
+      "dedupeKey": "AI工具判断>能进入真实工作流才值得学"
     },
     {
       "domain": "金融 / 职业",
       "cognition": "大平台看的是客户，不只是你卖了什么。",
       "why": "息差越来越难做，银行自然会更看重客户把多少资产留下来、配置是否合适、关系能不能长久。单品销量只是其中一小块。",
-      "meaning": "以后复盘客户，别只记‘卖了多少’。多记一句：我看懂了客户什么需求，又帮她避开了什么不合适的选择。"
+      "meaning": "以后复盘客户，别只记‘卖了多少’。多记一句：我看懂了客户什么需求，又帮她避开了什么不合适的选择。",
+      "dedupeKey": "客户经营>总资产关系比单品销量更重要"
     },
     {
       "domain": "个人成长 / 决策",
       "cognition": "你不是没经历，只是还没把它讲值钱。",
       "why": "大城市岗位常写项目协同、流程和交付，而你做过的医院、商户和客户项目里其实都有这些东西。问题往往不是你没做过，而是简历里没翻译出来。",
-      "meaning": "下次觉得自己‘平台太小、经历不够’时，先拿一个目标岗位，对照改写一个真实案例。改完再判断缺能力还是只缺表达。"
+      "meaning": "下次觉得自己‘平台太小、经历不够’时，先拿一个目标岗位，对照改写一个真实案例。改完再判断缺能力还是只缺表达。",
+      "dedupeKey": "职业证据>先把已有经历翻译成岗位语言"
     }
   ],
   "market": {
@@ -247,7 +279,23 @@
     "reason": "",
     "amount": "",
     "cancelIf": "",
-    "drivers": []
+    "drivers": [],
+    "assetSignals": {
+      "nasdaq100": {
+        "status": "🟡 暂不额外加仓",
+        "judgment": "行情尚未完成核验，维持工作日定投，不根据模糊数据增加仓位。"
+      },
+      "gold": {
+        "status": "🟡 继续持有，不追涨",
+        "judgment": "现有黄金仓位已经不低，数据不完整时先持有，不追着价格加仓。"
+      }
+    },
+    "environment": {
+      "usStocks": "⚪ 数据待核验",
+      "aShares": "⚪ 数据待核验",
+      "gold": "⚪ 数据待核验",
+      "summary": "宏观与行情数据还不完整，今天先维持长期纪律，不做方向性猜测。"
+    }
   },
   "oneThing": {
     "task": "用 40 分钟为 1 位真实客户做一张访前准备卡：现有资产、近期目标、风险边界、这次只问的 3 个问题、会后下一步。不要把姓名、证件号、账号等敏感信息输入公共 AI。",

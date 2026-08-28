@@ -13,7 +13,14 @@ function pct(value){
 
 export function buildMarketOnlyInvestment(market){
   const available=market?.status==="ok"&&(market.items||[]).filter(item=>item.value!==null).length>=3;
-  if(!available) return {available:false,verdict:"",reason:"",amount:"",cancelIf:"",drivers:[]};
+  const fallbackViews={
+    assetSignals:{
+      nasdaq100:{status:"🟡 暂不额外加仓",judgment:"行情没有完整核验，维持原定投，不根据模糊数据增加仓位。"},
+      gold:{status:"🟡 继续持有，不追涨",judgment:"现有黄金仓位已经不低，数据不完整时先持有，不追着价格加仓。"}
+    },
+    environment:{usStocks:"⚪ 数据待核验",aShares:"⚪ 数据待核验",gold:"⚪ 数据待核验",summary:"宏观与行情数据还不完整，今天先维持长期纪律，不做方向性猜测。"}
+  };
+  if(!available) return {available:false,verdict:"",reason:"",amount:"",cancelIf:"",drivers:[],...fallbackViews};
   const nasdaq=market.items.find(item=>item.key==="nasdaq100");
   const gold=market.items.find(item=>item.key==="gold");
   const us10y=market.items.find(item=>item.key==="us10y");
@@ -27,7 +34,12 @@ export function buildMarketOnlyInvestment(market){
       `Nasdaq 100：1日 ${pct(nasdaq?.dayChange)}、5日 ${pct(nasdaq?.weekChange)}、20日 ${pct(nasdaq?.monthChange)}`,
       `黄金：5日 ${pct(gold?.weekChange)}`,
       `美国10年期收益率：5日 ${pct(us10y?.weekChange)}`
-    ]
+    ],
+    assetSignals:{
+      nasdaq100:{status:"🟡 暂不额外加仓",judgment:"多周期行情已更新，但新闻原因尚未同步核验；维持原定投，不临时追涨杀跌。"},
+      gold:{status:"🟢 继续持有",judgment:"黄金多周期行情已更新；在宏观原因未核验前，保留现有仓位，不追加战术动作。"}
+    },
+    environment:{usStocks:"🟡 中性观察",aShares:"⚪ 数据待核验",gold:"🟡 中性观察",summary:"行情已更新，但宏观事件还没有同步核实，今天只执行原有纪律。"}
   };
 }
 

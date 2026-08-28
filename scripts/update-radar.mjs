@@ -1,10 +1,11 @@
-import {mkdir,writeFile} from "node:fs/promises";
+import {mkdir,readFile,writeFile} from "node:fs/promises";
 import {fileURLToPath,pathToFileURL} from "node:url";
 import path from "node:path";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const OUTPUT=path.join(ROOT,"data","radar-latest.json");
 const FALLBACK_OUTPUT=path.join(ROOT,"data","radar-fallback.js");
+const COGNITION_HISTORY_OUTPUT=path.join(ROOT,"data","cognition-history.json");
 const OPENAI_MODEL=process.env.OPENAI_MODEL||"gpt-5.4-mini";
 const MAX_SOURCE_AGE_HOURS=84;
 
@@ -15,6 +16,8 @@ const categories=[
   {id:"banking",label:"银行业",query:"(中国 银行业 OR 银行监管 OR 商业银行 OR 金融监管) when:3d",priority:"know",domestic:true,localGrounded:true},
   {id:"wealth",label:"财富管理 / 私行",query:"(中国 财富管理 OR 私人银行 OR 高净值 OR 资产配置) when:3d",priority:"know",domestic:true,localGrounded:true},
   {id:"markets",label:"黄金 / 纳指 / 利率 / 美元",query:"(黄金 OR 纳斯达克 OR 美债收益率 OR 美元指数) when:2d",priority:"must"},
+  {id:"a_share_trends",label:"A股 / 资金 / 市场风潮",query:"(A股 OR 沪深股市 OR 港股) (资金流向 OR 开户 OR 成交额 OR 板块爆发 OR IPO OR 投资者情绪) when:3d",priority:"know",domestic:true,maxAgeHours:96},
+  {id:"global_market_narrative",label:"美股 / 市场叙事",query:"(美股 OR 纳斯达克 OR 标普500) (资金流向 OR 财报 OR 市场叙事 OR 投资者情绪 OR 泡沫 OR 恐慌) when:3d",priority:"know",maxAgeHours:96},
   {id:"china_economy",label:"中国经济",query:"(中国经济 OR 货币政策 OR 财政政策 OR 消费 OR 房地产政策) when:3d",priority:"must",domestic:true,localGrounded:true},
   {id:"career_cities",label:"职场 / 城市产业",query:"(北京 OR 上海 OR 深圳 OR 杭州 OR 香港) (招聘 OR 岗位 OR 产业 OR 金融科技) when:4d",priority:"know",domestic:true,maxAgeHours:120},
   {id:"ai_workflows",label:"AI / 工作流",query:"(银行 AI OR 财富管理 AI OR 白领 AI 工作流 OR AI Agent 企业应用) when:3d",priority:"know"},
@@ -206,18 +209,28 @@ const outputSchema={
       whatHappened:{type:"string"},whyImportant:{type:"string"},relation:{type:"string"},
       actionLevel:{type:"string",enum:["现在就行动","加入观察清单","知道即可","与我暂时无关"]},actionDetail:{type:"string"}
     },required:["candidateId","level","eventKey","qualityScore","whatHappened","whyImportant","relation","actionLevel","actionDetail"]}},
-    cognitions:{type:"array",minItems:3,maxItems:3,items:{type:"object",additionalProperties:false,properties:{
-      domain:{type:"string",enum:["世界 / 科技","金融 / 职业","个人成长 / 决策"]},cognition:{type:"string",maxLength:26},why:{type:"string"},meaning:{type:"string"}
-    },required:["domain","cognition","why","meaning"]}},
-    outside:{type:"array",minItems:2,maxItems:4,items:{type:"object",additionalProperties:false,properties:{
-      evidenceCandidateId:{type:"string"},kind:{type:"string",enum:["career","life"]},placeOrSector:{type:"string"},signal:{type:"string"},meaning:{type:"string"},horizon:{type:"string"}
-    },required:["evidenceCandidateId","kind","placeOrSector","signal","meaning","horizon"]}},
+    cognitions:{type:"array",minItems:1,maxItems:3,items:{type:"object",additionalProperties:false,properties:{
+      domain:{type:"string",enum:["世界 / 科技","金融 / 职业","个人成长 / 决策"]},cognition:{type:"string",maxLength:26},why:{type:"string"},meaning:{type:"string"},dedupeKey:{type:"string"}
+    },required:["domain","cognition","why","meaning","dedupeKey"]}},
+    outside:{type:"array",minItems:0,maxItems:4,items:{type:"object",additionalProperties:false,properties:{
+      evidenceCandidateId:{type:"string"},trendKey:{type:"string"},kind:{type:"string",enum:["career","life"]},placeOrSector:{type:"string"},signal:{type:"string"},meaning:{type:"string"},horizon:{type:"string"}
+    },required:["evidenceCandidateId","trendKey","kind","placeOrSector","signal","meaning","horizon"]}},
+    marketStories:{type:"array",minItems:2,maxItems:5,items:{type:"object",additionalProperties:false,properties:{
+      candidateId:{type:"string"},market:{type:"string",enum:["A股","美股","黄金 / 宏观"]},title:{type:"string"},whatHappened:{type:"string"},whyMarketCares:{type:"string"},relation:{type:"string"}
+    },required:["candidateId","market","title","whatHappened","whyMarketCares","relation"]}},
     investment:{type:"object",additionalProperties:false,properties:{
       verdict:{type:"string",enum:["🟢 正常定投","🟡 可酌情小幅加仓","⚪ 正常定投，暂不额外加仓","🔴 暂缓新增风险"]},
-      reason:{type:"string"},amount:{type:"string"},cancelIf:{type:"string"},drivers:{type:"array",minItems:2,maxItems:4,items:{type:"string"}}
-    },required:["verdict","reason","amount","cancelIf","drivers"]},
+      reason:{type:"string"},amount:{type:"string"},cancelIf:{type:"string"},drivers:{type:"array",minItems:2,maxItems:4,items:{type:"string"}},
+      assetSignals:{type:"object",additionalProperties:false,properties:{
+        nasdaq100:{type:"object",additionalProperties:false,properties:{status:{type:"string"},judgment:{type:"string"}},required:["status","judgment"]},
+        gold:{type:"object",additionalProperties:false,properties:{status:{type:"string"},judgment:{type:"string"}},required:["status","judgment"]}
+      },required:["nasdaq100","gold"]},
+      environment:{type:"object",additionalProperties:false,properties:{
+        usStocks:{type:"string"},aShares:{type:"string"},gold:{type:"string"},summary:{type:"string"}
+      },required:["usStocks","aShares","gold","summary"]}
+    },required:["verdict","reason","amount","cancelIf","drivers","assetSignals","environment"]},
     oneThing:{type:"object",additionalProperties:false,properties:{task:{type:"string"},minutes:{type:"integer",minimum:10,maximum:60}},required:["task","minutes"]}
-  },required:["selected","cognitions","outside","investment","oneThing"]
+  },required:["selected","cognitions","outside","marketStories","investment","oneThing"]
 };
 
 function modelInstructions(){
@@ -230,6 +243,7 @@ function modelInstructions(){
 
 选题硬约束：
 - 总数 5–10；must 2–3 条、know 3–4 条、expand 1–3 条。当天没有高质量内容可少选，但绝不拿娱乐、猎奇或低价值内容凑数。
+- selected 对应“今日外部世界”，回答过去 24–72 小时发生了什么。规划、县域产业等低频主题即使候选窗口更长，也只有仍在影响当前决策时才选择，并必须保留真实发布时间。
 - 同一 category 最多 2 条；AI / 工作流最多 2 条；同一公司或同一事件只留 1 条。eventKey 用“主体+事件”短语归并重复报道。
 - qualityScore 低于 70 的内容不要选。真正的能力跃迁型 AI 事件可以进 must，普通产品更新不能。
 - 国际经济、全球市场、科技变化与北京/上海/深圳/杭州/香港等大城市前沿仍是主轴，通常占约 70%–80%。国内政策、中国经济、四川/成渝/县域等贴近当下生活的信息作为补充，通常约 20%–30%，比例只作编辑方向，不为凑数机械执行。
@@ -244,11 +258,18 @@ function modelInstructions(){
 - 同时看 1日/5日/20日、新闻驱动、长期逻辑、纳指与黄金仓位、现金安全垫和未来两年保险缴费。不可只凭单日涨跌。
 - 若建议小幅加仓，amount 必须写人民币金额区间，cancelIf 写清取消条件。不得出现梭哈、抄底冲刺等措辞。
 - 若市场数据不足或重大风险尚不清晰，优先克制。
+- 前台只直接解释用户真实持有的 Nasdaq 100 与黄金。assetSignals.nasdaq100 和 assetSignals.gold 各给一个短状态和一句不超过 45 字的人话判断；美元指数、美债收益率、VIX、汇率和利率预期只能作为后台依据，不把专业数字丢给用户自己解读。
+- environment 把宏观环境翻译为美股、A股、黄金三个简短状态和一句总判断。信息不足就写“⚪ 数据待核验”，不得假装实时。
+
+市场大事与风潮：
+- marketStories 选 2–5 条真正可能改变预期或形成讨论热潮的事件，关注 A股、美股，以及有重大事件时的黄金/宏观。优先 IPO、资金流向、散户行为、爆火板块、龙头财报、重大政策、利率转向、泡沫/恐慌和新投资叙事。
+- 不要把“指数涨 0.3%”“某股涨 2%”当市场大事。每条只写 1–2 句事实、1 句市场为何关注、1 句对用户的含义。candidateId 必须来自候选；来源、时间和链接由程序回填。
 
 认知与外部坐标：
-- 三条认知依次覆盖世界/科技、金融/职业、个人成长/决策；必须能由当天材料或明确机制验证，拒绝鸡汤。cognition 是一句不超过 22 个汉字、像熟悉她的 GPT 当面说出的短句：口语、直接、一下能听懂，不堆“结构性、迁移、赋能、范式”等抽象词。why 和 meaning 也用日常聊天语气，每段 1–2 句。
+- cognitions 可以 1–3 条，宁缺毋滥。优先覆盖世界/科技、金融/职业、个人成长/决策，但绝不能为凑满 3 条换词重复。生成前必须查看 input.cognitionHistory；dedupeKey 用“主题>核心结论”的稳定写法。只要核心观点、标题、主题或结论与过去 30 天相同，即使换了措辞也不要生成。
+- cognition 是一句不超过 22 个汉字、像熟悉她的 GPT 当面说出的短句：口语、直接、一下能听懂，不堆“结构性、迁移、赋能、范式”等抽象词。why 和 meaning 也用日常聊天语气，每段 1–2 句。
 - 认知更新优先带来大城市、更大平台和更开放环境里的新判断方式，帮助她识别“小地方都这么做”“大家都说应该如此”背后的局限；不要为了反主流而反主流，要给可验证的现实依据。
-- outside 既观察北京、上海、深圳、杭州、香港、头部机构和一线白领的能力/岗位变化，也观察人的观念、习惯、学习方式、消费选择和真实新热潮。每项用 kind 标为 career 或 life；当天有高质量依据时，优先保留 1 条 life，纯娱乐热搜不算。所有内容都用 evidenceCandidateId 绑定一条已选新闻。
+- outside 回答未来 1–3 年优秀平台、岗位、能力、工作方式和生活观念往哪里变化，不回答“今天发生了什么”。它与今日外部世界不能只是同一新闻换个说法。查看 input.outsideRefreshDue：为 false 时返回空数组；为 true 时也只有发现相对 input.previousOutside 真正新的趋势证据才返回。trendKey 用稳定短语归并同一趋势；每项用 kind 标为 career 或 life，所有内容都用 evidenceCandidateId 绑定候选新闻。
 - oneThing 只给一个 10–60 分钟动作，优先服务当周可迁移职业资本。
 
 ${profile}`;
@@ -273,7 +294,7 @@ function countWebSources(response){
   return count;
 }
 
-async function analyze(candidates,market){
+async function analyze(candidates,market,context={}){
   const key=process.env.OPENAI_API_KEY;
   if(!key) throw new Error("缺少 OPENAI_API_KEY。请把 Key 放在 GitHub Actions Secret，不要写进前端或仓库。");
   const payload={
@@ -281,11 +302,11 @@ async function analyze(candidates,market){
     store:false,
     reasoning:{effort:"low"},
     instructions:modelInstructions(),
-    input:JSON.stringify({generatedAt:new Date().toISOString(),candidates,market},null,2),
+    input:JSON.stringify({generatedAt:new Date().toISOString(),candidates,market,...context},null,2),
     tools:[{type:"web_search"}],
     include:["web_search_call.action.sources"],
-    max_tool_calls:14,
-    max_output_tokens:12000,
+    max_tool_calls:18,
+    max_output_tokens:14000,
     text:{format:{type:"json_schema",name:"nini_radar_daily",strict:true,schema:outputSchema}}
   };
   const raw=await fetchText("https://api.openai.com/v1/responses",{
@@ -301,6 +322,51 @@ async function analyze(candidates,market){
 function repeatedText(items,field,threshold=.88){
   for(let i=0;i<items.length;i++) for(let j=i+1;j<items.length;j++) if(similarity(items[i][field],items[j][field])>=threshold) return true;
   return false;
+}
+
+function canonicalCognition(value=""){
+  return normalizeTitle(value)
+    .replace(/客户关系|经营客户|客户总资产|客户资产留存/g,"客户经营")
+    .replace(/卖产品|产品销售|单品销量|单次成交/g,"单品销售")
+    .replace(/可迁移能力|外部岗位证据|带得走的能力/g,"可迁移证据")
+    .replace(/人工智能/g,"ai")
+    .replace(/大平台|头部平台|更大平台/g,"大平台");
+}
+
+export function dedupeCognitions(cognitions=[],history=[]){
+  const accepted=[];
+  const priorKeys=new Set(history.map(item=>canonicalCognition(item.dedupeKey||"")).filter(Boolean));
+  const prior=history.map(item=>canonicalCognition(`${item.dedupeKey||""}${item.cognition||item.title||""}${item.conclusion||""}`)).filter(Boolean);
+  for(const item of cognitions){
+    const key=canonicalCognition(item.dedupeKey||"");
+    const signature=canonicalCognition(`${item.dedupeKey||""}${item.cognition||""}`);
+    if(!signature) continue;
+    if(key&&priorKeys.has(key)) continue;
+    if(prior.some(existing=>existing===signature||similarity(existing,signature)>=.58)) continue;
+    if(accepted.some(existing=>{
+      const otherKey=canonicalCognition(existing.dedupeKey||"");
+      if(key&&otherKey===key) return true;
+      const other=canonicalCognition(`${existing.dedupeKey||""}${existing.cognition||""}`);
+      return other===signature||similarity(other,signature)>=.58;
+    })) continue;
+    accepted.push(item);
+  }
+  return accepted.slice(0,3);
+}
+
+function daysSince(dateValue){
+  const time=new Date(`${String(dateValue||"").slice(0,10)}T00:00:00Z`).getTime();
+  return Number.isFinite(time)?Math.floor((Date.now()-time)/864e5):Infinity;
+}
+
+function isOutsideDuplicate(left,right){
+  const leftKey=normalizeTitle(left.trendKey||left.signal||"");
+  const rightKey=normalizeTitle(right.trendKey||right.signal||"");
+  return Boolean(leftKey&&rightKey&&(leftKey===rightKey||similarity(leftKey,rightKey)>=.56));
+}
+
+async function readJsonOr(file,fallback){
+  try{return JSON.parse(await readFile(file,"utf8"));}catch{return fallback;}
 }
 
 export function enforceSelection(selected,candidates){
@@ -338,19 +404,37 @@ function chinaDate(instant=new Date()){
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
-function buildFinal({analysis,candidates,market,failures,verificationSourceCount}){
+function buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData={},cognitionHistory=[],outsideRefreshDue=true}){
   const news=enforceSelection(analysis.selected,candidates);
   if(!news.length) throw new Error("所有候选均未通过质量、重复或配额校验，保留上一版日报。");
   const levelCounts=news.reduce((counts,item)=>({...counts,[item.level]:(counts[item.level]||0)+1}),{});
   if(news.length<5||levelCounts.must<2||levelCounts.know<3||levelCounts.expand<1) throw new Error("本次结果未满足 2/3/1 的最低类别配额，保留上一版日报。");
   if(repeatedText(news,"relation")||repeatedText(news,"actionDetail")) throw new Error("检测到新闻分析高度重复，拒绝发布本次结果。");
-  const byId=new Map(news.map(item=>[item.id,item]));
-  const outside=(analysis.outside||[]).map(item=>{
-    const evidence=byId.get(item.evidenceCandidateId);
+  const candidateById=new Map(candidates.map(item=>[item.id,item]));
+  const marketStoryIds=new Set();
+  const marketStories=(analysis.marketStories||[]).map(item=>{
+    const evidence=candidateById.get(item.candidateId);
+    if(!evidence||marketStoryIds.has(evidence.id)) return null;
+    marketStoryIds.add(evidence.id);
+    return {...item,url:evidence.url,source:evidence.source,publishedAt:evidence.publishedAt};
+  }).filter(Boolean).slice(0,5);
+  if(marketStories.length<2) throw new Error("市场大事不足 2 条可追溯依据，拒绝发布本次结果。");
+
+  const previousOutside=(previousData.outside||[]).map(item=>({...item,trendKey:item.trendKey||normalizeTitle(item.signal||"")}));
+  const proposedOutside=(analysis.outside||[]).map(item=>{
+    const evidence=candidateById.get(item.evidenceCandidateId);
     return evidence?{...item,url:evidence.url,source:evidence.source,publishedAt:evidence.publishedAt}:null;
   }).filter(Boolean).slice(0,4);
-  if(outside.length<2) throw new Error("外部坐标不足 2 条可追溯依据，拒绝发布本次结果。");
-  const availableMarket=market.items.filter(item=>item.value!==null).length>=3;
+  const novelOutside=proposedOutside.filter(item=>!previousOutside.some(existing=>isOutsideDuplicate(item,existing)));
+  const outside=outsideRefreshDue&&novelOutside.length
+    ?[...novelOutside,...previousOutside.filter(existing=>!novelOutside.some(item=>isOutsideDuplicate(item,existing)))].slice(0,4)
+    :previousOutside.slice(0,4);
+  const outsideUpdatedAt=outsideRefreshDue&&novelOutside.length?chinaDate():previousData.outsideUpdatedAt||previousData.effectiveDate||chinaDate();
+
+  const cognitions=dedupeCognitions(analysis.cognitions||[],cognitionHistory);
+  market.generatedAt=new Date().toISOString();
+  const marketByKey=new Map((market.items||[]).map(item=>[item.key,item]));
+  const availableMarket=["nasdaq100","gold"].every(key=>marketByKey.get(key)?.value!==null&&marketByKey.get(key)?.value!==undefined);
   return {
     version:"3.3",
     status:"ok",
@@ -359,7 +443,9 @@ function buildFinal({analysis,candidates,market,failures,verificationSourceCount
     timezone:"Asia/Shanghai",
     news,
     outside,
-    cognitions:(analysis.cognitions||[]).slice(0,3),
+    outsideUpdatedAt,
+    marketStories,
+    cognitions,
     market,
     investment:{available:availableMarket,...analysis.investment},
     oneThing:analysis.oneThing,
@@ -369,6 +455,8 @@ function buildFinal({analysis,candidates,market,failures,verificationSourceCount
       verificationSourceCount,
       sourceFailures:failures,
       maxSourceAgeHours:MAX_SOURCE_AGE_HOURS,
+      cognitionHistoryWindowDays:30,
+      outsideRefreshDays:7,
       localGroundedSelected:news.filter(item=>item.localGrounded).length,
       note:"所有展示新闻均由程序回填原始来源与发布时间；失败时不覆盖最后一次成功日报。"
     }
@@ -378,18 +466,36 @@ function buildFinal({analysis,candidates,market,failures,verificationSourceCount
 async function main(){
   if(!process.env.OPENAI_API_KEY) throw new Error("缺少 OPENAI_API_KEY。请把 Key 放在 GitHub Actions Secret，不要写进前端或仓库。");
   console.log("[1/4] 抓取并去重候选新闻");
+  const previousData=await readJsonOr(OUTPUT,{});
+  const historyFile=await readJsonOr(COGNITION_HISTORY_OUTPUT,{entries:[]});
+  const allHistory=Array.isArray(historyFile)?historyFile:(historyFile.entries||[]);
+  const cognitionHistory=allHistory.filter(item=>daysSince(item.date)<=30);
+  const outsideRefreshDue=daysSince(previousData.outsideUpdatedAt||previousData.effectiveDate)>=7;
   const {candidates,failures}=await collectCandidates();
   console.log(`候选 ${candidates.length} 条；源失败 ${failures.length} 个`);
   console.log("[2/4] 读取多周期市场数据");
   const market=await collectMarket();
   console.log(`市场状态：${market.status}`);
   console.log("[3/4] 核实、筛选并逐条生成个性化分析");
-  const {analysis,verificationSourceCount}=await analyze(candidates,market);
-  const finalData=buildFinal({analysis,candidates,market,failures,verificationSourceCount});
+  const {analysis,verificationSourceCount}=await analyze(candidates,market,{
+    cognitionHistory,
+    outsideRefreshDue,
+    previousOutside:previousData.outside||[]
+  });
+  const finalData=buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData,cognitionHistory,outsideRefreshDue});
   console.log(`[4/4] 发布 ${finalData.news.length} 条（国内/县域补充 ${finalData.pipeline.localGroundedSelected} 条），写入数据文件`);
   await mkdir(path.dirname(OUTPUT),{recursive:true});
   await writeFile(OUTPUT,`${JSON.stringify(finalData,null,2)}\n`,"utf8");
   await writeFile(FALLBACK_OUTPUT,`window.__NINI_RADAR_FALLBACK__ = ${JSON.stringify(finalData,null,2)};\n`,"utf8");
+  const newHistory=finalData.cognitions.map(item=>({
+    date:finalData.effectiveDate,
+    domain:item.domain,
+    cognition:item.cognition,
+    dedupeKey:item.dedupeKey,
+    theme:String(item.dedupeKey||"").split(">")[0]||item.domain,
+    conclusion:item.cognition
+  }));
+  await writeFile(COGNITION_HISTORY_OUTPUT,`${JSON.stringify({updatedAt:new Date().toISOString(),entries:[...cognitionHistory,...newHistory]},null,2)}\n`,"utf8");
 }
 
 const invoked=process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href;

@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-import {dedupeCandidates,enforceSelection,similarity} from "../scripts/update-radar.mjs";
+import {dedupeCandidates,dedupeCognitions,enforceSelection,similarity} from "../scripts/update-radar.mjs";
 import {buildMarketOnlyInvestment} from "../scripts/update-market.mjs";
 
 test("相近标题会被识别为同一事件",()=>{
@@ -45,6 +45,15 @@ test("低质量与重复事件不会发布",()=>{
   assert.deepEqual(output.map(item=>item.id),["x2"]);
 });
 
+test("30天内同一核心认知即使换句话说也会被过滤",()=>{
+  const history=[{date:"2026-08-20",cognition:"未来更重要的是经营客户",dedupeKey:"客户经营>关系比单品销售重要"}];
+  const today=[
+    {cognition:"银行更看重客户关系，不只看销量。",dedupeKey:"客户经营>关系比单品销售重要"},
+    {cognition:"会复盘的人，成长得更快。",dedupeKey:"复盘习惯>把经验变成下一次判断"}
+  ];
+  assert.deepEqual(dedupeCognitions(today,history).map(item=>item.dedupeKey),["复盘习惯>把经验变成下一次判断"]);
+});
+
 test("国内县域补充不会挤占国际与大城市主轴",()=>{
   const candidates=Array.from({length:10},(_,index)=>({
     id:`r${index}`,title:`独立事件 ${index}`,categoryId:index<5?`local_${index}`:`world_${index}`,
@@ -80,7 +89,14 @@ test("首日发布数据满足 V3.3 硬约束",async()=>{
   assert.ok((categoryCounts.get("ai_workflows")||0)<=2);
   assert.equal(new Set(data.news.map(item=>item.eventKey)).size,data.news.length);
   assert.ok(data.cognitions.every(item=>[...item.cognition].length<=26));
+  assert.ok(data.cognitions.every(item=>item.dedupeKey));
   assert.ok(data.outside.some(item=>item.kind==="life"));
+  assert.ok(data.outside.every(item=>item.trendKey));
+  assert.ok(data.outsideUpdatedAt);
+  assert.ok(data.marketStories.length>=2&&data.marketStories.length<=5);
+  assert.ok(data.marketStories.every(item=>item.source&&item.publishedAt&&item.url));
+  assert.ok(data.investment.assetSignals?.nasdaq100&&data.investment.assetSignals?.gold);
+  assert.ok(data.investment.environment?.summary);
 });
 
 test("本地直接打开所需的随附数据与 JSON 一致",async()=>{

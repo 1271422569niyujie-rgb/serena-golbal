@@ -42,9 +42,6 @@
     <div class="balance" id="balance"></div>
     <main id="news"><section class="card skeleton">正在读取已验证的今日信息…</section></main>
 
-    <div class="section">🏙️ 外面的人已经走到哪里了</div>
-    <div id="outside"><section class="card mutedCard">今日数据加载后显示 2–4 个能力、观念与生活趋势信号。</section></div>
-
     <div class="section">💼 我的资产底盘</div>
     <section class="card">
       <div class="privacyHead">
@@ -88,6 +85,10 @@
       <div class="marketGrid" id="marketGrid">
         <div class="metric"><span class="pill">市场数据</span><div class="v smallV">正在读取</div><div class="note">失败时不会用旧数据冒充今日</div></div>
       </div>
+      <div id="marketEnvironment" class="marketEnvironment">
+        <div class="tag blue">🌡️ 今天的市场环境</div>
+        <div class="note">正在把宏观指标翻译成人话…</div>
+      </div>
       <div class="marketStamp" id="marketStamp"></div>
 
       <div class="settings">
@@ -110,10 +111,26 @@
       </div>
     </section>
 
-    <div class="section">🧠 今日三条认知更新</div>
+    <div class="section">🔥 今日市场大事 &amp; 风潮</div>
+    <div class="sectionHint">不是普通涨跌播报，只留下可能改变投资者预期的事。</div>
+    <div id="marketStories"><section class="card mutedCard">今日市场线索加载后显示 2–5 条。</section></div>
+
+    <div class="section">🧠 今日认知更新</div>
+    <div class="sectionHint">每天 1–3 条；30 天内同一个核心观点不换句式重讲。</div>
     <div id="cognitions"><section class="card mutedCard">今日数据加载后显示可验证的认知更新。</section></div>
 
+    <div class="section">🏙️ 外面的人已经走到哪里了</div>
+    <div class="sectionHint">看未来 1–3 年的能力、岗位、观念与生活变化；每 7 天或出现新证据时更新。</div>
+    <div id="outside"><section class="card mutedCard">趋势坐标加载后显示 2–4 条。</section></div>
+
     <div class="section">🧭 三年职业成长计划</div>
+    <section class="card">
+      <div class="tag blue">可迁移能力账户</div>
+      <div class="title">你做过的事，要慢慢变成带得走的证据</div>
+      <div class="note">分数来自已有经历、本周勾选和本月进度，不随机生成，也不是考试成绩。</div>
+      <div id="abilityAccount" class="abilityAccount"></div>
+    </section>
+
     <section class="card">
       <div class="cardHead">
         <div>

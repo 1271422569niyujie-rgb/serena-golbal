@@ -52,6 +52,44 @@ const careerDefaults = {
   quarterNote:""
 };
 
+const abilityDefinitions = [
+  {
+    id:"wealth",label:"财富管理",base:25,
+    baseline:"已在真实工作中接触存款、保险、基金、黄金和客户资产结构",
+    taskPoints:{afp:7,client:8},progressPoints:{cases:5,clientTalks:7,finance:10},
+    gap:"还需要更多完整资产配置复盘，而不只是单品成交记录",
+    next:"完成 1 份真实客户资产结构复盘，写清需求、取舍和风险边界"
+  },
+  {
+    id:"project",label:"项目能力",base:28,
+    baseline:"已有医院、商户和复杂现场推进等真实项目经历",
+    taskPoints:{star:8,client:4},progressPoints:{cases:8,clientTalks:3,jd:2},
+    gap:"项目经历还缺少统一的背景—动作—结果—数字表达",
+    next:"把 1 个医院或商户项目整理成可用于面试的 STAR 案例"
+  },
+  {
+    id:"english",label:"英语",base:10,
+    baseline:"已经开始持续学习英语",
+    taskPoints:{english:8},progressPoints:{english:15},
+    gap:"输入多，能被外部岗位看见的口语与输出证据还少",
+    next:"录一段 3 分钟金融主题英文输出并保留日期"
+  },
+  {
+    id:"ai",label:"AI 工作流",base:15,
+    baseline:"已经在主动寻找 AI 与银行真实工作的连接点",
+    taskPoints:{ai:10},progressPoints:{aiFlow:20},
+    gap:"还需要证明工具确实节省时间或提高了工作质量",
+    next:"完成 1 次合规的客户访前准备，记录输入模板、人工核验和节省时间"
+  },
+  {
+    id:"city",label:"大城市竞争力",base:14,
+    baseline:"已有明确迁移目标，并开始关注一线城市与更大平台",
+    taskPoints:{star:4,english:3,client:3},progressPoints:{jd:8,cases:3,clientTalks:3},
+    gap:"目标岗位要求与个人证据之间还没有形成稳定对照",
+    next:"再分析 1 个真实目标岗位 JD，只记录它要求而你尚未证明的 3 项能力"
+  }
+];
+
 const state = {activeFilter:"all",radar:null,dataAgeHours:Infinity,usingFallback:false,assetsVisible:false,assets:{},career:{},invest:{cashMonths:8,riskFlag:false}};
 
 const $ = id => document.getElementById(id);
@@ -156,6 +194,19 @@ function renderOutside(){
   </section>`).join(""):emptyState("今天没有足够可靠的一线城市或行业信号，宁可少一条。 ");
 }
 
+function renderMarketStories(){
+  const items=Array.isArray(state.radar?.marketStories)?state.radar.marketStories.slice(0,5):[];
+  $("marketStories").innerHTML=items.length?items.map((item,index)=>`<article class="card marketStory">
+    <div class="tag amber">0${index+1} · ${esc(item.market||"市场风潮")}</div>
+    <div class="title">${esc(item.title)}</div>
+    <div class="storyRow"><b>发生了什么：</b>${esc(item.whatHappened)}</div>
+    <div class="storyRow"><b>为什么市场在关注：</b>${esc(item.whyMarketCares)}</div>
+    <div class="storyRow"><b>对我意味着什么：</b>${esc(item.relation)}</div>
+    <div class="meta">${esc(item.source)} · 发布于 ${esc(formatDate(item.publishedAt))}</div>
+    <a class="source" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">查看原始来源 →</a>
+  </article>`).join(""):emptyState("今天没有足够重要的市场大事或新风潮，不用普通涨跌凑数。 ");
+}
+
 function renderCognitions(){
   const items=Array.isArray(state.radar?.cognitions)?state.radar.cognitions.slice(0,3):[];
   $("cognitions").innerHTML=items.length?items.map((item,index)=>`<section class="card cognitionCard">
@@ -178,11 +229,34 @@ function formatChange(value){ return value===null||value===undefined||!Number.is
 function renderMarket(){
   const market=state.radar?.market;
   const items=Array.isArray(market?.items)?market.items:[];
-  $("marketGrid").innerHTML=items.length?items.map(item=>`<div class="metric">
-    <span class="pill">${esc(item.label)}</span>
+  const investment=state.radar?.investment||{};
+  const assetSignals=investment.assetSignals||{};
+  const visibleAssets=[
+    {key:"nasdaq100",label:"Nasdaq 100",fallbackStatus:"🟡 暂不额外加仓",fallbackJudgment:"行情尚未完成核验，维持原定投，不根据单日波动加动作。"},
+    {key:"gold",label:"黄金",fallbackStatus:"🟡 继续持有，不追涨",fallbackJudgment:"行情尚未完成核验，保留现有仓位，暂不根据模糊信息追涨。"}
+  ];
+  $("marketGrid").innerHTML=visibleAssets.map(definition=>{
+    const item=items.find(entry=>entry.key===definition.key)||{key:definition.key,label:definition.label,value:null,unit:"",dayChange:null,weekChange:null,monthChange:null};
+    const signal=assetSignals[definition.key]||{status:definition.fallbackStatus,judgment:definition.fallbackJudgment};
+    return `<div class="metric marketAsset">
+    <span class="pill">${esc(definition.label)}</span>
     <div class="v smallV">${esc(formatMarketValue(item))}</div>
     <div class="move">1日 <span class="${changeClass(item.dayChange)}">${formatChange(item.dayChange)}</span> · 5日 ${formatChange(item.weekChange)} · 20日 ${formatChange(item.monthChange)}</div>
-  </div>`).join(""):`<div class="metric"><span class="pill">市场数据</span><div class="v smallV">暂不可用</div><div class="note">不会据此生成投资动作</div></div>`;
+    <div class="assetStatus">${esc(signal.status)}</div>
+    <div class="marketJudgment">${esc(signal.judgment)}</div>
+  </div>`;
+  }).join("");
+  const environment=investment.environment||{
+    usStocks:"⚪ 数据待核验",aShares:"⚪ 数据待核验",gold:"⚪ 数据待核验",
+    summary:"宏观与行情数据还不完整，今天先不做方向性解读。"
+  };
+  $("marketEnvironment").innerHTML=`<div class="tag blue">🌡️ 今天的市场环境</div>
+    <div class="environmentRows">
+      <div class="environmentItem"><span>美股</span><b>${esc(environment.usStocks)}</b></div>
+      <div class="environmentItem"><span>A股</span><b>${esc(environment.aShares)}</b></div>
+      <div class="environmentItem"><span>黄金</span><b>${esc(environment.gold)}</b></div>
+    </div>
+    <div class="environmentSummary">${esc(environment.summary)}</div>`;
   $("marketStamp").textContent=market?.asOf?`市场数据截至 ${formatDate(market.asOf)} · ${market.source||"公开市场数据"}`:"市场数据时间暂不可用";
   renderInvestmentVerdict();
 }
@@ -223,7 +297,7 @@ function renderInvestmentVerdict(){
   }
   verdict.textContent=finalVerdict;
   reason.textContent=finalReason;
-  detail.innerHTML=`${amount?`<div><b>金额/动作：</b>${esc(amount)}</div>`:""}${cancelIf?`<div><b>取消或重评条件：</b>${esc(cancelIf)}</div>`:""}${investment.drivers?.length?`<div><b>依据：</b>${investment.drivers.map(esc).join("；")}</div>`:""}`;
+  detail.innerHTML=`${amount?`<div><b>金额/动作：</b>${esc(amount)}</div>`:""}${cancelIf?`<div><b>取消或重评条件：</b>${esc(cancelIf)}</div>`:""}`;
 }
 
 function renderOneThing(){
@@ -237,6 +311,7 @@ function renderRadar(){
   renderOutside();
   renderCognitions();
   renderMarket();
+  renderMarketStories();
   renderOneThing();
 }
 
@@ -404,6 +479,34 @@ function renderCareer(){
   }).join("");
   $("quarterDone").checked=state.career.quarterDone;
   $("quarterNote").value=state.career.quarterNote;
+  renderAbilities();
+}
+
+function renderAbilities(){
+  if(!$("abilityAccount")) return;
+  const weeklyDone=new Set((state.career.weekly||[]).filter(item=>item.done).map(item=>item.id));
+  const progress=new Map((state.career.monthly||[]).map(item=>[item.id,Number(item.value)||0]));
+  $("abilityAccount").innerHTML=abilityDefinitions.map(definition=>{
+    let score=definition.base;
+    const recent=[];
+    for(const [taskId,points] of Object.entries(definition.taskPoints)){
+      if(weeklyDone.has(taskId)){score+=points;recent.push(state.career.weekly.find(item=>item.id===taskId)?.text||taskId);}
+    }
+    for(const [progressId,points] of Object.entries(definition.progressPoints)){
+      const value=progress.get(progressId)||0;
+      if(value>0){score+=value*points;recent.push(`${state.career.monthly.find(item=>item.id===progressId)?.label||progressId}：${value}`);}
+    }
+    score=clamp(Math.round(score),0,100);
+    return `<details class="abilityItem">
+      <summary><span class="abilityName">${esc(definition.label)}</span><span class="abilityTrack"><span class="abilityFill" style="width:${score}%"></span></span><span class="abilityScore">${score}%</span></summary>
+      <div class="abilityDetail">
+        <div><b>已有证据：</b>${esc(definition.baseline)}</div>
+        <div><b>最近新增：</b>${recent.length?esc(recent.slice(-2).join("；")):"本周还没有新增记录"}</div>
+        <div><b>当前缺口：</b>${esc(definition.gap)}</div>
+        <div><b>下一步最值得补：</b>${esc(definition.next)}</div>
+      </div>
+    </details>`;
+  }).join("");
 }
 
 function loadCareer(){
@@ -441,6 +544,7 @@ function bindCareer(){
     saveCareer();
     const fill=event.target.closest(".progressItem")?.querySelector(".progressFill");
     if(fill) fill.style.width=`${item.target?clamp(item.value/item.target*100,0,100):0}%`;
+    renderAbilities();
   });
   $("quarterDone").addEventListener("change",event=>{state.career.quarterDone=event.target.checked;saveCareer();});
   $("quarterNote").addEventListener("input",event=>{state.career.quarterNote=event.target.value;saveCareer();});

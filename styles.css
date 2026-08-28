@@ -44,6 +44,7 @@ h1 { font-size:29px; letter-spacing:-1px; margin:4px 0 5px }
 .nav::-webkit-scrollbar { display:none }
 .nav button { white-space:nowrap }
 .section { font-size:18px; font-weight:850; margin:27px 2px 10px; letter-spacing:-.2px }
+.sectionHint { margin:-4px 3px 10px; color:#6b7d88; font-size:11.5px; line-height:1.65 }
 .card { border-radius:20px; padding:17px; margin:10px 0 }
 .cardHead { display:flex; justify-content:space-between; align-items:flex-start; gap:10px }
 .tag { font-size:11px; font-weight:850; letter-spacing:.2px }
@@ -95,9 +96,20 @@ h1 { font-size:29px; letter-spacing:-1px; margin:4px 0 5px }
 .buttonRow { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px }
 .note { font-size:11px; color:var(--muted); line-height:1.6; margin-top:8px }
 .marketGrid { display:grid; grid-template-columns:1fr 1fr; gap:10px }
+.marketAsset { display:flex; flex-direction:column; gap:6px }
+.marketAsset .assetStatus { align-self:flex-start; margin-top:2px; padding:4px 8px; border-radius:999px; background:#e9f1f5; color:var(--blue); font-size:10.5px; font-weight:850 }
+.marketAsset .marketJudgment { margin-top:2px; padding-top:8px; border-top:1px solid var(--line2); color:#536773; font-size:11.5px; line-height:1.65 }
 .move { font-size:11px; margin-top:5px; color:var(--muted); line-height:1.45 }
 .move .down { color:var(--green) } .move .up { color:var(--red) }
 .marketStamp { font-size:10.5px; color:#8a99a3; margin:9px 2px 0; line-height:1.5 }
+.marketEnvironment { margin-top:12px; padding:14px; border:1px solid var(--line); border-radius:16px; background:#f4f8fa }
+.environmentRows { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-top:10px }
+.environmentItem { padding:9px 7px; border-radius:12px; background:#fff; text-align:center }
+.environmentItem span { display:block; color:var(--muted); font-size:10.5px }
+.environmentItem b { display:block; margin-top:4px; color:#40535f; font-size:11.5px }
+.environmentSummary { margin-top:10px; color:#536773; font-size:12px; line-height:1.7 }
+.marketStory .storyRow { margin-top:9px; color:#5b6d78; font-size:12px; line-height:1.7 }
+.marketStory .storyRow b { color:#354954 }
 .settings { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px }
 .field input,.inputLike { width:100%; border:1px solid var(--line); border-radius:12px; padding:11px; background:#fbfcfd; color:var(--ink); font-size:14px }
 .inputLike { color:#50636f; min-height:43px }
@@ -132,6 +144,17 @@ textarea { width:100%; resize:vertical; border:1px solid var(--line); border-rad
 .timeline > div { display:grid; grid-template-columns:70px 1fr; gap:10px; padding:10px 0; border-bottom:1px dashed var(--line); font-size:12.5px; line-height:1.7; color:#5a6c77 }
 .timeline > div:last-child { border-bottom:0 }
 .timeline b { color:var(--blue) }
+.abilityAccount { margin-top:12px }
+.abilityItem { border-top:1px solid var(--line2); padding:11px 0 }
+.abilityItem:first-child { border-top:0 }
+.abilityItem summary { display:grid; grid-template-columns:88px 1fr 42px; align-items:center; gap:9px; cursor:pointer; list-style:none }
+.abilityItem summary::-webkit-details-marker { display:none }
+.abilityName { color:#425662; font-size:12px; font-weight:800 }
+.abilityScore { color:var(--blue); font-size:11px; font-weight:850; text-align:right }
+.abilityTrack { height:8px; overflow:hidden; border-radius:999px; background:#e8eff3 }
+.abilityFill { height:100%; border-radius:999px; background:linear-gradient(90deg,#7896aa,var(--blue)) }
+.abilityDetail { margin:10px 0 0 97px; padding:11px; border-radius:12px; background:#f4f8fa; color:#5b6d78; font-size:11.5px; line-height:1.7 }
+.abilityDetail div + div { margin-top:5px }
 .dataNote summary { cursor:pointer; color:var(--blue); font-size:12px; font-weight:800 }
 .dataNote .txt { margin-top:10px; font-size:12px }
 .footer { text-align:center; color:#687c89; font-size:10.5px; margin-top:30px; line-height:1.7 }
@@ -148,6 +171,9 @@ textarea { width:100%; resize:vertical; border:1px solid var(--line); border-rad
   h1 { font-size:26px }
   .grid,.marketGrid { grid-template-columns:1fr }
   .assetInput { width:98px }
+  .environmentRows { grid-template-columns:1fr }
+  .abilityItem summary { grid-template-columns:78px 1fr 38px }
+  .abilityDetail { margin-left:0 }
 }
 @media (prefers-reduced-motion:reduce) {
   * { scroll-behavior:auto!important; animation:none!important; transition:none!important }
