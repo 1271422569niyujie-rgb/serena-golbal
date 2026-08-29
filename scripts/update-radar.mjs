@@ -99,12 +99,19 @@ function hoursOld(value){
   return Number.isFinite(time)?Math.max(0,(Date.now()-time)/36e5):Infinity;
 }
 
+const sleep=milliseconds=>new Promise(resolve=>setTimeout(resolve,milliseconds));
+
 async function fetchText(url,options={}){
+  const {timeoutMs=20000,...fetchOptions}=options;
   const controller=new AbortController();
-  const timeout=setTimeout(()=>controller.abort(),20000);
+  const timeout=setTimeout(()=>controller.abort(),timeoutMs);
   try{
-    const response=await fetch(url,{...options,signal:controller.signal,headers:{"User-Agent":"NiniRadar/3.3 (+personal GitHub Pages project)",...(options.headers||{})}});
-    if(!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    const response=await fetch(url,{...fetchOptions,signal:controller.signal,headers:{"User-Agent":"NiniRadar/3.3 (+personal GitHub Pages project)",...(fetchOptions.headers||{})}});
+    if(!response.ok){
+      const error=new Error(`${response.status} ${response.statusText}`);
+      error.status=response.status;
+      throw error;
+    }
     return await response.text();
   }finally{clearTimeout(timeout);}
 }
@@ -157,10 +164,16 @@ async function fetchYahooSeries(definition){
   const suffix=`/v8/finance/chart/${encodeURIComponent(definition.symbol)}?range=2mo&interval=1d&includePrePost=false`;
   let raw,lastError;
   for(const host of ["https://query1.finance.yahoo.com","https://query2.finance.yahoo.com"]){
-    try{
-      raw=JSON.parse(await fetchText(`${host}${suffix}`,{headers:{Accept:"application/json"}}));
-      break;
-    }catch(error){lastError=error;}
+    for(let attempt=1;attempt<=3;attempt++){
+      try{
+        raw=JSON.parse(await fetchText(`${host}${suffix}`,{headers:{Accept:"application/json"}}));
+        break;
+      }catch(error){
+        lastError=error;
+        if(attempt<3) await sleep(1200*attempt);
+      }
+    }
+    if(raw) break;
   }
   if(!raw) throw lastError||new Error(`${definition.label} 行情读取失败`);
   const result=raw?.chart?.result?.[0];
@@ -191,7 +204,11 @@ export async function collectMarket(){
     {key:"dollar",label:"美元指数",symbol:"DX-Y.NYB",unit:"",digits:2},
     {key:"us10y",label:"美国 10Y",symbol:"^TNX",unit:"%",digits:2}
   ];
-  const settled=await Promise.allSettled(definitions.map(fetchYahooSeries));
+  const settled=[];
+  for(let index=0;index<definitions.length;index+=2){
+    settled.push(...await Promise.allSettled(definitions.slice(index,index+2).map(fetchYahooSeries)));
+    if(index+2<definitions.length) await sleep(800);
+  }
   const items=settled.map((result,index)=>result.status==="fulfilled"?result.value:{
     key:definitions[index].key,label:definitions[index].label,value:null,unit:definitions[index].unit,
     dayChange:null,weekChange:null,monthChange:null,asOf:"",sourceUrl:`https://finance.yahoo.com/quote/${encodeURIComponent(definitions[index].symbol)}`
@@ -312,7 +329,8 @@ async function analyze(candidates,market,context={}){
   const raw=await fetchText("https://api.openai.com/v1/responses",{
     method:"POST",
     headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},
-    body:JSON.stringify(payload)
+    body:JSON.stringify(payload),
+    timeoutMs:180000
   });
   const response=JSON.parse(raw);
   if(response.status&&response.status!=="completed") throw new Error(`OpenAI 任务状态：${response.status}`);
@@ -404,6 +422,12 @@ function chinaDate(instant=new Date()){
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
+export function isReusableMarketSnapshot(market,maxAgeMinutes=30){
+  const generatedAt=new Date(market?.generatedAt||0).getTime();
+  const ageMinutes=(Date.now()-generatedAt)/60000;
+  return ["ok","partial"].includes(market?.status)&&Number.isFinite(ageMinutes)&&ageMinutes>=0&&ageMinutes<=maxAgeMinutes;
+}
+
 function buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData={},cognitionHistory=[],outsideRefreshDue=true}){
   const news=enforceSelection(analysis.selected,candidates);
   if(!news.length) throw new Error("所有候选均未通过质量、重复或配额校验，保留上一版日报。");
@@ -474,7 +498,10 @@ async function main(){
   const {candidates,failures}=await collectCandidates();
   console.log(`候选 ${candidates.length} 条；源失败 ${failures.length} 个`);
   console.log("[2/4] 读取多周期市场数据");
-  const market=await collectMarket();
+  const market=isReusableMarketSnapshot(previousData.market)
+    ?previousData.market
+    :await collectMarket();
+  if(isReusableMarketSnapshot(previousData.market)) console.log("复用本次工作流刚刚核验的行情，避免重复请求行情源。");
   console.log(`市场状态：${market.status}`);
   console.log("[3/4] 核实、筛选并逐条生成个性化分析");
   const {analysis,verificationSourceCount}=await analyze(candidates,market,{

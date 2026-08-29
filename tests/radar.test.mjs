@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-import {dedupeCandidates,dedupeCognitions,enforceSelection,similarity} from "../scripts/update-radar.mjs";
+import {dedupeCandidates,dedupeCognitions,enforceSelection,isReusableMarketSnapshot,similarity} from "../scripts/update-radar.mjs";
 import {buildMarketOnlyInvestment} from "../scripts/update-market.mjs";
 
 test("相近标题会被识别为同一事件",()=>{
@@ -118,4 +118,20 @@ test("只有行情、没有新闻原因时使用克制的基础纪律判断",()=
   assert.equal(result.available,true);
   assert.equal(result.verdict,"⚪ 正常定投，暂不额外加仓");
   assert.match(result.reason,/没有同步完成新闻原因核验/);
+});
+
+test("投资区必须同时拿到 Nasdaq 100 与黄金，不能用其他三项凑成可用",()=>{
+  const market={status:"ok",items:[
+    {key:"nasdaq100",value:null},
+    {key:"gold",value:100},
+    {key:"dollar",value:99},
+    {key:"us10y",value:4}
+  ]};
+  assert.equal(buildMarketOnlyInvestment(market).available,false);
+});
+
+test("同一次工作流只复用 30 分钟内成功或部分成功的行情",()=>{
+  assert.equal(isReusableMarketSnapshot({status:"ok",generatedAt:new Date().toISOString()}),true);
+  assert.equal(isReusableMarketSnapshot({status:"unavailable",generatedAt:new Date().toISOString()}),false);
+  assert.equal(isReusableMarketSnapshot({status:"ok",generatedAt:new Date(Date.now()-31*60000).toISOString()}),false);
 });

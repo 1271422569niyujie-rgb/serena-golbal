@@ -12,7 +12,11 @@ function pct(value){
 }
 
 export function buildMarketOnlyInvestment(market){
-  const available=market?.status==="ok"&&(market.items||[]).filter(item=>item.value!==null).length>=3;
+  const marketByKey=new Map((market?.items||[]).map(item=>[item.key,item]));
+  const available=market?.status==="ok"&&["nasdaq100","gold"].every(key=>{
+    const value=marketByKey.get(key)?.value;
+    return value!==null&&value!==undefined&&Number.isFinite(Number(value));
+  });
   const fallbackViews={
     assetSignals:{
       nasdaq100:{status:"🟡 暂不额外加仓",judgment:"行情没有完整核验，维持原定投，不根据模糊数据增加仓位。"},
