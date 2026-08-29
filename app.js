@@ -140,7 +140,10 @@ function showFreshness(data){
     return;
   }
   const localNote=state.usingFallback?" 当前为本地直接打开模式，使用网站随附的最近一次快照；发布到 GitHub Pages 后会优先读取每日更新数据。":"";
-  const source=`数据生成于 ${formatDate(data.generatedAt)}，新闻均保留原始来源与发布时间。${localNote}`;
+  const modeNote=data.pipeline?.analysisMode==="rules"
+    ?" 当前为免费基础版：标题、来源和时间来自公开数据，解释由透明规则生成；AI 个性化增强未启用。"
+    :data.pipeline?.analysisMode==="ai"?" 当前已启用 AI 个性化增强。":"";
+  const source=`数据生成于 ${formatDate(data.generatedAt)}，新闻均保留原始来源与发布时间。${modeNote}${localNote}`;
   if(!Number.isFinite(state.dataAgeHours)||state.dataAgeHours>72){
     box.classList.add("error");
     box.textContent=`数据已过期，不作为今日信息使用。${source}`;

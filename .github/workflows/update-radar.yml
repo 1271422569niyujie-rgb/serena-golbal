@@ -1,6 +1,13 @@
 name: Update daily radar
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/update-radar.yml"
+      - "scripts/**"
+      - "package.json"
+      - "tests/**"
   schedule:
     - cron: "15 6 * * *"
       timezone: Asia/Shanghai
@@ -49,7 +56,7 @@ jobs:
         continue-on-error: true
         run: npm run update:market
 
-      - name: Generate verified daily radar
+      - name: Generate daily radar (AI optional)
         id: radar
         continue-on-error: true
         env:
@@ -57,9 +64,9 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run update
 
-      - name: Explain AI fallback
+      - name: Explain base radar failure
         if: steps.radar.outcome == 'failure'
-        run: echo "News/AI update failed; committing the independently refreshed market snapshot and keeping the last verified news."
+        run: echo "The free rule-based radar also failed. Committing any safe market refresh and keeping the last verified news."
 
       - name: Validate publishable data and timestamps
         run: npm run validate:data

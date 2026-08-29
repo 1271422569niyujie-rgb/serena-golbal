@@ -10,19 +10,19 @@ const OPENAI_MODEL=process.env.OPENAI_MODEL||"gpt-5.4-mini";
 const MAX_SOURCE_AGE_HOURS=84;
 
 const categories=[
-  {id:"domestic_policy",label:"国内政策 / 十五五",query:"(十五五 OR 国务院 OR 国家发展改革委 OR 中国人民银行 OR 金融监管总局) (规划 OR 政策 OR 就业 OR 消费 OR 金融) when:5d",priority:"must",domestic:true,localGrounded:true,maxAgeHours:120},
-  {id:"county_local",label:"四川 / 成渝 / 县域",query:"(四川 OR 成都 OR 绵阳 OR 成渝 OR 县域) (银行 OR 金融 OR 产业 OR 就业 OR 人才 OR 消费 OR 政策) when:7d",priority:"know",domestic:true,localGrounded:true,maxAgeHours:168},
-  {id:"macro_global",label:"重大事件 / 宏观政策",query:"(中国 重大政策 OR 美联储 OR 全球经济 OR 地缘政治) when:2d",priority:"must"},
-  {id:"banking",label:"银行业",query:"(中国 银行业 OR 银行监管 OR 商业银行 OR 金融监管) when:3d",priority:"know",domestic:true,localGrounded:true},
-  {id:"wealth",label:"财富管理 / 私行",query:"(中国 财富管理 OR 私人银行 OR 高净值 OR 资产配置) when:3d",priority:"know",domestic:true,localGrounded:true},
-  {id:"markets",label:"黄金 / 纳指 / 利率 / 美元",query:"(黄金 OR 纳斯达克 OR 美债收益率 OR 美元指数) when:2d",priority:"must"},
-  {id:"a_share_trends",label:"A股 / 资金 / 市场风潮",query:"(A股 OR 沪深股市 OR 港股) (资金流向 OR 开户 OR 成交额 OR 板块爆发 OR IPO OR 投资者情绪) when:3d",priority:"know",domestic:true,maxAgeHours:96},
-  {id:"global_market_narrative",label:"美股 / 市场叙事",query:"(美股 OR 纳斯达克 OR 标普500) (资金流向 OR 财报 OR 市场叙事 OR 投资者情绪 OR 泡沫 OR 恐慌) when:3d",priority:"know",maxAgeHours:96},
-  {id:"china_economy",label:"中国经济",query:"(中国经济 OR 货币政策 OR 财政政策 OR 消费 OR 房地产政策) when:3d",priority:"must",domestic:true,localGrounded:true},
-  {id:"career_cities",label:"职场 / 城市产业",query:"(北京 OR 上海 OR 深圳 OR 杭州 OR 香港) (招聘 OR 岗位 OR 产业 OR 金融科技) when:4d",priority:"know",domestic:true,maxAgeHours:120},
-  {id:"ai_workflows",label:"AI / 工作流",query:"(银行 AI OR 财富管理 AI OR 白领 AI 工作流 OR AI Agent 企业应用) when:3d",priority:"know"},
-  {id:"frontier",label:"新行业 / 社会变化",query:"(新兴行业 OR 新工具 OR 工作方式 OR 社会趋势 OR 产业变化) when:3d",priority:"expand"},
-  {id:"life_trends",label:"生活 / 观念 / 新习惯",query:"(年轻人 OR 白领 OR 城市生活) (新习惯 OR 消费观念 OR 学习方式 OR 工作观念 OR 新热潮) when:4d",priority:"expand",maxAgeHours:120}
+  {id:"domestic_policy",label:"国内政策 / 十五五",query:"(十五五 OR 国务院 OR 国家发展改革委 OR 中国人民银行 OR 金融监管总局) (规划 OR 政策 OR 就业 OR 消费 OR 金融) when:5d",bingQuery:"中国 政策",priority:"must",domestic:true,localGrounded:true,maxAgeHours:120},
+  {id:"county_local",label:"四川 / 成渝 / 县域",query:"(四川 OR 成都 OR 绵阳 OR 成渝 OR 县域) (银行 OR 金融 OR 产业 OR 就业 OR 人才 OR 消费 OR 政策) when:7d",bingQuery:"四川 成都",priority:"know",domestic:true,localGrounded:true,maxAgeHours:168},
+  {id:"macro_global",label:"重大事件 / 宏观政策",query:"(中国 重大政策 OR 美联储 OR 全球经济 OR 地缘政治) when:2d",bingQuery:"美联储 全球经济",priority:"must"},
+  {id:"banking",label:"银行业",query:"(中国 银行业 OR 银行监管 OR 商业银行 OR 金融监管) when:3d",bingQuery:"银行 监管",priority:"know",domestic:true,localGrounded:true},
+  {id:"wealth",label:"财富管理 / 私行",query:"(中国 财富管理 OR 私人银行 OR 高净值 OR 资产配置) when:3d",bingQuery:"财富管理",priority:"know",domestic:true,localGrounded:true},
+  {id:"markets",label:"黄金 / 纳指 / 利率 / 美元",query:"(黄金 OR 纳斯达克 OR 美债收益率 OR 美元指数) when:2d",bingQuery:"黄金 纳斯达克",priority:"must"},
+  {id:"a_share_trends",label:"A股 / 资金 / 市场风潮",query:"(A股 OR 沪深股市 OR 港股) (资金流向 OR 开户 OR 成交额 OR 板块爆发 OR IPO OR 投资者情绪) when:3d",bingQuery:"A股",priority:"know",domestic:true,maxAgeHours:96},
+  {id:"global_market_narrative",label:"美股 / 市场叙事",query:"(美股 OR 纳斯达克 OR 标普500) (资金流向 OR 财报 OR 市场叙事 OR 投资者情绪 OR 泡沫 OR 恐慌) when:3d",bingQuery:"美股 纳斯达克",priority:"know",maxAgeHours:96},
+  {id:"china_economy",label:"中国经济",query:"(中国经济 OR 货币政策 OR 财政政策 OR 消费 OR 房地产政策) when:3d",bingQuery:"中国经济",priority:"must",domestic:true,localGrounded:true},
+  {id:"career_cities",label:"职场 / 城市产业",query:"(北京 OR 上海 OR 深圳 OR 杭州 OR 香港) (招聘 OR 岗位 OR 产业 OR 金融科技) when:4d",bingQuery:"招聘",priority:"know",domestic:true,maxAgeHours:120},
+  {id:"ai_workflows",label:"AI / 工作流",query:"(银行 AI OR 财富管理 AI OR 白领 AI 工作流 OR AI Agent 企业应用) when:3d",bingQuery:"AI 金融",priority:"know"},
+  {id:"frontier",label:"新行业 / 社会变化",query:"(新兴行业 OR 新工具 OR 工作方式 OR 社会趋势 OR 产业变化) when:3d",bingQuery:"科技 产业",priority:"expand"},
+  {id:"life_trends",label:"生活 / 观念 / 新习惯",query:"(年轻人 OR 白领 OR 城市生活) (新习惯 OR 消费观念 OR 学习方式 OR 工作观念 OR 新热潮) when:4d",bingQuery:"年轻人",priority:"expand",maxAgeHours:120}
 ];
 
 const blockedTerms=["明星","综艺","恋情","离婚","票房","红毯","网红","猎奇","占卜","星座","游戏皮肤","演唱会","短剧热搜"];
@@ -116,14 +116,13 @@ async function fetchText(url,options={}){
   }finally{clearTimeout(timeout);}
 }
 
-async function fetchRss(category){
-  const rss=`https://news.google.com/rss/search?q=${encodeURIComponent(category.query)}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans`;
-  const xml=await fetchText(rss);
+function parseRss(xml,category,feedProvider){
   const items=[...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].map(match=>match[1]);
   return items.slice(0,16).map((item,index)=>{
     const rawTitle=stripHtml(extractTag(item,"title"));
     const publishedAt=extractTag(item,"pubDate");
-    const source=stripHtml(extractTag(item,"source"))||sourceFromTitle(rawTitle);
+    const publishedTime=new Date(publishedAt);
+    const source=stripHtml(extractTag(item,"source"))||stripHtml(extractTag(item,"News:Source"))||sourceFromTitle(rawTitle);
     return {
       id:`${category.id}-${index}-${Buffer.from(normalizeTitle(rawTitle)).toString("base64url").slice(0,10)}`,
       categoryId:category.id,
@@ -133,11 +132,84 @@ async function fetchRss(category){
       localGrounded:Boolean(category.localGrounded),
       title:cleanTitle(rawTitle),
       source,
-      publishedAt:new Date(publishedAt).toISOString(),
+      publishedAt:Number.isFinite(publishedTime.getTime())?publishedTime.toISOString():"",
       url:stripHtml(extractTag(item,"link")),
-      snippet:stripHtml(extractTag(item,"description")).slice(0,700)
+      snippet:stripHtml(extractTag(item,"description")).slice(0,700),
+      feedProvider
     };
   }).filter(item=>item.title&&item.url&&hoursOld(item.publishedAt)<=(category.maxAgeHours??MAX_SOURCE_AGE_HOURS)&&!blockedTerms.some(term=>item.title.includes(term)));
+}
+
+async function fetchGoogleRss(category){
+  const rss=`https://news.google.com/rss/search?q=${encodeURIComponent(category.query)}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans`;
+  const xml=await fetchText(rss);
+  if(!/<rss\b/i.test(xml)) throw new Error("返回内容不是 RSS");
+  return parseRss(xml,category,"Google News RSS");
+}
+
+async function fetchBingRss(category){
+  const query=category.bingQuery||category.label;
+  const rss=`https://www.bing.com/news/search?q=${encodeURIComponent(query)}&qft=interval%3d%227%22&form=PTFTNR&format=rss&setlang=zh-cn`;
+  const xml=await fetchText(rss);
+  if(!/<rss\b/i.test(xml)) throw new Error("地区重定向后未返回 RSS");
+  return parseRss(xml,category,"Bing News RSS");
+}
+
+const gdeltQueries={
+  domestic_policy:'"China policy" OR "Chinese central bank"',
+  county_local:"Sichuan OR Chengdu",
+  macro_global:'"Federal Reserve" OR "global economy" OR geopolitics',
+  banking:'"bank regulation" OR "commercial bank"',
+  wealth:'"wealth management" OR "private banking"',
+  markets:'gold OR Nasdaq OR "US Treasury"',
+  a_share_trends:'"A shares" OR "China stock market"',
+  global_market_narrative:'Nasdaq OR "US stocks" OR "Wall Street"',
+  china_economy:'"China economy" OR "China consumption"',
+  career_cities:'(Beijing OR Shanghai OR Shenzhen OR Hangzhou OR "Hong Kong") (jobs OR hiring)',
+  ai_workflows:'AI (banking OR finance OR workplace)',
+  frontier:'"emerging industry" OR "future of work"',
+  life_trends:'"young people" (consumption OR work OR learning)'
+};
+
+function gdeltDate(value=""){
+  const match=String(value).match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z$/);
+  return match?`${match[1]}-${match[2]}-${match[3]}T${match[4]}:${match[5]}:${match[6]}Z`:value;
+}
+
+export function parseGdeltArticles(payload,category){
+  return (payload?.articles||[]).map((article,index)=>({
+    id:`${category.id}-gdelt-${index}-${Buffer.from(normalizeTitle(article.title||"")).toString("base64url").slice(0,10)}`,
+    categoryId:category.id,
+    category:category.label,
+    priorityHint:category.priority,
+    domestic:Boolean(category.domestic),
+    localGrounded:Boolean(category.localGrounded),
+    title:stripHtml(article.title||""),
+    source:article.domain||article.sourcecountry||"GDELT 收录来源",
+    publishedAt:gdeltDate(article.seendate||""),
+    url:article.url||"",
+    snippet:"",
+    feedProvider:"GDELT DOC API"
+  })).filter(item=>item.title&&item.url&&hoursOld(item.publishedAt)<=(category.maxAgeHours??MAX_SOURCE_AGE_HOURS)&&!blockedTerms.some(term=>item.title.includes(term)));
+}
+
+async function fetchGdelt(category){
+  const query=gdeltQueries[category.id]||category.bingQuery||category.label;
+  const days=Math.max(3,Math.ceil((category.maxAgeHours??MAX_SOURCE_AGE_HOURS)/24));
+  const url=`https://api.gdeltproject.org/api/v2/doc/doc?query=${encodeURIComponent(`(${query})`)}&mode=artlist&maxrecords=20&timespan=${days}d&sort=datedesc&format=json`;
+  return parseGdeltArticles(JSON.parse(await fetchText(url,{headers:{Accept:"application/json"},timeoutMs:30000})),category);
+}
+
+async function fetchRss(category){
+  const collected=[],errors=[];
+  for(const [name,fetcher] of [["Google",fetchGoogleRss],["Bing",fetchBingRss],["GDELT",fetchGdelt]]){
+    if(collected.length>=3) break;
+    try{collected.push(...await fetcher(category));}
+    catch(error){errors.push(`${name}: ${error.message}`);}
+  }
+  const result=dedupeCandidates(collected);
+  if(!result.length&&errors.length===3) throw new Error(errors.join("；"));
+  return result;
 }
 
 async function collectCandidates(){
@@ -145,8 +217,10 @@ async function collectCandidates(){
   const failures=[];
   const buckets=[];
   results.forEach((result,index)=>{
-    if(result.status==="fulfilled") buckets.push(result.value.slice(0,7));
-    else failures.push(`${categories[index].label}: ${result.reason?.message||"抓取失败"}`);
+    if(result.status==="fulfilled"){
+      console.log(`[RSS] ${categories[index].label}: ${result.value.length} 条`);
+      buckets.push(result.value.slice(0,7));
+    }else failures.push(`${categories[index].label}: ${result.reason?.message||"抓取失败"}`);
   });
   const interleaved=[];
   for(let round=0;round<7;round++) for(const bucket of buckets) if(bucket[round]) interleaved.push(bucket[round]);
@@ -216,6 +290,242 @@ export async function collectMarket(){
   const available=items.filter(item=>item.value!==null);
   const asOf=available.map(item=>item.asOf).sort().at(-1)||"";
   return {status:available.length>=3?"ok":available.length?"partial":"unavailable",asOf,source:"Yahoo Finance（公开行情，可能延迟）",items};
+}
+
+function shorten(value="",maximum=24){
+  const clean=String(value).replace(/\s+/g," ").trim();
+  return clean.length>maximum?`${clean.slice(0,maximum-1)}…`:clean;
+}
+
+function usefulSnippet(candidate){
+  let value=String(candidate.snippet||"").replace(candidate.title," ").replace(candidate.source," ");
+  value=value.replace(/\s+-\s+/g," ").replace(/\s+/g," ").trim();
+  return value.length>=16?shorten(value,180):"";
+}
+
+function publishedDay(value){
+  const date=new Date(value);
+  return Number.isFinite(date.getTime())
+    ?new Intl.DateTimeFormat("zh-CN",{timeZone:"Asia/Shanghai",month:"numeric",day:"numeric"}).format(date)
+    :"近日";
+}
+
+function relationFor(candidate){
+  const title=shorten(candidate.title,30);
+  const map={
+    domestic_policy:`它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“${title}”后续有没有具体实施口径。`,
+    county_local:`它离你当前客户和工作环境更近，可用来判断本地产业、就业与金融需求有没有变化。先区分真实业务变化和口号。`,
+    macro_global:`它可能通过利率、汇率与风险偏好影响你的纳指和黄金仓位。基础模式只提示传导方向，不替你猜市场。`,
+    banking:`它与存款、保险、基金、贷款或客户经营直接相关。重点看是否改变客户问题、合规要求或网点做法。`,
+    wealth:`它能补充你从“卖单个产品”走向“看客户整体资产”的视角，可作为 AFP 学习与真实客户沟通的连接点。`,
+    markets:`它与现有纳指、黄金仓位有关，但标题本身不足以触发加仓；还要结合 1日、5日和20日行情。`,
+    a_share_trends:`它能帮助你理解国内客户正在谈论什么市场叙事。面对客户时先核实资金和政策依据，不跟着热度下判断。`,
+    global_market_narrative:`它是你理解美股定价逻辑的一条线索。与你的关系是判断长期逻辑有没有变化，而不是追当天涨跌。`,
+    china_economy:`它可能影响县域客户的收入预期、储蓄与贷款需求，也可能影响你未来选择城市和平台时对行业的判断。`,
+    career_cities:`它提供大城市岗位与产业变化的外部坐标。可以拿它对照自己的简历证据，看哪些能力还没有形成可展示成果。`,
+    ai_workflows:`它只有在能进入访前准备、客户复盘、数据整理或汇报时才与你相关。先看真实工作流，不追工具数量。`,
+    frontier:`它暂时更适合作为未来 1–3 年的观察项，用来防止自己的信息边界只停留在县域环境。`,
+    life_trends:`它提供大城市人群观念和习惯变化的样本。先观察它是否持续，不必因为一条热潮立刻改变生活。`
+  };
+  return map[candidate.categoryId]||`它为你提供县域之外的一条真实信息线索。先判断“${title}”是否会传到客户、职业或资产，再决定是否行动。`;
+}
+
+function whyFor(candidate){
+  const map={
+    domestic_policy:"政策真正重要的部分是执行口径，以及它会怎样改变居民、企业和金融机构的选择。",
+    county_local:"县域与成渝地区的产业和就业变化，通常会先反映到客户现金流、融资与储蓄行为。",
+    macro_global:"宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
+    banking:"银行业变化最终会落到客户需求、产品结构、风控和一线工作方法上。",
+    wealth:"财富管理竞争正在从单品销售转向资产诊断、长期陪伴与风险匹配。",
+    markets:"市场关注它，是因为它可能改变增长、利率或风险溢价预期，需要结合多周期数据确认。",
+    a_share_trends:"A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
+    global_market_narrative:"美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
+    china_economy:"中国经济政策会沿着就业、收入、消费、房地产和信用需求传导到普通客户。",
+    career_cities:"大城市产业和招聘信号会提前改变岗位要求，是判断可迁移能力是否值钱的现实依据。",
+    ai_workflows:"真正值得关注的不是工具名称，而是它是否已经缩短普通白领的一段具体工作流程。",
+    frontier:"新行业和工作方式往往先在少数平台出现，持续一段时间后才会传到更广泛的岗位。",
+    life_trends:"观念和习惯的变化会影响消费、学习与职业选择，但需要连续信号而不是一次热搜。"
+  };
+  return map[candidate.categoryId]||"这条信息的价值在于提供一个可继续核实的外部信号，而不是仅凭标题得出确定结论。";
+}
+
+function actionFor(candidate,level){
+  const title=shorten(candidate.title,22);
+  if(level==="must") return {
+    actionLevel:"加入观察清单",
+    actionDetail:`打开“${title}”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。`
+  };
+  if(level==="know") return {
+    actionLevel:"知道即可",
+    actionDetail:`先记住“${title}”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。`
+  };
+  return {
+    actionLevel:"知道即可",
+    actionDetail:`把“${title}”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。`
+  };
+}
+
+function factualSummary(candidate){
+  const snippet=usefulSnippet(candidate);
+  const first=`${candidate.source}在${publishedDay(candidate.publishedAt)}发布了“${candidate.title}”。`;
+  return snippet
+    ?`${first}公开摘要还提到：${snippet}`
+    :`${first}基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。`;
+}
+
+function selectRuleNews(candidates){
+  const used=new Set(),categoryCounts=new Map();
+  let aiCount=0,localGroundedCount=0;
+  const picked=[];
+  const eligible=candidate=>{
+    if(used.has(candidate.id)||(categoryCounts.get(candidate.categoryId)||0)>=2) return false;
+    if(candidate.categoryId==="ai_workflows"&&aiCount>=2) return false;
+    if(candidate.localGrounded&&localGroundedCount>=2) return false;
+    return true;
+  };
+  const take=(level,count,preferred)=>{
+    for(const candidate of candidates){
+      if(picked.filter(item=>item.level===level).length>=count) break;
+      if(!preferred(candidate)||!eligible(candidate)) continue;
+      const action=actionFor(candidate,level);
+      picked.push({
+        candidateId:candidate.id,
+        level,
+        eventKey:normalizeTitle(candidate.title),
+        qualityScore:76,
+        whatHappened:factualSummary(candidate),
+        whyImportant:whyFor(candidate),
+        relation:relationFor(candidate),
+        ...action
+      });
+      used.add(candidate.id);
+      categoryCounts.set(candidate.categoryId,(categoryCounts.get(candidate.categoryId)||0)+1);
+      if(candidate.categoryId==="ai_workflows") aiCount++;
+      if(candidate.localGrounded) localGroundedCount++;
+    }
+  };
+  take("must",2,candidate=>candidate.priorityHint==="must");
+  take("must",2,()=>true);
+  take("know",3,candidate=>candidate.priorityHint==="know");
+  take("know",3,()=>true);
+  take("expand",1,candidate=>candidate.priorityHint==="expand");
+  take("expand",1,()=>true);
+  return picked;
+}
+
+function marketLabel(candidate){
+  if(candidate.categoryId==="a_share_trends"||candidate.categoryId==="china_economy"||/A股|港股|沪深/.test(candidate.title)) return "A股";
+  if(/黄金|金价|美元|美债|利率|央行|美联储/.test(candidate.title)) return "黄金 / 宏观";
+  return "美股";
+}
+
+function ruleMarketStories(candidates){
+  const preferred=new Set(["a_share_trends","global_market_narrative","markets","macro_global","china_economy"]);
+  return candidates.filter(candidate=>preferred.has(candidate.categoryId)).slice(0,4).map(candidate=>({
+    candidateId:candidate.id,
+    market:marketLabel(candidate),
+    title:candidate.title,
+    whatHappened:factualSummary(candidate),
+    whyMarketCares:whyFor(candidate),
+    relation:`把它作为“${shorten(candidate.title,20)}”的观察线索；未读完原文前，不据此临时改变定投或追涨。`
+  }));
+}
+
+function ruleCognitions(candidates){
+  const groups=[
+    {domain:"世界 / 科技",ids:new Set(["macro_global","ai_workflows","frontier","global_market_narrative"])},
+    {domain:"金融 / 职业",ids:new Set(["banking","wealth","career_cities","domestic_policy","china_economy"])},
+    {domain:"个人成长 / 决策",ids:new Set(["life_trends","county_local","a_share_trends","markets"])}
+  ];
+  const used=new Set();
+  return groups.map(group=>{
+    const candidate=candidates.find(item=>group.ids.has(item.categoryId)&&!used.has(item.id))||candidates.find(item=>!used.has(item.id));
+    if(!candidate) return null;
+    used.add(candidate.id);
+    const subject=shorten(candidate.title.replace(/[：:，,。；;].*$/,""),10);
+    return {
+      domain:group.domain,
+      cognition:shorten(`${subject}，先看传导链`,22),
+      why:`今天的公开依据是 ${candidate.source} 发布的“${shorten(candidate.title,30)}”。基础模式只把它当作可核实信号，不把标题直接当结论。`,
+      meaning:`以后遇到类似消息，先问它会经过哪些环节影响客户、岗位或资产；说不出传导链，就先不行动。`,
+      dedupeKey:`${candidate.categoryId}>${normalizeTitle(candidate.title).slice(0,36)}`
+    };
+  }).filter(Boolean);
+}
+
+function ruleOutside(candidates,outsideRefreshDue){
+  if(!outsideRefreshDue) return [];
+  const ids=new Set(["career_cities","ai_workflows","frontier","life_trends"]);
+  return candidates.filter(candidate=>ids.has(candidate.categoryId)).slice(0,4).map(candidate=>({
+    evidenceCandidateId:candidate.id,
+    trendKey:`${candidate.categoryId}>${normalizeTitle(candidate.title).slice(0,32)}`,
+    kind:candidate.categoryId==="life_trends"?"life":"career",
+    placeOrSector:candidate.category,
+    signal:shorten(candidate.title,34),
+    meaning:`这是 ${candidate.source} 提供的一条新信号。基础模式先记录它是否持续影响岗位、工作流或生活观念，不把单条报道写成确定趋势。`,
+    horizon:"未来 1–3 年；需等待更多独立来源或岗位变化验证"
+  }));
+}
+
+function changeText(value){
+  return Number.isFinite(Number(value))?`${Number(value)>=0?"+":""}${Number(value).toFixed(2)}%`:"暂缺";
+}
+
+function ruleInvestment(market){
+  const byKey=new Map((market.items||[]).map(item=>[item.key,item]));
+  const nasdaq=byKey.get("nasdaq100"),gold=byKey.get("gold"),us10y=byKey.get("us10y");
+  const available=[nasdaq?.value,gold?.value].every(value=>value!==null&&value!==undefined&&Number.isFinite(Number(value)));
+  if(!available) return {
+    verdict:"⚪ 正常定投，暂不额外加仓",
+    reason:"基础模式没有同时拿到 Nasdaq 100 与黄金的有效行情，因此不做战术判断。",
+    amount:"维持工作日纳指 ¥100 原定投；不额外加仓",
+    cancelIf:"等 Nasdaq 100 与黄金行情同时恢复，并核实重大风险后再重新判断。",
+    drivers:["Nasdaq 100 或黄金数据不完整","现金与未来两年保险缴费责任优先"],
+    assetSignals:{
+      nasdaq100:{status:"🟡 暂不额外加仓",judgment:"数据未完整核验，维持原定投，不根据模糊行情增加仓位。"},
+      gold:{status:"🟡 继续持有，不追涨",judgment:"现有黄金仓位已经不低，数据不完整时先持有。"}
+    },
+    environment:{usStocks:"⚪ 数据待核验",aShares:"⚪ 看政策与资金信号",gold:"⚪ 数据待核验",summary:"今天只执行长期纪律，不用不完整数据猜方向。"}
+  };
+  const nasdaqFast=Number(nasdaq.monthChange)>=8?"近期涨幅偏快，不追涨":Number(nasdaq.monthChange)<=-8?"近期波动偏弱，仍只维持定投":"多周期波动尚未触发额外动作";
+  const goldFast=Number(gold.monthChange)>=8?"近期涨幅偏快，已有仓位不追涨":Number(gold.monthChange)<=-8?"近期偏弱，先检查宏观原因":"现有仓位继续持有";
+  return {
+    verdict:"⚪ 正常定投，暂不额外加仓",
+    reason:"免费基础模式已核验多周期行情，但没有 AI 对新闻原因做逐条联合分析；维持原计划比临时猜方向更合适。",
+    amount:"工作日维持纳指 ¥100 定投；黄金不新增战术仓位",
+    cancelIf:"若 20 日波动明显扩大、重大政策改变长期逻辑，或出现尚未理解的风险，暂停额外动作并重新核验。",
+    drivers:[
+      `Nasdaq 100：1日 ${changeText(nasdaq.dayChange)}、5日 ${changeText(nasdaq.weekChange)}、20日 ${changeText(nasdaq.monthChange)}`,
+      `黄金：1日 ${changeText(gold.dayChange)}、5日 ${changeText(gold.weekChange)}、20日 ${changeText(gold.monthChange)}`,
+      `美国10年期收益率：5日 ${changeText(us10y?.weekChange)}`
+    ],
+    assetSignals:{
+      nasdaq100:{status:"🟢 按计划定投",judgment:nasdaqFast},
+      gold:{status:"🟢 继续持有",judgment:goldFast}
+    },
+    environment:{
+      usStocks:Number(nasdaq.weekChange)>=0?"🟡 风险偏好尚可":"🟡 波动偏谨慎",
+      aShares:"⚪ 看政策与资金信号",
+      gold:Number(gold.weekChange)>=0?"🟡 避险需求偏强":"🟡 短期有所降温",
+      summary:"行情已更新；基础模式不猜新闻因果，今天维持既定节奏。"
+    }
+  };
+}
+
+export function buildRuleBasedAnalysis(candidates,market,context={}){
+  const selected=selectRuleNews(candidates);
+  const focus=selected[0]&&candidates.find(candidate=>candidate.id===selected[0].candidateId);
+  return {
+    selected,
+    cognitions:ruleCognitions(candidates),
+    outside:ruleOutside(candidates,context.outsideRefreshDue),
+    marketStories:ruleMarketStories(candidates),
+    investment:ruleInvestment(market),
+    oneThing:{
+      task:focus?`用 20 分钟打开“${shorten(focus.title,24)}”原文，写下一条它影响客户、职业或资产的传导链。`:"用 20 分钟完成本周任务清单里最靠前的一项。",
+      minutes:20
+    }
+  };
 }
 
 const outputSchema={
@@ -428,7 +738,7 @@ export function isReusableMarketSnapshot(market,maxAgeMinutes=30){
   return ["ok","partial"].includes(market?.status)&&Number.isFinite(ageMinutes)&&ageMinutes>=0&&ageMinutes<=maxAgeMinutes;
 }
 
-function buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData={},cognitionHistory=[],outsideRefreshDue=true}){
+function buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData={},cognitionHistory=[],outsideRefreshDue=true,analysisMode="rules",aiFallbackReason=""}){
   const news=enforceSelection(analysis.selected,candidates);
   if(!news.length) throw new Error("所有候选均未通过质量、重复或配额校验，保留上一版日报。");
   const levelCounts=news.reduce((counts,item)=>({...counts,[item.level]:(counts[item.level]||0)+1}),{});
@@ -474,8 +784,13 @@ function buildFinal({analysis,candidates,market,failures,verificationSourceCount
     investment:{available:availableMarket,...analysis.investment},
     oneThing:analysis.oneThing,
     pipeline:{
-      newsSource:"Google News RSS（候选）",
-      analysis:`OpenAI Responses API · ${OPENAI_MODEL} · web search 核实`,
+      newsSource:"Google News RSS + Bing News RSS + GDELT DOC API 自动备用（候选）",
+      analysis:analysisMode==="ai"
+        ?`OpenAI Responses API · ${OPENAI_MODEL} · web search 核实`
+        :"免费公开数据 + 本地规则基础分析（未调用 AI）",
+      analysisMode,
+      aiEnhanced:analysisMode==="ai",
+      aiFallbackReason,
       verificationSourceCount,
       sourceFailures:failures,
       maxSourceAgeHours:MAX_SOURCE_AGE_HOURS,
@@ -488,7 +803,6 @@ function buildFinal({analysis,candidates,market,failures,verificationSourceCount
 }
 
 async function main(){
-  if(!process.env.OPENAI_API_KEY) throw new Error("缺少 OPENAI_API_KEY。请把 Key 放在 GitHub Actions Secret，不要写进前端或仓库。");
   console.log("[1/4] 抓取并去重候选新闻");
   const previousData=await readJsonOr(OUTPUT,{});
   const historyFile=await readJsonOr(COGNITION_HISTORY_OUTPUT,{entries:[]});
@@ -503,13 +817,41 @@ async function main(){
     :await collectMarket();
   if(isReusableMarketSnapshot(previousData.market)) console.log("复用本次工作流刚刚核验的行情，避免重复请求行情源。");
   console.log(`市场状态：${market.status}`);
-  console.log("[3/4] 核实、筛选并逐条生成个性化分析");
-  const {analysis,verificationSourceCount}=await analyze(candidates,market,{
+  const context={
     cognitionHistory,
     outsideRefreshDue,
     previousOutside:previousData.outside||[]
-  });
-  const finalData=buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData,cognitionHistory,outsideRefreshDue});
+  };
+  console.log("[3/4] 生成每日雷达；OpenAI 为可选增强层");
+  let analysis,verificationSourceCount=0,analysisMode="rules",aiFallbackReason="";
+  if(process.env.OPENAI_API_KEY){
+    try{
+      const enhanced=await analyze(candidates,market,context);
+      analysis=enhanced.analysis;
+      verificationSourceCount=enhanced.verificationSourceCount;
+      analysisMode="ai";
+      console.log("AI 个性化增强成功。");
+    }catch(error){
+      aiFallbackReason=shorten(error?.message||"AI 增强调用失败",240);
+      console.warn(`AI 增强暂不可用，自动切换规则基础版：${aiFallbackReason}`);
+    }
+  }else{
+    aiFallbackReason="未配置 OPENAI_API_KEY；按设计使用免费规则基础版。";
+    console.log(aiFallbackReason);
+  }
+  if(!analysis) analysis=buildRuleBasedAnalysis(candidates,market,context);
+  let finalData;
+  try{
+    finalData=buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData,cognitionHistory,outsideRefreshDue,analysisMode,aiFallbackReason});
+  }catch(error){
+    if(analysisMode!=="ai") throw error;
+    aiFallbackReason=`AI 结果未通过发布校验：${shorten(error?.message||"未知校验错误",180)}`;
+    console.warn(`${aiFallbackReason}；自动改用规则基础版。`);
+    analysisMode="rules";
+    verificationSourceCount=0;
+    analysis=buildRuleBasedAnalysis(candidates,market,context);
+    finalData=buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData,cognitionHistory,outsideRefreshDue,analysisMode,aiFallbackReason});
+  }
   console.log(`[4/4] 发布 ${finalData.news.length} 条（国内/县域补充 ${finalData.pipeline.localGroundedSelected} 条），写入数据文件`);
   await mkdir(path.dirname(OUTPUT),{recursive:true});
   await writeFile(OUTPUT,`${JSON.stringify(finalData,null,2)}\n`,"utf8");

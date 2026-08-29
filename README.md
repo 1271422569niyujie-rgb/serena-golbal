@@ -1,6 +1,6 @@
 # 倪倪专属雷达 V3.3
 
-一个保留 V3.2 蓝灰色手机仪表盘风格的静态单页。网页仍可部署在 GitHub Pages；每日新闻、逐条分析、认知更新和投资判断由 GitHub Actions 在服务端生成，API Key 不会出现在前端。
+一个保留 V3.2 蓝灰色手机仪表盘风格的静态单页。网页仍可部署在 GitHub Pages；GitHub Actions 每天用免费公开数据源生成基础雷达。OpenAI API 是可选的个性化增强层，未配置或调用失败时也不会阻止日报更新。
 
 ## 这次改了什么
 
@@ -17,13 +17,14 @@
 - 认知更新允许只有 1–3 条；`data/cognition-history.json` 保存最近 30 天的标题、主题、核心结论和去重键，生成前先做语义去重。
 - 三年计划新增“可迁移能力账户”。五项分数按已有经历、本周勾选和本月进度计算，点击可查看已有证据、最近新增、当前缺口和下一步。
 - 市场数据缺失时，投资区不会再整块停在“暂不可用”，而是明确进入基础纪律模式：正常定投、暂不额外加仓，同时如实标注行情尚未核验。
-- GitHub 自动任务会先单独刷新行情，再生成新闻分析；即使 OpenAI 步骤失败，也会提交市场快照并保留上一份已核实新闻。
+- GitHub 自动任务会先刷新行情，再抓取 Google News RSS；若 Google 暂时不可达，会自动尝试 Bing News RSS 和 GDELT DOC API。没有 OpenAI Key 时，按类别配额和透明规则生成基础新闻、市场大事、认知、外部坐标与克制投资判断；标题、来源、时间均来自公开数据，不补写未读取到的正文事实。
+- 配置 OpenAI Key 后才启用逐条个性化增强；API 缺失、额度不足、超时或结果未通过发布校验时自动降级到基础版，不再让日报停在旧日期。
 - 本周任务、本月进度和季度体检均可编辑并保存在手机浏览器 `localStorage`。
 
 ## 最简单的部署方式：继续使用 GitHub Pages
 
 1. 把本项目文件提交到你现有的 GitHub Pages 仓库根目录。`index.html` 仍是入口，原网址可以不变。确认 `.github/workflows/update-radar.yml` 也在默认分支 `main`；只上传可见网页文件是不够的。
-2. 打开仓库 `Settings → Secrets and variables → Actions → New repository secret`，新建 `OPENAI_API_KEY`。只把 Key 放这里，绝不能写进 `app.js`、HTML 或公开仓库。
+2. `OPENAI_API_KEY` 为可选项。若以后启用 AI 个性化增强，再到 `Settings → Secrets and variables → Actions → New repository secret` 新建同名 Secret；只放在 GitHub Secrets，绝不能写进 `app.js`、HTML 或公开仓库。
 3. 打开 `Settings → Pages → Build and deployment → Source`，一次性选择 `GitHub Actions`。每日任务会在同一条链路中发布已校验的网站，不依赖机器人提交再次触发旧的分支部署。
 4. 打开 `Actions → Update daily radar → Run workflow`，手动跑第一次。
 5. 成功后检查 `data/radar-latest.json` 已自动更新，再打开手机桌面网址并点击“检查更新”。
@@ -35,11 +36,11 @@
 
 ## 数据链路与真实性边界
 
-1. 免费的 Google News RSS 只负责收集分门别类的候选标题、来源、时间和链接。快讯通常限 84 小时，国内规划与县域产业等低频主题可放宽到 5–7 天，但页面始终显示真实发布时间。
-2. OpenAI Responses API 使用 web search 核实候选事件，再按固定 JSON 结构逐条分析。
-3. 程序用候选 ID 回填原始来源和发布时间，模型不能自行改写来源字段。
+1. 免费的 Google News RSS、Bing News RSS 与 GDELT DOC API 负责收集分门别类的候选标题、来源、时间和链接，并按顺序自动备用。快讯通常限 84 小时，国内规划与县域产业等低频主题可放宽到 5–7 天，但页面始终显示真实发布时间。
+2. 免费基础模式只根据标题、公开摘要、来源、发布时间、类别和多周期行情做规则筛选与保守解释；无法读取正文时会明确说明，不补造事件细节。
+3. 若配置 OpenAI Key，Responses API 使用 web search 核实候选事件，再按固定 JSON 结构逐条增强；程序仍用候选 ID 回填原始来源和发布时间，模型不能改写来源字段。
 4. 代码再次执行新闻去重、类别上限、AI 上限、质量阈值、30 天认知去重与 7 天趋势更新检查。
-5. 任何一步失败都不会覆盖上一份成功日报；网页根据 `generatedAt` 明确标记是否过期。
+5. AI 层失败会自动发布基础版；只有免费数据抓取或基础规则本身也失败时，才保留上一份成功日报。网页始终根据 `generatedAt` 标记真实更新时间。
 
 公开 RSS、网页搜索和免费行情可能延迟或临时不可用，所以这不是交易终端，也不保证覆盖世界上的每一条新闻。它的目标是可信地少看，而不是假装无所不知。
 

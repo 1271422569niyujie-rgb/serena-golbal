@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-import {dedupeCandidates,dedupeCognitions,enforceSelection,isReusableMarketSnapshot,similarity} from "../scripts/update-radar.mjs";
+import {buildRuleBasedAnalysis,dedupeCandidates,dedupeCognitions,enforceSelection,isReusableMarketSnapshot,parseGdeltArticles,similarity} from "../scripts/update-radar.mjs";
 import {buildMarketOnlyInvestment} from "../scripts/update-market.mjs";
 
 test("相近标题会被识别为同一事件",()=>{
@@ -134,4 +134,47 @@ test("同一次工作流只复用 30 分钟内成功或部分成功的行情",()
   assert.equal(isReusableMarketSnapshot({status:"ok",generatedAt:new Date().toISOString()}),true);
   assert.equal(isReusableMarketSnapshot({status:"unavailable",generatedAt:new Date().toISOString()}),false);
   assert.equal(isReusableMarketSnapshot({status:"ok",generatedAt:new Date(Date.now()-31*60000).toISOString()}),false);
+});
+
+test("没有 API Key 时规则基础版仍生成完整日报结构",()=>{
+  const definitions=[
+    ["p1","domestic_policy","国内政策 / 十五五","must",true],
+    ["m1","macro_global","重大事件 / 宏观政策","must",false],
+    ["l1","county_local","四川 / 成渝 / 县域","know",true],
+    ["a1","a_share_trends","A股 / 资金 / 市场风潮","know",false],
+    ["g1","global_market_narrative","美股 / 市场叙事","know",false],
+    ["c1","career_cities","职场 / 城市产业","know",true],
+    ["f1","frontier","新行业 / 社会变化","expand",false],
+    ["t1","life_trends","生活 / 观念 / 新习惯","expand",false]
+  ];
+  const candidates=definitions.map(([id,categoryId,category,priorityHint,localGrounded],index)=>(
+    {id,categoryId,category,priorityHint,localGrounded,title:`真实公开标题 ${index+1}`,source:`公开来源 ${index+1}`,
+      publishedAt:new Date(Date.now()-index*3600000).toISOString(),url:`https://example.com/${id}`,snippet:""}
+  ));
+  const market={status:"ok",generatedAt:new Date().toISOString(),items:[
+    {key:"nasdaq100",value:20000,dayChange:1,weekChange:2,monthChange:3},
+    {key:"gold",value:2500,dayChange:-1,weekChange:1,monthChange:4},
+    {key:"dollar",value:100,dayChange:0,weekChange:1,monthChange:1},
+    {key:"us10y",value:4,dayChange:0,weekChange:-1,monthChange:2}
+  ]};
+  const result=buildRuleBasedAnalysis(candidates,market,{outsideRefreshDue:true});
+  assert.equal(result.selected.filter(item=>item.level==="must").length,2);
+  assert.equal(result.selected.filter(item=>item.level==="know").length,3);
+  assert.equal(result.selected.filter(item=>item.level==="expand").length,1);
+  assert.ok(result.selected.every(item=>item.whatHappened.includes("基础模式")||item.whatHappened.includes("公开摘要")));
+  assert.ok(result.marketStories.length>=2);
+  assert.equal(result.investment.verdict,"⚪ 正常定投，暂不额外加仓");
+  assert.equal(result.cognitions.length,3);
+  assert.ok(result.outside.length>=1);
+});
+
+test("GDELT 备用源只接收带真实标题、链接和新鲜时间的条目",()=>{
+  const category={id:"markets",label:"市场",priority:"must",maxAgeHours:84};
+  const items=parseGdeltArticles({articles:[
+    {title:"Nasdaq reacts to rate outlook",url:"https://example.com/news",domain:"example.com",seendate:new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d{3}Z$/,"Z")},
+    {title:"没有链接",url:"",domain:"example.com",seendate:"20260828T120000Z"}
+  ]},category);
+  assert.equal(items.length,1);
+  assert.equal(items[0].source,"example.com");
+  assert.equal(items[0].feedProvider,"GDELT DOC API");
 });
