@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T12:44:16.225Z",
+  "updatedAt": "2026-08-29T22:23:45.633Z",
   "entries": [
     {
       "date": "2026-08-27",
@@ -48,6 +48,22 @@
       "dedupeKey": "county_local>县域消费新观察丨一座鲁北小城的留客之道",
       "theme": "county_local",
       "conclusion": "县域消费新观察丨一…，先看传导链"
+    },
+    {
+      "date": "2026-08-30",
+      "domain": "世界 / 科技",
+      "cognition": "地缘政治紧张背景下…，先看传导链",
+      "dedupeKey": "macro_global>地缘政治紧张背景下普京和习近平及佩泽什基安赴中亚参加区域峰会",
+      "theme": "macro_global",
+      "conclusion": "地缘政治紧张背景下…，先看传导链"
+    },
+    {
+      "date": "2026-08-30",
+      "domain": "金融 / 职业",
+      "cognition": "虹桥国际中央商务区…，先看传导链",
+      "dedupeKey": "domestic_policy>虹桥国际中央商务区十五五规划发布",
+      "theme": "domestic_policy",
+      "conclusion": "虹桥国际中央商务区…，先看传导链"
     }
   ]
 }

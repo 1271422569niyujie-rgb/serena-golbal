@@ -1,55 +1,55 @@
 window.__NINI_RADAR_FALLBACK__ = {
   "version": "3.3",
   "status": "ok",
-  "generatedAt": "2026-08-29T12:44:16.222Z",
-  "effectiveDate": "2026-08-29",
+  "generatedAt": "2026-08-29T22:23:45.631Z",
+  "effectiveDate": "2026-08-30",
   "timezone": "Asia/Shanghai",
   "news": [
     {
-      "id": "domestic_policy-0-6YeR6J6N55",
+      "id": "domestic_policy-0-6Jm55qGl5Z",
       "categoryId": "domestic_policy",
       "category": "国内政策 / 十五五",
       "priorityHint": "must",
       "domestic": true,
       "localGrounded": true,
-      "title": "金融监管总局发布房地产相关融资管理办法",
-      "source": "人民日报",
-      "publishedAt": "2026-08-28T23:45:35.000Z",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE54NEExeURvd29MMnhfRWR0aEhCQ19QNk5KRnkwenVXVnNOSTRtOWI2cjJwR0JjWHdPSE9uWHIxNTJHUktjMmpOUGxpb1dua0ZCZ25pamQtbWRQbkhZUDlLVzFtZ3hKZlAtd1ZoRFowWGRKWVdGRHpyYzg3RlpsaW8?oc=5",
-      "snippet": "金融监管总局发布房地产相关融资管理办法 人民日报",
+      "title": "虹桥国际中央商务区“十五五”规划发布",
+      "source": "中国科技网",
+      "publishedAt": "2026-08-29T14:13:06.000Z",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1fY08zMGwza21oejNhelNaUlg4dWdpbGl0cTZIelFGMWJaVEdnaS1nSElVblVXc3lIZkt6Q2Q5NHR5bkx2dVhyU1YybFN2TnprZGNhaUtsX0YzdUdmREVjT1JUX2hFc1piUkVPU0N1c28?oc=5",
+      "snippet": "虹桥国际中央商务区“十五五”规划发布 中国科技网",
       "feedProvider": "Google News RSS",
-      "candidateId": "domestic_policy-0-6YeR6J6N55",
+      "candidateId": "domestic_policy-0-6Jm55qGl5Z",
       "level": "must",
-      "eventKey": "金融监管总局发布房地产相关融资管理办法",
+      "eventKey": "虹桥国际中央商务区十五五规划发布",
       "qualityScore": 76,
-      "whatHappened": "人民日报在8/29发布了“金融监管总局发布房地产相关融资管理办法”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "中国科技网在8/29发布了“虹桥国际中央商务区“十五五”规划发布”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "政策真正重要的部分是执行口径，以及它会怎样改变居民、企业和金融机构的选择。",
-      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“金融监管总局发布房地产相关融资管理办法”后续有没有具体实施口径。",
+      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“虹桥国际中央商务区“十五五”规划发布”后续有没有具体实施口径。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“金融监管总局发布房地产相关融资管理办法”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“虹桥国际中央商务区“十五五”规划发布”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
-      "id": "macro_global-0-6L6-6LWW5Z",
+      "id": "macro_global-0-5Zyw57yY5p",
       "categoryId": "macro_global",
       "category": "重大事件 / 宏观政策",
       "priorityHint": "must",
       "domestic": false,
       "localGrounded": false,
-      "title": "达赖喇嘛继任牵动地缘政治 USCC最新报告：美国应提前应对北京介入",
-      "source": "美国之音",
-      "publishedAt": "2026-08-29T01:00:00.000Z",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdjNCLTVmM2tmNlU5S1pPVjlOODJlR1RRNnBvVTFzcXpBbmttR3NhdTQyRmc1VjVIREFTa2MzLXBkV1B0THhKMWE5SFZZcmZKeXRSX2hvNkJpOERmU1NXaUdIaVc4MGZfRi12aW1kM05KOTdhYi1XYnU0cnE3UnRiYk9qWmVTalNReXRLSUZsbHZWRXJKOVg4ckhpcml4QkFJUWFRajZvSUEzdDRPQm9YaExaSHXSAbQBQVVfeXFMT3YzQi01ZjNrZjZVOUtaT1Y5TjgyZUdUUTZwb1Uxc3F6QW5rbUdzYXU0MkZnNVY1SERBU2tjMy1wZFdQdEx4SjFhOUhWWXJmSnl0Ul9obzZCaThEZlNTV2lHSGlXODBmX0YtdmltZDNOSjk3YWItV2J1NHJxN1J0YmJPalplU2pTUXl0S0lGbGx2VkVySjlYOHJIaXJpeEJBSVFhUWo2b0lBM3Q0T0JvWGhMWkh1?oc=5",
-      "snippet": "达赖喇嘛继任牵动地缘政治 USCC最新报告：美国应提前应对北京介入 美国之音",
+      "title": "地缘政治紧张背景下 普京和习近平及佩泽什基安赴中亚参加区域峰会",
+      "source": "RFI",
+      "publishedAt": "2026-08-29T16:30:05.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiyANBVV95cUxNLUs5VUs2Y0dLR2VOSDVHam9WbjlXa3RXYTd3VjVYakRJREZxUVoteENhOVpiSlhoLXlWMDFxQzJhMkpDVzlRX0EwbW1vTnJpU0RPa2l6bzg0SFh2RnRmVHZFcTNQZ3BQTnZSZk41b0psYnI3UzBNWnRaX09rYjd4cExmRG5wWXY1eG9ncjRXSnc1NUc4YnVvYmhmWFBGNHdjX0pGTS1acTloUXdrbzZldjgxR2Z5TzB6ajNaNF9zMWdFVXZKTnpTZDJXYzIzWnh5ejZUR1lVcGJCb0ZFQzZ0ZUp1bUNDaUo0Sk5rN25ZOU96ODBoNjM3bFdBaERUS1IwUnd1bUJCY2EzMU4xcEpHQmc4WDA3dFItYUZSX1NFN1A0MzNaTjRJT2x2U0R6UERjZGI4SEpDZU8xYi01TVZwU1duY1V3TWdnNVFuWGFGek92V1Q3VkFiOFh0VURpcnFDOFhxeUdQeUlQUVhUUXNSV080RDFBSU1KNTJIRTNFQ0ZBUTZMX1ZwSWIwdm43ZUNwempnTXNmZGh6X0ttOVM1VHNMZEtYQTl0LW1JVTVNYzM0YkpfNGo5NmhfYmJ4d09ERlowR2NxekQ?oc=5",
+      "snippet": "地缘政治紧张背景下 普京和习近平及佩泽什基安赴中亚参加区域峰会 RFI",
       "feedProvider": "Google News RSS",
-      "candidateId": "macro_global-0-6L6-6LWW5Z",
+      "candidateId": "macro_global-0-5Zyw57yY5p",
       "level": "must",
-      "eventKey": "达赖喇嘛继任牵动地缘政治uscc报告美国应提前应对北京介入",
+      "eventKey": "地缘政治紧张背景下普京和习近平及佩泽什基安赴中亚参加区域峰会",
       "qualityScore": 76,
-      "whatHappened": "美国之音在8/29发布了“达赖喇嘛继任牵动地缘政治 USCC最新报告：美国应提前应对北京介入”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "RFI在8/30发布了“地缘政治紧张背景下 普京和习近平及佩泽什基安赴中亚参加区域峰会”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
       "relation": "它可能通过利率、汇率与风险偏好影响你的纳指和黄金仓位。基础模式只提示传导方向，不替你猜市场。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“达赖喇嘛继任牵动地缘政治 USCC最新报告…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“地缘政治紧张背景下 普京和习近平及佩泽什基…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
       "id": "county_local-0-5Y6_5Z-f5r",
@@ -75,73 +75,73 @@ window.__NINI_RADAR_FALLBACK__ = {
       "actionDetail": "先记住“县域消费新观察丨一座鲁北小城的“留客”之道”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "a_share_trends-0-5ouf56C4Mu",
+      "id": "a_share_trends-0-5pep5oql5L",
       "categoryId": "a_share_trends",
       "category": "A股 / 资金 / 市场风潮",
       "priorityHint": "know",
       "domestic": true,
       "localGrounded": false,
-      "title": "拟砸2亿元赴中东建厂，济南建邦金属港股IPO被监管追问",
-      "source": "凤凰网财经",
-      "publishedAt": "2026-08-29T10:32:59.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5BdURBRi15ekNGSFc0bVBBbEJNZ0tjQXk4TmpZUWxXYUZfU0ZoUExBUHlNdnczUHEzZ0p5WGEwQmk0SHRrRkk0SV95ZnBKYzZh?oc=5",
-      "snippet": "拟砸2亿元赴中东建厂，济南建邦金属港股IPO被监管追问 凤凰网财经",
+      "title": "【早报】中际旭创发布严正声明；MiniMax启动A股IPO",
+      "source": "财联社",
+      "publishedAt": "2026-08-29T15:16:54.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBLQlhVWDdTZVZucGx4QjE1QTlYVDlyaDMxQ0VhZTNJUGloeWpWUXVDYmw2Z0RTS1VDYkJEOXBCR3VoMlJld1hLVg?oc=5",
+      "snippet": "【早报】中际旭创发布严正声明；MiniMax启动A股IPO 财联社",
       "feedProvider": "Google News RSS",
-      "candidateId": "a_share_trends-0-5ouf56C4Mu",
+      "candidateId": "a_share_trends-0-5pep5oql5L",
       "level": "know",
-      "eventKey": "拟砸2亿元赴中东建厂济南建邦金属港股ipo被监管追问",
+      "eventKey": "早报中际旭创发布严正声明minimax启动a股ipo",
       "qualityScore": 76,
-      "whatHappened": "凤凰网财经在8/29发布了“拟砸2亿元赴中东建厂，济南建邦金属港股IPO被监管追问”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "财联社在8/29发布了“【早报】中际旭创发布严正声明；MiniMax启动A股IPO”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
       "relation": "它能帮助你理解国内客户正在谈论什么市场叙事。面对客户时先核实资金和政策依据，不跟着热度下判断。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“拟砸2亿元赴中东建厂，济南建邦金属港股IP…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“【早报】中际旭创发布严正声明；MiniMa…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "global_market_narrative-0-5LqL5YWz6I",
+      "id": "global_market_narrative-0-576O6IKh5Y",
       "categoryId": "global_market_narrative",
       "category": "美股 / 市场叙事",
       "priorityHint": "know",
       "domestic": false,
       "localGrounded": false,
-      "title": "事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪",
+      "title": "美股光模块巨头公布强劲财报 公司CEO：订单已排到2028年！",
       "source": "财联社",
-      "publishedAt": "2026-08-29T06:45:39.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBHLWNoNHlzalBxR2c2bUV0aWNCcTU2d3BHR2xPUWVRVUhFT3Q0M0ZKSXRoa1duTEVTQTVsT2ItLWRQT0Q5bUJidg?oc=5",
-      "snippet": "事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪 财联社",
+      "publishedAt": "2026-08-29T05:55:19.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9rNkJrODNtc2MxTGFTSVp0bHFlR09QR3BkMFhjR2lKLUdndlNQTGEyZDdyQ2pKVjJjaVZqd195OWtHbUhYaFFTaQ?oc=5",
+      "snippet": "美股光模块巨头公布强劲财报 公司CEO：订单已排到2028年！ 财联社",
       "feedProvider": "Google News RSS",
-      "candidateId": "global_market_narrative-0-5LqL5YWz6I",
+      "candidateId": "global_market_narrative-0-576O6IKh5Y",
       "level": "know",
-      "eventKey": "事关芯市美股财报季启幕今明两份财报或提前定调市场情绪",
+      "eventKey": "美股光模块巨头公布强劲财报公司ceo订单已排到2028年",
       "qualityScore": 76,
-      "whatHappened": "财联社在8/29发布了“事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "财联社在8/29发布了“美股光模块巨头公布强劲财报 公司CEO：订单已排到2028年！”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
       "relation": "它是你理解美股定价逻辑的一条线索。与你的关系是判断长期逻辑有没有变化，而不是追当天涨跌。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“事关“芯”市！美股财报季启幕 今明两份财报…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“美股光模块巨头公布强劲财报 公司CEO：订…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "frontier-0-5paw5bel5Y",
+      "id": "frontier-0-55SY5b-r55",
       "categoryId": "frontier",
       "category": "新行业 / 社会变化",
       "priorityHint": "expand",
       "domestic": false,
       "localGrounded": false,
-      "title": "新工具让蛋白质设计“字母表”扩展至34种",
-      "source": "中国科技网",
-      "publishedAt": "2026-08-27T18:02:00.000Z",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBTUGRCeHVmWHZlajVpLV9CQ1hJWXotcVpUTHpmOEk3YlUwNDJ0cHJBUnRoM3ZvVC1lMEkxQ1V5ZEQ3LWNKbjFCRzQ2RlpheEtKdTl0MHhNbWVUajBTUzJ1akEybWRBVC1jNnNzNVBydnk?oc=5",
-      "snippet": "新工具让蛋白质设计“字母表”扩展至34种 中国科技网",
+      "title": "【甘快看·深读·社会】第“361”行的精彩——走近新兴职业从业者聆听别样奋斗故事_社会综合",
+      "source": "中国甘肃网",
+      "publishedAt": "2026-08-29T14:37:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1QWWxXYjdwNHB2SHkyVXdaTncwdDZMNm1BbzUzcEM3VEdYX3NjemZDRjRscXlOekY4YVBoT0s0Mm82bTA5Z3hVUS01Z21wQzdaS2xENHh0YkQ0NV9RY0lyUTBYcHJrQ0pzWE13?oc=5",
+      "snippet": "【甘快看·深读·社会】第“361”行的精彩——走近新兴职业从业者聆听别样奋斗故事_社会综合 中国甘肃网",
       "feedProvider": "Google News RSS",
-      "candidateId": "frontier-0-5paw5bel5Y",
+      "candidateId": "frontier-0-55SY5b-r55",
       "level": "expand",
-      "eventKey": "新工具让蛋白质设计字母表扩展至34种",
+      "eventKey": "甘快看深读社会第361行的精彩走近新兴职业从业者聆听别样奋斗故事社会综合",
       "qualityScore": 76,
-      "whatHappened": "中国科技网在8/28发布了“新工具让蛋白质设计“字母表”扩展至34种”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "中国甘肃网在8/29发布了“【甘快看·深读·社会】第“361”行的精彩——走近新兴职业从业者聆听别样奋斗故事_社会综合”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "新行业和工作方式往往先在少数平台出现，持续一段时间后才会传到更广泛的岗位。",
       "relation": "它暂时更适合作为未来 1–3 年的观察项，用来防止自己的信息边界只停留在县域环境。",
       "actionLevel": "知道即可",
-      "actionDetail": "把“新工具让蛋白质设计“字母表”扩展至34种”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。"
+      "actionDetail": "把“【甘快看·深读·社会】第“361”行的精彩…”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。"
     }
   ],
   "outside": [
@@ -197,71 +197,64 @@ window.__NINI_RADAR_FALLBACK__ = {
   "outsideUpdatedAt": "2026-08-27",
   "marketStories": [
     {
-      "candidateId": "macro_global-0-6L6-6LWW5Z",
+      "candidateId": "macro_global-0-5Zyw57yY5p",
       "market": "美股",
-      "title": "达赖喇嘛继任牵动地缘政治 USCC最新报告：美国应提前应对北京介入",
-      "whatHappened": "美国之音在8/29发布了“达赖喇嘛继任牵动地缘政治 USCC最新报告：美国应提前应对北京介入”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "地缘政治紧张背景下 普京和习近平及佩泽什基安赴中亚参加区域峰会",
+      "whatHappened": "RFI在8/30发布了“地缘政治紧张背景下 普京和习近平及佩泽什基安赴中亚参加区域峰会”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
-      "relation": "把它作为“达赖喇嘛继任牵动地缘政治 USCC最新…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdjNCLTVmM2tmNlU5S1pPVjlOODJlR1RRNnBvVTFzcXpBbmttR3NhdTQyRmc1VjVIREFTa2MzLXBkV1B0THhKMWE5SFZZcmZKeXRSX2hvNkJpOERmU1NXaUdIaVc4MGZfRi12aW1kM05KOTdhYi1XYnU0cnE3UnRiYk9qWmVTalNReXRLSUZsbHZWRXJKOVg4ckhpcml4QkFJUWFRajZvSUEzdDRPQm9YaExaSHXSAbQBQVVfeXFMT3YzQi01ZjNrZjZVOUtaT1Y5TjgyZUdUUTZwb1Uxc3F6QW5rbUdzYXU0MkZnNVY1SERBU2tjMy1wZFdQdEx4SjFhOUhWWXJmSnl0Ul9obzZCaThEZlNTV2lHSGlXODBmX0YtdmltZDNOSjk3YWItV2J1NHJxN1J0YmJPalplU2pTUXl0S0lGbGx2VkVySjlYOHJIaXJpeEJBSVFhUWo2b0lBM3Q0T0JvWGhMWkh1?oc=5",
-      "source": "美国之音",
-      "publishedAt": "2026-08-29T01:00:00.000Z"
+      "relation": "把它作为“地缘政治紧张背景下 普京和习近平及佩泽…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiyANBVV95cUxNLUs5VUs2Y0dLR2VOSDVHam9WbjlXa3RXYTd3VjVYakRJREZxUVoteENhOVpiSlhoLXlWMDFxQzJhMkpDVzlRX0EwbW1vTnJpU0RPa2l6bzg0SFh2RnRmVHZFcTNQZ3BQTnZSZk41b0psYnI3UzBNWnRaX09rYjd4cExmRG5wWXY1eG9ncjRXSnc1NUc4YnVvYmhmWFBGNHdjX0pGTS1acTloUXdrbzZldjgxR2Z5TzB6ajNaNF9zMWdFVXZKTnpTZDJXYzIzWnh5ejZUR1lVcGJCb0ZFQzZ0ZUp1bUNDaUo0Sk5rN25ZOU96ODBoNjM3bFdBaERUS1IwUnd1bUJCY2EzMU4xcEpHQmc4WDA3dFItYUZSX1NFN1A0MzNaTjRJT2x2U0R6UERjZGI4SEpDZU8xYi01TVZwU1duY1V3TWdnNVFuWGFGek92V1Q3VkFiOFh0VURpcnFDOFhxeUdQeUlQUVhUUXNSV080RDFBSU1KNTJIRTNFQ0ZBUTZMX1ZwSWIwdm43ZUNwempnTXNmZGh6X0ttOVM1VHNMZEtYQTl0LW1JVTVNYzM0YkpfNGo5NmhfYmJ4d09ERlowR2NxekQ?oc=5",
+      "source": "RFI",
+      "publishedAt": "2026-08-29T16:30:05.000Z"
     },
     {
-      "candidateId": "markets-0-546w6LSn6b",
+      "candidateId": "markets-0-5Lit5Zu95a",
       "market": "黄金 / 宏观",
-      "title": "现货黄金跌幅扩大至3%",
-      "whatHappened": "东方财富在8/29发布了“现货黄金跌幅扩大至3%”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "中国女排“黄金一代” 助力全民健康新实践",
+      "whatHappened": "天津日报在8/30发布了“中国女排“黄金一代” 助力全民健康新实践”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "市场关注它，是因为它可能改变增长、利率或风险溢价预期，需要结合多周期数据确认。",
-      "relation": "把它作为“现货黄金跌幅扩大至3%”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBCcko3OW1VdDM0XzBhZ0t1RHVtZ3RxZ09wV2xjYWJsOWxoWHlXQi1xbWhVQUR2bkhjeG1zeEtRMTFWY0Y5RlNVak95eEg0UzNjbURJNnBmN2ZtcWZ6Z2M5cw?oc=5",
-      "source": "东方财富",
-      "publishedAt": "2026-08-29T08:26:32.000Z"
+      "relation": "把它作为“中国女排“黄金一代” 助力全民健康新实践”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNTnZhVUlQOHFPZkluWk1TRXVYd3J5MFZzcWdTeGhSV2hERHQyMWI0TWYtQnVMYU51bG00bG1WcFN2S0dXcXFKdW81MXF3bWlmMHE1SVgzWlJVeG5KdHBubnZSQlhxV21ENGF4c0p2d1ZMSERvaHlPLXQ2MXhwbE5wdnF3?oc=5",
+      "source": "天津日报",
+      "publishedAt": "2026-08-29T22:04:42.000Z"
     },
     {
-      "candidateId": "a_share_trends-0-5ouf56C4Mu",
+      "candidateId": "a_share_trends-0-5pep5oql5L",
       "market": "A股",
-      "title": "拟砸2亿元赴中东建厂，济南建邦金属港股IPO被监管追问",
-      "whatHappened": "凤凰网财经在8/29发布了“拟砸2亿元赴中东建厂，济南建邦金属港股IPO被监管追问”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "【早报】中际旭创发布严正声明；MiniMax启动A股IPO",
+      "whatHappened": "财联社在8/29发布了“【早报】中际旭创发布严正声明；MiniMax启动A股IPO”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
-      "relation": "把它作为“拟砸2亿元赴中东建厂，济南建邦金属港股…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5BdURBRi15ekNGSFc0bVBBbEJNZ0tjQXk4TmpZUWxXYUZfU0ZoUExBUHlNdnczUHEzZ0p5WGEwQmk0SHRrRkk0SV95ZnBKYzZh?oc=5",
-      "source": "凤凰网财经",
-      "publishedAt": "2026-08-29T10:32:59.000Z"
+      "relation": "把它作为“【早报】中际旭创发布严正声明；Mini…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBLQlhVWDdTZVZucGx4QjE1QTlYVDlyaDMxQ0VhZTNJUGloeWpWUXVDYmw2Z0RTS1VDYkJEOXBCR3VoMlJld1hLVg?oc=5",
+      "source": "财联社",
+      "publishedAt": "2026-08-29T15:16:54.000Z"
     },
     {
-      "candidateId": "global_market_narrative-0-5LqL5YWz6I",
+      "candidateId": "global_market_narrative-0-576O6IKh5Y",
       "market": "美股",
-      "title": "事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪",
-      "whatHappened": "财联社在8/29发布了“事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "美股光模块巨头公布强劲财报 公司CEO：订单已排到2028年！",
+      "whatHappened": "财联社在8/29发布了“美股光模块巨头公布强劲财报 公司CEO：订单已排到2028年！”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
-      "relation": "把它作为“事关“芯”市！美股财报季启幕 今明两份…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBHLWNoNHlzalBxR2c2bUV0aWNCcTU2d3BHR2xPUWVRVUhFT3Q0M0ZKSXRoa1duTEVTQTVsT2ItLWRQT0Q5bUJidg?oc=5",
+      "relation": "把它作为“美股光模块巨头公布强劲财报 公司CEO…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9rNkJrODNtc2MxTGFTSVp0bHFlR09QR3BkMFhjR2lKLUdndlNQTGEyZDdyQ2pKVjJjaVZqd195OWtHbUhYaFFTaQ?oc=5",
       "source": "财联社",
-      "publishedAt": "2026-08-29T06:45:39.000Z"
+      "publishedAt": "2026-08-29T05:55:19.000Z"
     }
   ],
   "cognitions": [
     {
       "domain": "世界 / 科技",
-      "cognition": "达赖喇嘛继任牵动地…，先看传导链",
-      "why": "今天的公开依据是 美国之音 发布的“达赖喇嘛继任牵动地缘政治 USCC最新报告：美国应提前应对…”。基础模式只把它当作可核实信号，不把标题直接当结论。",
+      "cognition": "地缘政治紧张背景下…，先看传导链",
+      "why": "今天的公开依据是 RFI 发布的“地缘政治紧张背景下 普京和习近平及佩泽什基安赴中亚参加区域…”。基础模式只把它当作可核实信号，不把标题直接当结论。",
       "meaning": "以后遇到类似消息，先问它会经过哪些环节影响客户、岗位或资产；说不出传导链，就先不行动。",
-      "dedupeKey": "macro_global>达赖喇嘛继任牵动地缘政治uscc报告美国应提前应对北京介入"
+      "dedupeKey": "macro_global>地缘政治紧张背景下普京和习近平及佩泽什基安赴中亚参加区域峰会"
     },
     {
       "domain": "金融 / 职业",
-      "cognition": "金融监管总局发布房…，先看传导链",
-      "why": "今天的公开依据是 人民日报 发布的“金融监管总局发布房地产相关融资管理办法”。基础模式只把它当作可核实信号，不把标题直接当结论。",
+      "cognition": "虹桥国际中央商务区…，先看传导链",
+      "why": "今天的公开依据是 中国科技网 发布的“虹桥国际中央商务区“十五五”规划发布”。基础模式只把它当作可核实信号，不把标题直接当结论。",
       "meaning": "以后遇到类似消息，先问它会经过哪些环节影响客户、岗位或资产；说不出传导链，就先不行动。",
-      "dedupeKey": "domestic_policy>金融监管总局发布房地产相关融资管理办法"
-    },
-    {
-      "domain": "个人成长 / 决策",
-      "cognition": "县域消费新观察丨一…，先看传导链",
-      "why": "今天的公开依据是 新华网 发布的“县域消费新观察丨一座鲁北小城的“留客”之道”。基础模式只把它当作可核实信号，不把标题直接当结论。",
-      "meaning": "以后遇到类似消息，先问它会经过哪些环节影响客户、岗位或资产；说不出传导链，就先不行动。",
-      "dedupeKey": "county_local>县域消费新观察丨一座鲁北小城的留客之道"
+      "dedupeKey": "domestic_policy>虹桥国际中央商务区十五五规划发布"
     }
   ],
   "market": {
@@ -272,11 +265,11 @@ window.__NINI_RADAR_FALLBACK__ = {
       {
         "key": "nasdaq100",
         "label": "Nasdaq 100",
-        "value": 0,
+        "value": 29433,
         "unit": "点",
-        "dayChange": -100,
-        "weekChange": -100,
-        "monthChange": -100,
+        "dayChange": -0.7,
+        "weekChange": 0.43,
+        "monthChange": 4.1,
         "asOf": "2026-08-28T13:30:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5ENDX"
       },
@@ -294,27 +287,27 @@ window.__NINI_RADAR_FALLBACK__ = {
       {
         "key": "dollar",
         "label": "美元指数",
-        "value": 0,
+        "value": 99.7,
         "unit": "",
-        "dayChange": -100,
+        "dayChange": 0.54,
         "weekChange": null,
-        "monthChange": -100,
+        "monthChange": 0.01,
         "asOf": "2026-08-28T04:00:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
       },
       {
         "key": "us10y",
         "label": "美国 10Y",
-        "value": 0,
+        "value": 4.72,
         "unit": "%",
-        "dayChange": -100,
-        "weekChange": -100,
-        "monthChange": -100,
+        "dayChange": 1.03,
+        "weekChange": -0.38,
+        "monthChange": -0.53,
         "asOf": "2026-08-28T12:20:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5ETNX"
       }
     ],
-    "generatedAt": "2026-08-29T12:44:16.222Z",
+    "generatedAt": "2026-08-29T22:23:45.631Z",
     "note": "行情已独立更新。若新闻分析暂时失败，投资区会使用克制的基础纪律判断，不把行情涨跌硬解释成原因。"
   },
   "investment": {
@@ -324,14 +317,14 @@ window.__NINI_RADAR_FALLBACK__ = {
     "amount": "工作日维持纳指 ¥100 定投；黄金不新增战术仓位",
     "cancelIf": "若 20 日波动明显扩大、重大政策改变长期逻辑，或出现尚未理解的风险，暂停额外动作并重新核验。",
     "drivers": [
-      "Nasdaq 100：1日 -100.00%、5日 -100.00%、20日 -100.00%",
+      "Nasdaq 100：1日 -0.70%、5日 +0.43%、20日 +4.10%",
       "黄金：1日 -100.00%、5日 -100.00%、20日 -100.00%",
-      "美国10年期收益率：5日 -100.00%"
+      "美国10年期收益率：5日 -0.38%"
     ],
     "assetSignals": {
       "nasdaq100": {
         "status": "🟢 按计划定投",
-        "judgment": "近期波动偏弱，仍只维持定投"
+        "judgment": "多周期波动尚未触发额外动作"
       },
       "gold": {
         "status": "🟢 继续持有",
@@ -339,14 +332,14 @@ window.__NINI_RADAR_FALLBACK__ = {
       }
     },
     "environment": {
-      "usStocks": "🟡 波动偏谨慎",
+      "usStocks": "🟡 风险偏好尚可",
       "aShares": "⚪ 看政策与资金信号",
       "gold": "🟡 短期有所降温",
       "summary": "行情已更新；基础模式不猜新闻因果，今天维持既定节奏。"
     }
   },
   "oneThing": {
-    "task": "用 20 分钟打开“金融监管总局发布房地产相关融资管理办法”原文，写下一条它影响客户、职业或资产的传导链。",
+    "task": "用 20 分钟打开“虹桥国际中央商务区“十五五”规划发布”原文，写下一条它影响客户、职业或资产的传导链。",
     "minutes": 20
   },
   "pipeline": {
