@@ -1,0 +1,102 @@
+name: Update daily radar
+
+on:
+  schedule:
+    - cron: "15 6 * * *"
+      timezone: Asia/Shanghai
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  TZ: Asia/Shanghai
+
+concurrency:
+  group: daily-radar-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check JavaScript syntax
+        id: syntax
+        run: npm run check
+
+      - name: Run automated tests
+        id: tests
+        run: npm test
+
+      - name: Refresh market snapshot without AI
+        id: market
+        continue-on-error: true
+        run: npm run update:market
+
+      - name: Generate verified daily radar
+        id: radar
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+        run: npm run update
+
+      - name: Explain AI fallback
+        if: steps.radar.outcome == 'failure'
+        run: echo "News/AI update failed; committing the independently refreshed market snapshot and keeping the last verified news."
+
+      - name: Validate publishable data and timestamps
+        run: npm run validate:data
+
+      - name: Commit fresh data only
+        run: |
+          if git diff --quiet -- data/radar-latest.json data/radar-fallback.js data/cognition-history.json; then
+            echo "No data change."
+            exit 0
+          fi
+          git config user.name "nini-radar-bot"
+          git config user.email "nini-radar-bot@users.noreply.github.com"
+          git add data/radar-latest.json data/radar-fallback.js data/cognition-history.json
+          git commit -m "chore: update daily radar"
+          git push
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload verified website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy verified website
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Check whether today's update is fully fresh
+        id: health
+        continue-on-error: true
+        env:
+          REQUIRE_FRESH_DATA: "1"
+        run: npm run validate:data
+
+      - name: Mark degraded update clearly
+        if: steps.market.outcome == 'failure' || steps.radar.outcome == 'failure' || steps.health.outcome == 'failure'
+        run: |
+          echo "At least one update stage failed. The last verified data was preserved and any safe partial refresh was committed."
+          exit 1

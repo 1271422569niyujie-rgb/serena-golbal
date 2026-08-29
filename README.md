@@ -22,13 +22,16 @@
 
 ## 最简单的部署方式：继续使用 GitHub Pages
 
-1. 把本项目文件提交到你现有的 GitHub Pages 仓库根目录。`index.html` 仍是入口，原网址可以不变。
+1. 把本项目文件提交到你现有的 GitHub Pages 仓库根目录。`index.html` 仍是入口，原网址可以不变。确认 `.github/workflows/update-radar.yml` 也在默认分支 `main`；只上传可见网页文件是不够的。
 2. 打开仓库 `Settings → Secrets and variables → Actions → New repository secret`，新建 `OPENAI_API_KEY`。只把 Key 放这里，绝不能写进 `app.js`、HTML 或公开仓库。
-3. 打开 `Actions → Update daily radar → Run workflow`，手动跑第一次。
-4. 成功后检查 `data/radar-latest.json` 已自动更新，再打开手机桌面网址并点击“检查更新”。
-5. 工作流默认每天北京时间约 06:15 触发。GitHub 的定时任务可能有少量延迟，不保证精确到分钟。
+3. 打开 `Settings → Pages → Build and deployment → Source`，一次性选择 `GitHub Actions`。每日任务会在同一条链路中发布已校验的网站，不依赖机器人提交再次触发旧的分支部署。
+4. 打开 `Actions → Update daily radar → Run workflow`，手动跑第一次。
+5. 成功后检查 `data/radar-latest.json` 已自动更新，再打开手机桌面网址并点击“检查更新”。
+6. 工作流默认每天北京时间约 06:15 触发。GitHub 的定时任务可能有少量延迟，不保证精确到分钟。
 
 如果 GitHub 阻止工作流推送，请在 `Settings → Actions → General → Workflow permissions` 选择允许写入仓库内容。若主分支有保护规则，需要允许 GitHub Actions 写入，或改为通过 Pull Request 更新。
+
+定时更新文件必须真实存在于默认分支的 `.github/workflows/update-radar.yml`。只有 GitHub 自动生成的 `pages-build-deployment` 代表“网页能部署”，不代表新闻和行情会每天更新。GitHub 官方规定：使用工作流自带 `GITHUB_TOKEN` 推送的提交不会再次触发 Pages 构建，因此本项目会在每日任务里直接上传并发布刚刚校验过的网站。
 
 ## 数据链路与真实性边界
 
@@ -46,6 +49,7 @@
 
 ```powershell
 npm test
+npm run validate:data
 npx serve .
 ```
 
