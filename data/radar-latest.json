@@ -221,80 +221,84 @@
     }
   ],
   "market": {
-    "status": "unavailable",
-    "asOf": "",
+    "status": "ok",
+    "asOf": "2026-08-28T13:30:00.000Z",
     "source": "Yahoo Finance（公开行情，可能延迟）",
     "items": [
       {
         "key": "nasdaq100",
         "label": "Nasdaq 100",
-        "value": null,
+        "value": 29433,
         "unit": "点",
-        "dayChange": null,
-        "weekChange": null,
-        "monthChange": null,
-        "asOf": "",
+        "dayChange": -0.7,
+        "weekChange": 0.43,
+        "monthChange": 4.1,
+        "asOf": "2026-08-28T13:30:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5ENDX"
       },
       {
         "key": "gold",
         "label": "COMEX 黄金",
-        "value": null,
+        "value": 4504.1,
         "unit": " 美元/盎司",
-        "dayChange": null,
-        "weekChange": null,
-        "monthChange": null,
-        "asOf": "",
+        "dayChange": -2.29,
+        "weekChange": -2.6,
+        "monthChange": 11.24,
+        "asOf": "2026-08-28T04:00:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/GC%3DF"
       },
       {
         "key": "dollar",
         "label": "美元指数",
-        "value": null,
+        "value": 99.68,
         "unit": "",
-        "dayChange": null,
+        "dayChange": 0.52,
         "weekChange": null,
-        "monthChange": null,
-        "asOf": "",
+        "monthChange": -0.01,
+        "asOf": "2026-08-28T04:00:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
       },
       {
         "key": "us10y",
         "label": "美国 10Y",
-        "value": null,
+        "value": 4.72,
         "unit": "%",
-        "dayChange": null,
-        "weekChange": null,
-        "monthChange": null,
-        "asOf": "",
+        "dayChange": 1.03,
+        "weekChange": -0.38,
+        "monthChange": -0.53,
+        "asOf": "2026-08-28T12:20:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5ETNX"
       }
     ],
-    "generatedAt": "2026-08-28T15:40:10.668Z",
-    "note": "公开行情源本次没有返回至少 3 项有效数据，因此不展示伪实时数字；投资区暂时使用基础纪律模式。"
+    "generatedAt": "2026-08-29T03:34:50.394Z",
+    "note": "行情已独立更新。若新闻分析暂时失败，投资区会使用克制的基础纪律判断，不把行情涨跌硬解释成原因。"
   },
   "investment": {
-    "available": false,
-    "verdict": "",
-    "reason": "",
-    "amount": "",
-    "cancelIf": "",
-    "drivers": [],
+    "available": true,
+    "verdict": "⚪ 正常定投，暂不额外加仓",
+    "reason": "行情已经更新，但这次没有同步完成新闻原因核验。先维持原计划，不根据几根涨跌线临时加动作。",
+    "amount": "工作日维持纳指 ¥100 定投；不额外加仓",
+    "cancelIf": "下一次新闻与行情完成联合核验，或你标记了尚未搞懂的重大风险时重新判断。",
+    "drivers": [
+      "Nasdaq 100：1日 -0.70%、5日 +0.43%、20日 +4.10%",
+      "黄金：5日 -2.60%",
+      "美国10年期收益率：5日 -0.38%"
+    ],
     "assetSignals": {
       "nasdaq100": {
         "status": "🟡 暂不额外加仓",
-        "judgment": "行情尚未完成核验，维持工作日定投，不根据模糊数据增加仓位。"
+        "judgment": "多周期行情已更新，但新闻原因尚未同步核验；维持原定投，不临时追涨杀跌。"
       },
       "gold": {
-        "status": "🟡 继续持有，不追涨",
-        "judgment": "现有黄金仓位已经不低，数据不完整时先持有，不追着价格加仓。"
+        "status": "🟢 继续持有",
+        "judgment": "黄金多周期行情已更新；在宏观原因未核验前，保留现有仓位，不追加战术动作。"
       }
     },
     "environment": {
-      "usStocks": "⚪ 数据待核验",
+      "usStocks": "🟡 中性观察",
       "aShares": "⚪ 数据待核验",
-      "gold": "⚪ 数据待核验",
-      "summary": "宏观与行情数据还不完整，今天先维持长期纪律，不做方向性猜测。"
+      "gold": "🟡 中性观察",
+      "summary": "行情已更新，但宏观事件还没有同步核实，今天只执行原有纪律。"
     }
   },
   "oneThing": {
@@ -305,7 +309,7 @@
     "newsSource": "人工核实公开来源（首日快照）",
     "analysis": "人工逐条分析（首日）；后续由 OpenAI Responses API 接管",
     "note": "首日数据由人工核实公开来源生成；市场四项数据未完成同一时点核验，因此投资判断明确标为不可用。首次自动更新后由程序接管。",
-    "marketOnlyUpdatedAt": "2026-08-28T15:40:10.668Z",
+    "marketOnlyUpdatedAt": "2026-08-29T03:34:50.394Z",
     "marketSource": "Yahoo Finance（公开行情，可能延迟）"
   }
 }
