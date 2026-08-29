@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-27T23:25:40.416+08:00",
+  "updatedAt": "2026-08-29T12:44:16.225Z",
   "entries": [
     {
       "date": "2026-08-27",
@@ -24,6 +24,30 @@
       "dedupeKey": "职业证据>先把已有经历翻译成岗位语言",
       "theme": "职业证据",
       "conclusion": "先把已有经历翻译成岗位语言"
+    },
+    {
+      "date": "2026-08-29",
+      "domain": "世界 / 科技",
+      "cognition": "达赖喇嘛继任牵动地…，先看传导链",
+      "dedupeKey": "macro_global>达赖喇嘛继任牵动地缘政治uscc报告美国应提前应对北京介入",
+      "theme": "macro_global",
+      "conclusion": "达赖喇嘛继任牵动地…，先看传导链"
+    },
+    {
+      "date": "2026-08-29",
+      "domain": "金融 / 职业",
+      "cognition": "金融监管总局发布房…，先看传导链",
+      "dedupeKey": "domestic_policy>金融监管总局发布房地产相关融资管理办法",
+      "theme": "domestic_policy",
+      "conclusion": "金融监管总局发布房…，先看传导链"
+    },
+    {
+      "date": "2026-08-29",
+      "domain": "个人成长 / 决策",
+      "cognition": "县域消费新观察丨一…，先看传导链",
+      "dedupeKey": "county_local>县域消费新观察丨一座鲁北小城的留客之道",
+      "theme": "county_local",
+      "conclusion": "县域消费新观察丨一…，先看传导链"
     }
   ]
 }
