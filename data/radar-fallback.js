@@ -1,7 +1,7 @@
 window.__NINI_RADAR_FALLBACK__ = {
   "version": "3.3",
   "status": "ok",
-  "generatedAt": "2026-08-30T08:59:50.193Z",
+  "generatedAt": "2026-08-30T09:11:13.711Z",
   "effectiveDate": "2026-08-30",
   "timezone": "Asia/Shanghai",
   "news": [
@@ -241,32 +241,10 @@ window.__NINI_RADAR_FALLBACK__ = {
       "publishedAt": "2026-08-30T06:28:13.000Z"
     }
   ],
-  "cognitions": [
-    {
-      "domain": "世界 / 科技",
-      "cognition": "离你很远的事，也可能绕道影响资产。",
-      "why": "今天的依据来自 thepaper.cn 的公开信息，具体新闻仍可从原始来源核对。",
-      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
-      "dedupeKey": "macro_global>离你很远的事也可能绕道影响资产"
-    },
-    {
-      "domain": "金融 / 职业",
-      "cognition": "真正影响你的，是政策落地后的连锁反应。",
-      "why": "今天的依据来自 中国科技网 的公开信息，具体新闻仍可从原始来源核对。",
-      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
-      "dedupeKey": "domestic_policy>真正影响你的是政策落地后的连锁反应"
-    },
-    {
-      "domain": "个人成长 / 决策",
-      "cognition": "熟悉的环境，也会悄悄限制你的判断。",
-      "why": "今天的依据来自 新华网 的公开信息，具体新闻仍可从原始来源核对。",
-      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
-      "dedupeKey": "county_local>熟悉的环境也会悄悄限制你的判断"
-    }
-  ],
+  "cognitions": [],
   "market": {
     "status": "ok",
-    "asOf": "2026-08-28T13:30:00.000Z",
+    "asOf": "2026-08-30T09:02:32.000Z",
     "source": "Yahoo Finance + 中国工商银行公开行情（均可能延迟）",
     "items": [
       {
@@ -316,17 +294,18 @@ window.__NINI_RADAR_FALLBACK__ = {
       {
         "key": "icbcGold1000g",
         "label": "工行 Au99.99（1000g 交割规格参考）",
-        "value": null,
+        "value": 965,
         "unit": " 元/克",
-        "dayChange": null,
+        "dayChange": -3.02,
         "weekChange": null,
         "monthChange": null,
-        "asOf": "",
+        "asOf": "2026-08-30T09:02:32.000Z",
         "sourceUrl": "https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp",
-        "source": "中国工商银行公开贵金属行情"
+        "source": "中国工商银行公开贵金属行情",
+        "retrievedVia": "Jina Reader 只读转码（原始页面为工商银行）"
       }
     ],
-    "generatedAt": "2026-08-30T08:59:50.193Z",
+    "generatedAt": "2026-08-30T09:11:13.711Z",
     "note": "Nasdaq 100、COMEX 黄金、美元指数和美国 10 年期收益率已核验；工行 Au99.99 作为独立参考，取不到时会单独显示暂不可用。"
   },
   "investment": {
