@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T22:23:45.633Z",
+  "updatedAt": "2026-08-30T08:59:50.195Z",
   "entries": [
     {
       "date": "2026-08-27",
@@ -64,6 +64,30 @@
       "dedupeKey": "domestic_policy>虹桥国际中央商务区十五五规划发布",
       "theme": "domestic_policy",
       "conclusion": "虹桥国际中央商务区…，先看传导链"
+    },
+    {
+      "date": "2026-08-30",
+      "domain": "世界 / 科技",
+      "cognition": "离你很远的事，也可能绕道影响资产。",
+      "dedupeKey": "macro_global>离你很远的事也可能绕道影响资产",
+      "theme": "macro_global",
+      "conclusion": "离你很远的事，也可能绕道影响资产。"
+    },
+    {
+      "date": "2026-08-30",
+      "domain": "金融 / 职业",
+      "cognition": "真正影响你的，是政策落地后的连锁反应。",
+      "dedupeKey": "domestic_policy>真正影响你的是政策落地后的连锁反应",
+      "theme": "domestic_policy",
+      "conclusion": "真正影响你的，是政策落地后的连锁反应。"
+    },
+    {
+      "date": "2026-08-30",
+      "domain": "个人成长 / 决策",
+      "cognition": "熟悉的环境，也会悄悄限制你的判断。",
+      "dedupeKey": "county_local>熟悉的环境也会悄悄限制你的判断",
+      "theme": "county_local",
+      "conclusion": "熟悉的环境，也会悄悄限制你的判断。"
     }
   ]
 }
