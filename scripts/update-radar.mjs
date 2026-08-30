@@ -230,7 +230,7 @@ async function collectCandidates(){
 }
 
 function percentageChange(current,previous){
-  if(!Number.isFinite(current)||!Number.isFinite(previous)||previous===0) return null;
+  if(!Number.isFinite(current)||!Number.isFinite(previous)||current<=0||previous<=0) return null;
   return Number(((current/previous-1)*100).toFixed(2));
 }
 
@@ -253,11 +253,15 @@ async function fetchYahooSeries(definition){
   const result=raw?.chart?.result?.[0];
   const timestamps=result?.timestamp||[];
   const closes=result?.indicators?.quote?.[0]?.close||[];
-  const rows=timestamps.map((timestamp,index)=>({timestamp,value:Number(closes[index])})).filter(row=>Number.isFinite(row.value));
+  const rows=timestamps.map((timestamp,index)=>({timestamp,rawValue:closes[index]}))
+    .filter(row=>row.rawValue!==null&&row.rawValue!==undefined&&row.rawValue!=="")
+    .map(row=>({timestamp:row.timestamp,value:Number(row.rawValue)}))
+    .filter(row=>Number.isFinite(row.value)&&row.value>0);
   if(rows.length<2) throw new Error(`${definition.label} 可用数据不足`);
   const last=rows.at(-1);
   const transform=definition.transform||((value)=>value);
   const current=transform(last.value);
+  if(!Number.isFinite(current)||current<=0) throw new Error(`${definition.label} 最新数值无效`);
   return {
     key:definition.key,
     label:definition.label,
@@ -269,6 +273,33 @@ async function fetchYahooSeries(definition){
     asOf:new Date(last.timestamp*1000).toISOString(),
     sourceUrl:`https://finance.yahoo.com/quote/${encodeURIComponent(definition.symbol)}`
   };
+}
+
+export function parseIcbcGoldQuote(html=""){
+  const price=Number(html.match(/id=["']last_080020000214["'][^>]*>\s*([\d.]+)/i)?.[1]);
+  const previous=Number(html.match(/id=["']lstclose_080020000214["'][^>]*>\s*([\d.]+)/i)?.[1]);
+  const dateMatches=[...html.matchAll(/(20\d{2}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})/g)];
+  const latestDate=dateMatches.at(-1);
+  const asOf=latestDate?new Date(`${latestDate[1]}T${latestDate[2]}+08:00`).toISOString():"";
+  if(!Number.isFinite(price)||price<=0||!asOf) throw new Error("工行 Au99.99 公开报价或更新时间无效");
+  return {
+    key:"icbcGold1000g",
+    label:"工行 Au99.99（1000g 交割规格参考）",
+    value:Number(price.toFixed(2)),
+    unit:" 元/克",
+    dayChange:percentageChange(price,previous),
+    weekChange:null,
+    monthChange:null,
+    asOf,
+    sourceUrl:"https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp",
+    source:"中国工商银行公开贵金属行情"
+  };
+}
+
+async function fetchIcbcGold(){
+  const url="https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp";
+  const html=await fetchText(url,{timeoutMs:30000,headers:{Accept:"text/html"}});
+  return parseIcbcGoldQuote(html);
 }
 
 export async function collectMarket(){
@@ -283,13 +314,34 @@ export async function collectMarket(){
     settled.push(...await Promise.allSettled(definitions.slice(index,index+2).map(fetchYahooSeries)));
     if(index+2<definitions.length) await sleep(800);
   }
-  const items=settled.map((result,index)=>result.status==="fulfilled"?result.value:{
+  const yahooItems=settled.map((result,index)=>result.status==="fulfilled"?result.value:{
     key:definitions[index].key,label:definitions[index].label,value:null,unit:definitions[index].unit,
     dayChange:null,weekChange:null,monthChange:null,asOf:"",sourceUrl:`https://finance.yahoo.com/quote/${encodeURIComponent(definitions[index].symbol)}`
   });
-  const available=items.filter(item=>item.value!==null);
+  let icbcGold;
+  try{icbcGold=await fetchIcbcGold();}
+  catch(error){
+    console.warn(`工行 Au99.99 参考价暂不可用：${error.message}`);
+    icbcGold={
+      key:"icbcGold1000g",label:"工行 Au99.99（1000g 交割规格参考）",value:null,unit:" 元/克",
+      dayChange:null,weekChange:null,monthChange:null,asOf:"",
+      sourceUrl:"https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp",
+      source:"中国工商银行公开贵金属行情"
+    };
+  }
+  const items=[...yahooItems,icbcGold];
+  const available=items.filter(item=>Number.isFinite(Number(item.value))&&Number(item.value)>0);
+  const coreReady=["nasdaq100","gold","dollar","us10y"].every(key=>{
+    const value=items.find(item=>item.key===key)?.value;
+    return Number.isFinite(Number(value))&&Number(value)>0;
+  });
   const asOf=available.map(item=>item.asOf).sort().at(-1)||"";
-  return {status:available.length>=3?"ok":available.length?"partial":"unavailable",asOf,source:"Yahoo Finance（公开行情，可能延迟）",items};
+  return {
+    status:coreReady?"ok":available.length?"partial":"unavailable",
+    asOf,
+    source:"Yahoo Finance + 中国工商银行公开行情（均可能延迟）",
+    items
+  };
 }
 
 function shorten(value="",maximum=24){
@@ -437,18 +489,35 @@ function ruleCognitions(candidates){
     {domain:"金融 / 职业",ids:new Set(["banking","wealth","career_cities","domestic_policy","china_economy"])},
     {domain:"个人成长 / 决策",ids:new Set(["life_trends","county_local","a_share_trends","markets"])}
   ];
+  const copies={
+    macro_global:["大事先看传导，别先被情绪带走。","离你很远的事，也可能绕道影响资产。"],
+    ai_workflows:["别追新工具，先看它省掉哪一步。","会用 AI 不稀奇，会检查结果才值钱。"],
+    frontier:["新机会出现时，先补能带走的能力。","热门行业会变，学得快的能力更耐用。"],
+    global_market_narrative:["市场讲故事时，你要回头看数字。","一天的涨跌，不值得推翻长期计划。"],
+    banking:["客户真正需要的，常常不是又一个产品。","会把客户问题讲清楚，比话术更值钱。"],
+    wealth:["资产配置的起点，是先问钱要做什么。","财富管理不是卖得多，是配得合适。"],
+    career_cities:["大平台先看证据，不看你有多努力。","能把小事做成结果，就是可迁移能力。"],
+    domestic_policy:["政策别只看标题，要看最后怎么落地。","真正影响你的，是政策落地后的连锁反应。"],
+    china_economy:["宏观数字最后会落到客户的钱袋子里。","看经济，先看普通人的收入和信心。"],
+    life_trends:["流行不等于适合你，持续才算趋势。","别急着跟风，先看它半年后还在不在。"],
+    county_local:["小地方的共识，不等于世界的答案。","熟悉的环境，也会悄悄限制你的判断。"],
+    a_share_trends:["热度只能吸引目光，不能代替依据。","大家都在聊，不等于现在就该买。"],
+    markets:["仓位是计划的结果，不是情绪的出口。","没弄懂为什么跌，就先别急着加仓。"]
+  };
   const used=new Set();
   return groups.map(group=>{
     const candidate=candidates.find(item=>group.ids.has(item.categoryId)&&!used.has(item.id))||candidates.find(item=>!used.has(item.id));
     if(!candidate) return null;
     used.add(candidate.id);
-    const subject=shorten(candidate.title.replace(/[：:，,。；;].*$/,""),10);
+    const options=copies[candidate.categoryId]||["先把事情看懂，再决定要不要行动。"];
+    const index=[...normalizeTitle(candidate.title)].reduce((sum,char)=>sum+char.codePointAt(0),0)%options.length;
+    const cognition=options[index];
     return {
       domain:group.domain,
-      cognition:shorten(`${subject}，先看传导链`,22),
-      why:`今天的公开依据是 ${candidate.source} 发布的“${shorten(candidate.title,30)}”。基础模式只把它当作可核实信号，不把标题直接当结论。`,
-      meaning:`以后遇到类似消息，先问它会经过哪些环节影响客户、岗位或资产；说不出传导链，就先不行动。`,
-      dedupeKey:`${candidate.categoryId}>${normalizeTitle(candidate.title).slice(0,36)}`
+      cognition,
+      why:`今天的依据来自 ${candidate.source} 的公开信息，具体新闻仍可从原始来源核对。`,
+      meaning:"以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
+      dedupeKey:`${candidate.categoryId}>${normalizeTitle(cognition)}`
     };
   }).filter(Boolean);
 }
@@ -456,25 +525,61 @@ function ruleCognitions(candidates){
 function ruleOutside(candidates,outsideRefreshDue){
   if(!outsideRefreshDue) return [];
   const ids=new Set(["career_cities","ai_workflows","frontier","life_trends"]);
-  return candidates.filter(candidate=>ids.has(candidate.categoryId)).slice(0,4).map(candidate=>({
-    evidenceCandidateId:candidate.id,
-    trendKey:`${candidate.categoryId}>${normalizeTitle(candidate.title).slice(0,32)}`,
-    kind:candidate.categoryId==="life_trends"?"life":"career",
-    placeOrSector:candidate.category,
-    signal:shorten(candidate.title,34),
-    meaning:`这是 ${candidate.source} 提供的一条新信号。基础模式先记录它是否持续影响岗位、工作流或生活观念，不把单条报道写成确定趋势。`,
-    horizon:"未来 1–3 年；需等待更多独立来源或岗位变化验证"
-  }));
+  const copies={
+    career_cities:{kind:"career",signal:"大平台越来越看重“把事落地”",meaning:"会说还不够，最好能讲清你做过什么、怎么推进、最后有什么结果。"},
+    ai_workflows:{kind:"career",signal:"会把 AI 用进日常流程的人，已经开始更省时间",meaning:"重点不是会多少工具，而是能不能把访前准备、整理和复盘做快。"},
+    frontier:{kind:"career",signal:"新行业更喜欢能快速学会、马上上手的人",meaning:"行业会变，但学习速度、表达和交付能力可以一直带走。"},
+    life_trends:{kind:"life",signal:"新的生活方式，通常先从小习惯开始",meaning:"先观察它有没有持续半年，不用因为一次热潮立刻跟着改变。"}
+  };
+  return candidates.filter(candidate=>ids.has(candidate.categoryId)).slice(0,4).map(candidate=>{
+    const copy=copies[candidate.categoryId];
+    return {
+      evidenceCandidateId:candidate.id,
+      trendKey:`${candidate.categoryId}>${normalizeTitle(copy.signal)}`,
+      kind:copy.kind,
+      placeOrSector:candidate.category,
+      signal:copy.signal,
+      meaning:copy.meaning,
+      horizon:"未来 1–3 年",
+      source:candidate.source,
+      publishedAt:candidate.publishedAt,
+      url:candidate.url
+    };
+  });
+}
+
+function plainOutside(item){
+  const key=normalizeTitle(`${item.trendKey||""}${item.signal||""}${item.meaning||""}`);
+  if(item.kind==="life") return {...item,
+    signal:"先让工具打底、再由自己判断，正在变成普通习惯",
+    meaning:"工具负责整理，人负责判断和担责。",
+    horizon:"未来 1–2 年"};
+  if(/ai|人工智能|提示词|聊天工具|工作流/.test(key)) return {...item,
+    signal:"会把 AI 用进日常流程的人，已经开始更省时间",
+    meaning:"重点不是会多少工具，而是能不能把访前准备、整理和复盘做快。",
+    horizon:"未来 1–3 年"};
+  if(/财富|客户总资产|单品销售|资产经营/.test(key)) return {...item,
+    signal:"客户经理正在从卖产品，变成管好客户的整盘资产",
+    meaning:"资产结构、风险匹配和长期沟通，会比一次活动话术更值钱。",
+    horizon:"未来 1–3 年"};
+  if(/项目|交付|协同|标准化|城市岗位/.test(key)) return {...item,
+    signal:"大平台越来越看重“把事落地”",
+    meaning:"会说还不够，最好能讲清你做过什么、怎么推进、最后有什么结果。",
+    horizon:"未来 1–3 年"};
+  return {...item,
+    signal:shorten(item.signal,28),
+    meaning:shorten(item.meaning,48),
+    horizon:"未来 1–3 年"};
 }
 
 function changeText(value){
-  return Number.isFinite(Number(value))?`${Number(value)>=0?"+":""}${Number(value).toFixed(2)}%`:"暂缺";
+  return value!==null&&value!==undefined&&Number.isFinite(Number(value))?`${Number(value)>=0?"+":""}${Number(value).toFixed(2)}%`:"暂缺";
 }
 
 function ruleInvestment(market){
   const byKey=new Map((market.items||[]).map(item=>[item.key,item]));
   const nasdaq=byKey.get("nasdaq100"),gold=byKey.get("gold"),us10y=byKey.get("us10y");
-  const available=[nasdaq?.value,gold?.value].every(value=>value!==null&&value!==undefined&&Number.isFinite(Number(value)));
+  const available=[nasdaq?.value,gold?.value].every(value=>Number.isFinite(Number(value))&&Number(value)>0);
   if(!available) return {
     verdict:"⚪ 正常定投，暂不额外加仓",
     reason:"基础模式没有同时拿到 Nasdaq 100 与黄金的有效行情，因此不做战术判断。",
@@ -735,7 +840,12 @@ function chinaDate(instant=new Date()){
 export function isReusableMarketSnapshot(market,maxAgeMinutes=30){
   const generatedAt=new Date(market?.generatedAt||0).getTime();
   const ageMinutes=(Date.now()-generatedAt)/60000;
-  return ["ok","partial"].includes(market?.status)&&Number.isFinite(ageMinutes)&&ageMinutes>=0&&ageMinutes<=maxAgeMinutes;
+  const byKey=new Map((market?.items||[]).map(item=>[item.key,item]));
+  const coreReady=["nasdaq100","gold"].every(key=>{
+    const value=byKey.get(key)?.value;
+    return Number.isFinite(Number(value))&&Number(value)>0;
+  });
+  return market?.status==="ok"&&coreReady&&Number.isFinite(ageMinutes)&&ageMinutes>=0&&ageMinutes<=maxAgeMinutes;
 }
 
 function buildFinal({analysis,candidates,market,failures,verificationSourceCount,previousData={},cognitionHistory=[],outsideRefreshDue=true,analysisMode="rules",aiFallbackReason=""}){
@@ -754,10 +864,10 @@ function buildFinal({analysis,candidates,market,failures,verificationSourceCount
   }).filter(Boolean).slice(0,5);
   if(marketStories.length<2) throw new Error("市场大事不足 2 条可追溯依据，拒绝发布本次结果。");
 
-  const previousOutside=(previousData.outside||[]).map(item=>({...item,trendKey:item.trendKey||normalizeTitle(item.signal||"")}));
+  const previousOutside=(previousData.outside||[]).map(item=>plainOutside({...item,trendKey:item.trendKey||normalizeTitle(item.signal||"")}));
   const proposedOutside=(analysis.outside||[]).map(item=>{
     const evidence=candidateById.get(item.evidenceCandidateId);
-    return evidence?{...item,url:evidence.url,source:evidence.source,publishedAt:evidence.publishedAt}:null;
+    return evidence?plainOutside({...item,url:evidence.url,source:evidence.source,publishedAt:evidence.publishedAt}):null;
   }).filter(Boolean).slice(0,4);
   const novelOutside=proposedOutside.filter(item=>!previousOutside.some(existing=>isOutsideDuplicate(item,existing)));
   const outside=outsideRefreshDue&&novelOutside.length
@@ -768,7 +878,10 @@ function buildFinal({analysis,candidates,market,failures,verificationSourceCount
   const cognitions=dedupeCognitions(analysis.cognitions||[],cognitionHistory);
   market.generatedAt=new Date().toISOString();
   const marketByKey=new Map((market.items||[]).map(item=>[item.key,item]));
-  const availableMarket=["nasdaq100","gold"].every(key=>marketByKey.get(key)?.value!==null&&marketByKey.get(key)?.value!==undefined);
+  const availableMarket=["nasdaq100","gold"].every(key=>{
+    const value=marketByKey.get(key)?.value;
+    return Number.isFinite(Number(value))&&Number(value)>0;
+  });
   return {
     version:"3.3",
     status:"ok",

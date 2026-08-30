@@ -8,14 +8,14 @@ const DATA_PATH=path.join(ROOT,"data","radar-latest.json");
 const FALLBACK_PATH=path.join(ROOT,"data","radar-fallback.js");
 
 function pct(value){
-  return Number.isFinite(Number(value))?`${Number(value)>=0?"+":""}${Number(value).toFixed(2)}%`:"暂缺";
+  return value!==null&&value!==undefined&&Number.isFinite(Number(value))?`${Number(value)>=0?"+":""}${Number(value).toFixed(2)}%`:"暂缺";
 }
 
 export function buildMarketOnlyInvestment(market){
   const marketByKey=new Map((market?.items||[]).map(item=>[item.key,item]));
   const available=market?.status==="ok"&&["nasdaq100","gold"].every(key=>{
     const value=marketByKey.get(key)?.value;
-    return value!==null&&value!==undefined&&Number.isFinite(Number(value));
+    return Number.isFinite(Number(value))&&Number(value)>0;
   });
   const fallbackViews={
     assetSignals:{
@@ -52,15 +52,15 @@ async function main(){
   const market=await collectMarket();
   market.generatedAt=new Date().toISOString();
   market.note=market.status==="ok"
-    ?"行情已独立更新。若新闻分析暂时失败，投资区会使用克制的基础纪律判断，不把行情涨跌硬解释成原因。"
-    :"公开行情源本次没有返回至少 3 项有效数据，因此不展示伪实时数字；投资区暂时使用基础纪律模式。";
+    ?"Nasdaq 100、COMEX 黄金、美元指数和美国 10 年期收益率已核验；工行 Au99.99 作为独立参考，取不到时会单独显示暂不可用。"
+    :"核心公开行情本次没有完整返回，因此不展示伪实时数字；投资区暂时使用基础纪律模式。";
 
   data.market=market;
   data.investment=buildMarketOnlyInvestment(market);
   data.pipeline={...(data.pipeline||{}),marketOnlyUpdatedAt:market.generatedAt,marketSource:market.source};
   await writeFile(DATA_PATH,`${JSON.stringify(data,null,2)}\n`,"utf8");
   await writeFile(FALLBACK_PATH,`window.__NINI_RADAR_FALLBACK__ = ${JSON.stringify(data,null,2)};\n`,"utf8");
-  console.log(`市场数据状态：${market.status}；有效项 ${(market.items||[]).filter(item=>item.value!==null).length}/4`);
+  console.log(`市场数据状态：${market.status}；有效项 ${(market.items||[]).filter(item=>Number.isFinite(Number(item.value))&&Number(item.value)>0).length}/5`);
 }
 
 const invoked=process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href;

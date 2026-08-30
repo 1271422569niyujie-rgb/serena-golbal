@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-import {buildRuleBasedAnalysis,dedupeCandidates,dedupeCognitions,enforceSelection,isReusableMarketSnapshot,parseGdeltArticles,similarity} from "../scripts/update-radar.mjs";
+import {buildRuleBasedAnalysis,dedupeCandidates,dedupeCognitions,enforceSelection,isReusableMarketSnapshot,parseGdeltArticles,parseIcbcGoldQuote,similarity} from "../scripts/update-radar.mjs";
 import {buildMarketOnlyInvestment} from "../scripts/update-market.mjs";
 
 test("相近标题会被识别为同一事件",()=>{
@@ -130,10 +130,34 @@ test("投资区必须同时拿到 Nasdaq 100 与黄金，不能用其他三项�
   assert.equal(buildMarketOnlyInvestment(market).available,false);
 });
 
-test("同一次工作流只复用 30 分钟内成功或部分成功的行情",()=>{
-  assert.equal(isReusableMarketSnapshot({status:"ok",generatedAt:new Date().toISOString()}),true);
+test("0 不能冒充有效行情",()=>{
+  const market={status:"ok",items:[
+    {key:"nasdaq100",value:0},
+    {key:"gold",value:2500}
+  ]};
+  assert.equal(buildMarketOnlyInvestment(market).available,false);
+});
+
+test("能从工行公开页解析 Au99.99 的 1000g 交割规格参考价",()=>{
+  const html=`
+    <td id="last_080020000214">965.00</td>
+    <td id="lstclose_080020000214">995.05</td>
+    <div>更新时间:2026-08-30 16:16:32</div>`;
+  const item=parseIcbcGoldQuote(html);
+  assert.equal(item.key,"icbcGold1000g");
+  assert.equal(item.value,965);
+  assert.equal(item.unit," 元/克");
+  assert.ok(item.dayChange<0);
+  assert.equal(item.asOf,"2026-08-30T08:16:32.000Z");
+});
+
+test("同一次工作流只复用 30 分钟内核心数值有效的行情",()=>{
+  const validItems=[{key:"nasdaq100",value:26000},{key:"gold",value:3500}];
+  assert.equal(isReusableMarketSnapshot({status:"ok",items:validItems,generatedAt:new Date().toISOString()}),true);
+  assert.equal(isReusableMarketSnapshot({status:"ok",items:[{key:"nasdaq100",value:0},{key:"gold",value:3500}],generatedAt:new Date().toISOString()}),false);
+  assert.equal(isReusableMarketSnapshot({status:"partial",items:validItems,generatedAt:new Date().toISOString()}),false);
   assert.equal(isReusableMarketSnapshot({status:"unavailable",generatedAt:new Date().toISOString()}),false);
-  assert.equal(isReusableMarketSnapshot({status:"ok",generatedAt:new Date(Date.now()-31*60000).toISOString()}),false);
+  assert.equal(isReusableMarketSnapshot({status:"ok",items:validItems,generatedAt:new Date(Date.now()-31*60000).toISOString()}),false);
 });
 
 test("没有 API Key 时规则基础版仍生成完整日报结构",()=>{
@@ -165,7 +189,9 @@ test("没有 API Key 时规则基础版仍生成完整日报结构",()=>{
   assert.ok(result.marketStories.length>=2);
   assert.equal(result.investment.verdict,"⚪ 正常定投，暂不额外加仓");
   assert.equal(result.cognitions.length,3);
+  assert.ok(result.cognitions.every(item=>!item.cognition.includes("真实公开标题")));
   assert.ok(result.outside.length>=1);
+  assert.ok(result.outside.every(item=>[...item.meaning].length<=48));
 });
 
 test("GDELT 备用源只接收带真实标题、链接和新鲜时间的条目",()=>{

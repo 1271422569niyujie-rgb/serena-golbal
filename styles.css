@@ -56,6 +56,14 @@ h1 { font-size:29px; letter-spacing:-1px; margin:4px 0 5px }
 .analysisRow { padding:10px 0; border-bottom:1px solid rgba(49,93,122,.10); font-size:12.5px; color:#566873; line-height:1.72 }
 .analysisRow:last-child { border-bottom:0 }
 .analysisRow b { display:block; color:#344752; font-size:11.5px; margin-bottom:2px }
+.quickTake { margin-top:11px; padding:11px 12px; border-radius:13px; background:var(--soft); color:#526773; font-size:12.5px; line-height:1.65 }
+.quickTake b { color:#344752 }
+.quickAction { margin-top:10px; color:#586a75; font-size:12px; line-height:1.65 }
+.detailFold { margin-top:10px }
+.detailFold summary { cursor:pointer; color:var(--blue); font-size:11.5px; font-weight:800; list-style:none }
+.detailFold summary::-webkit-details-marker { display:none }
+.detailFold summary::after { content:" ＋"; font-weight:600 }
+.detailFold[open] summary::after { content:" －" }
 .actionBadge { display:inline-flex; align-items:center; padding:4px 8px; border-radius:999px; margin:0 0 5px; font-size:11px; font-weight:850; background:#fff }
 .actionBadge.now { color:var(--red) } .actionBadge.watch { color:var(--amber) } .actionBadge.know { color:var(--green) } .actionBadge.none { color:var(--gray) }
 .source { display:inline-block; margin-top:10px; font-size:12px; color:var(--blue); font-weight:750; text-decoration:none }
@@ -99,6 +107,8 @@ h1 { font-size:29px; letter-spacing:-1px; margin:4px 0 5px }
 .marketAsset { display:flex; flex-direction:column; gap:6px }
 .marketAsset .assetStatus { align-self:flex-start; margin-top:2px; padding:4px 8px; border-radius:999px; background:#e9f1f5; color:var(--blue); font-size:10.5px; font-weight:850 }
 .marketAsset .marketJudgment { margin-top:2px; padding-top:8px; border-top:1px solid var(--line2); color:#536773; font-size:11.5px; line-height:1.65 }
+.marketNote { color:#72838e; font-size:10.5px; line-height:1.55 }
+.marketMiniLink { margin-top:auto; padding-top:5px; color:var(--blue); font-size:10.5px; font-weight:750; text-decoration:none }
 .move { font-size:11px; margin-top:5px; color:var(--muted); line-height:1.45 }
 .move .down { color:var(--green) } .move .up { color:var(--red) }
 .marketStamp { font-size:10.5px; color:#8a99a3; margin:9px 2px 0; line-height:1.5 }
@@ -121,11 +131,11 @@ h1 { font-size:29px; letter-spacing:-1px; margin:4px 0 5px }
 .verdictDetail { margin-top:10px; font-size:11.5px; color:#63747e; line-height:1.7 }
 .verdictDetail div + div { margin-top:4px }
 .action { border-left:3px solid var(--blue); padding-left:12px; font-size:13px; line-height:1.8 }
-.outsideCard .horizon { margin-top:8px; color:var(--blue); font-size:11px; font-weight:800 }
+.outsidePlain { line-height:1.65 }
+.quietSource { color:#7b8b95; font-size:10.5px; font-weight:650 }
 .cognitionLabel { display:flex; justify-content:space-between; gap:8px }
-.cognitionWhy,.cognitionMeaning { font-size:12.5px; line-height:1.72; color:#5b6c77; margin-top:9px }
-.cognitionWhy b,.cognitionMeaning b { color:#354954 }
-.cognitionCard .title { font-size:16px; line-height:1.55 }
+.cognitionCard { padding-top:15px; padding-bottom:15px }
+.cognitionCard .title { font-size:17px; line-height:1.55; margin-bottom:0 }
 .taskList { margin-top:10px }
 .taskItem { display:grid; grid-template-columns:auto 1fr; align-items:flex-start; gap:9px; padding:9px 0; border-bottom:1px dashed var(--line) }
 .taskItem:last-child { border-bottom:0 }
@@ -164,7 +174,7 @@ textarea { width:100%; resize:vertical; border:1px solid var(--line); border-rad
   .heroRow .btn { flex:0 0 auto }
   .hero h2 { font-size:17px }
   .card { padding:15px }
-  .marketGrid { grid-template-columns:1fr 1fr }
+  .marketGrid { grid-template-columns:1fr }
   .settings { grid-template-columns:1fr }
 }
 @media (max-width:350px) {

@@ -175,12 +175,15 @@ function renderNews(){
       <div class="tag ${color}">${levelLabel} · ${esc(item.category)}</div>
       <div class="title">${esc(item.title)}</div>
       <div class="meta">${esc(item.source)} · 发布于 ${esc(formatDate(item.publishedAt))}</div>
-      <div class="analysis">
-        <div class="analysisRow"><b>发生了什么</b>${esc(item.whatHappened)}</div>
-        <div class="analysisRow"><b>为什么重要</b>${esc(item.whyImportant)}</div>
-        <div class="analysisRow"><b>和我有什么关系</b>${esc(item.relation)}</div>
-        <div class="analysisRow"><span class="actionBadge ${actionClass}">${actionLabel}</span>${item.actionDetail?`<div>${esc(item.actionDetail)}</div>`:""}</div>
-      </div>
+      <div class="quickTake"><b>和你有关：</b>${esc(item.relation)}</div>
+      <div class="quickAction"><span class="actionBadge ${actionClass}">${actionLabel}</span>${item.actionDetail?`<div>${esc(item.actionDetail)}</div>`:""}</div>
+      <details class="detailFold">
+        <summary>展开看完整分析</summary>
+        <div class="analysis">
+          <div class="analysisRow"><b>发生了什么</b>${esc(item.whatHappened)}</div>
+          <div class="analysisRow"><b>为什么重要</b>${esc(item.whyImportant)}</div>
+        </div>
+      </details>
       <a class="source" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">打开原始来源 →</a>
     </article>`;
   }).join("");
@@ -188,13 +191,29 @@ function renderNews(){
 
 function renderOutside(){
   const items=Array.isArray(state.radar?.outside)?state.radar.outside.slice(0,4):[];
-  $("outside").innerHTML=items.length?items.map(item=>`<section class="card outsideCard">
+  $("outside").innerHTML=items.length?items.map(item=>{
+    const haystack=`${item.trendKey||""}${item.signal||""}${item.meaning||""}`.toLowerCase();
+    let signal=item.signal,meaning=item.meaning;
+    if(item.kind==="life"){
+      signal="先让工具打底、再由自己判断，正在变成普通习惯";
+      meaning="工具负责整理，人负责判断和担责。";
+    }else if(/ai|人工智能|提示词|聊天工具|工作流/.test(haystack)){
+      signal="会把 AI 用进日常流程的人，已经开始更省时间";
+      meaning="重点不是会多少工具，而是能不能把访前准备、整理和复盘做快。";
+    }else if(/财富|客户总资产|单品销售|资产经营/.test(haystack)){
+      signal="客户经理正在从卖产品，变成管好客户的整盘资产";
+      meaning="资产结构、风险匹配和长期沟通，会比一次活动话术更值钱。";
+    }else if(/项目|交付|协同|标准化|城市岗位/.test(haystack)){
+      signal="大平台越来越看重“把事落地”";
+      meaning="会说还不够，最好能讲清你做过什么、怎么推进、最后有什么结果。";
+    }
+    return `<section class="card outsideCard">
     <div class="tag blue">${item.kind==="life"?"🌿 生活与观念":"📍 能力与平台"} · ${esc(item.placeOrSector)}</div>
-    <div class="title">${esc(item.signal)}</div>
-    <div class="txt">${esc(item.meaning)}</div>
-    <div class="horizon">可能影响：${esc(item.horizon)}</div>
-    ${item.url?`<a class="source" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">查看依据 →</a>`:""}
-  </section>`).join(""):emptyState("今天没有足够可靠的一线城市或行业信号，宁可少一条。 ");
+    <div class="title">${esc(signal)}</div>
+    <div class="txt outsidePlain">${esc(meaning)}</div>
+    ${item.url?`<a class="source quietSource" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">依据：${esc(item.source||"公开来源")} →</a>`:""}
+  </section>`;
+  }).join(""):emptyState("今天没有足够可靠的一线城市或行业信号，宁可少一条。 ");
 }
 
 function renderMarketStories(){
@@ -202,9 +221,12 @@ function renderMarketStories(){
   $("marketStories").innerHTML=items.length?items.map((item,index)=>`<article class="card marketStory">
     <div class="tag amber">0${index+1} · ${esc(item.market||"市场风潮")}</div>
     <div class="title">${esc(item.title)}</div>
-    <div class="storyRow"><b>发生了什么：</b>${esc(item.whatHappened)}</div>
-    <div class="storyRow"><b>为什么市场在关注：</b>${esc(item.whyMarketCares)}</div>
-    <div class="storyRow"><b>对我意味着什么：</b>${esc(item.relation)}</div>
+    <div class="quickTake"><b>对你意味着：</b>${esc(item.relation)}</div>
+    <details class="detailFold">
+      <summary>展开看市场背景</summary>
+      <div class="storyRow"><b>发生了什么：</b>${esc(item.whatHappened)}</div>
+      <div class="storyRow"><b>为什么市场在关注：</b>${esc(item.whyMarketCares)}</div>
+    </details>
     <div class="meta">${esc(item.source)} · 发布于 ${esc(formatDate(item.publishedAt))}</div>
     <a class="source" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">查看原始来源 →</a>
   </article>`).join(""):emptyState("今天没有足够重要的市场大事或新风潮，不用普通涨跌凑数。 ");
@@ -212,21 +234,23 @@ function renderMarketStories(){
 
 function renderCognitions(){
   const items=Array.isArray(state.radar?.cognitions)?state.radar.cognitions.slice(0,3):[];
-  $("cognitions").innerHTML=items.length?items.map((item,index)=>`<section class="card cognitionCard">
+  const fallback={"世界 / 科技":"别急着下结论，先看它怎么影响你。","金融 / 职业":"真正值钱的，是能把问题讲清楚。","个人成长 / 决策":"小地方的共识，不一定是世界的答案。"};
+  $("cognitions").innerHTML=items.length?items.map((item,index)=>{
+    const cognition=/先看传导链|…/.test(item.cognition||"")?(fallback[item.domain]||item.cognition):item.cognition;
+    return `<section class="card cognitionCard">
     <div class="cognitionLabel"><div class="tag blue">0${index+1} · ${esc(item.domain)}</div></div>
-    <div class="title">${esc(item.cognition)}</div>
-    <div class="cognitionWhy"><b>为什么：</b>${esc(item.why)}</div>
-    <div class="cognitionMeaning"><b>对我的意义：</b>${esc(item.meaning)}</div>
-  </section>`).join(""):emptyState("今日认知更新暂不可用；不展示与当天事实无关的鸡汤占位。 ");
+    <div class="title">${esc(cognition)}</div>
+  </section>`;
+  }).join(""):emptyState("今日认知更新暂不可用；不展示与当天事实无关的鸡汤占位。 ");
 }
 
 function formatMarketValue(item){
-  if(item.value===null||item.value===undefined||!Number.isFinite(Number(item.value))) return "暂不可用";
+  if(item.value===null||item.value===undefined||!Number.isFinite(Number(item.value))||Number(item.value)<=0) return "暂不可用";
   const digits=item.unit==="%"?2:item.value>1000?0:2;
   return `${Number(item.value).toLocaleString("zh-CN",{maximumFractionDigits:digits,minimumFractionDigits:item.unit==="%"?2:0})}${item.unit||""}`;
 }
 
-function changeClass(value){ return Number(value)>=0?"up":"down"; }
+function changeClass(value){ return value===null||value===undefined||!Number.isFinite(Number(value))?"":Number(value)>=0?"up":"down"; }
 function formatChange(value){ return value===null||value===undefined||!Number.isFinite(Number(value))?"—":`${Number(value)>=0?"+":""}${Number(value).toFixed(2)}%`; }
 
 function renderMarket(){
@@ -235,18 +259,24 @@ function renderMarket(){
   const investment=state.radar?.investment||{};
   const assetSignals=investment.assetSignals||{};
   const visibleAssets=[
-    {key:"nasdaq100",label:"Nasdaq 100",fallbackStatus:"🟡 暂不额外加仓",fallbackJudgment:"行情尚未完成核验，维持原定投，不根据单日波动加动作。"},
-    {key:"gold",label:"黄金",fallbackStatus:"🟡 继续持有，不追涨",fallbackJudgment:"行情尚未完成核验，保留现有仓位，暂不根据模糊信息追涨。"}
+    {key:"nasdaq100",signalKey:"nasdaq100",label:"Nasdaq 100（NDX）",note:"本雷达参考 NDX；苹果股市常见的“纳斯达克”是综合指数 IXIC，数值不同。",fallbackStatus:"🟡 暂不额外加仓",fallbackJudgment:"行情尚未完成核验，维持原定投，不根据单日波动加动作。"},
+    {key:"gold",signalKey:"gold",label:"国际金价（COMEX）",note:"美元/盎司 · 国际期货参考",fallbackStatus:"🟡 继续持有，不追涨",fallbackJudgment:"行情尚未完成核验，保留现有仓位，暂不根据模糊信息追涨。"},
+    {key:"icbcGold1000g",label:"工行 Au99.99",note:"元/克 · 1000g 交割规格参考，不等于品牌金条零售价",referenceOnly:true}
   ];
   $("marketGrid").innerHTML=visibleAssets.map(definition=>{
     const item=items.find(entry=>entry.key===definition.key)||{key:definition.key,label:definition.label,value:null,unit:"",dayChange:null,weekChange:null,monthChange:null};
-    const signal=assetSignals[definition.key]||{status:definition.fallbackStatus,judgment:definition.fallbackJudgment};
+    const hasValue=Number.isFinite(Number(item.value))&&Number(item.value)>0;
+    const signal=hasValue?(assetSignals[definition.signalKey||definition.key]||{status:definition.fallbackStatus,judgment:definition.fallbackJudgment}):{status:definition.fallbackStatus,judgment:definition.fallbackJudgment};
+    const moves=!hasValue?"行情待更新":definition.referenceOnly
+      ?`当日 ${formatChange(item.dayChange)}`
+      :`1日 <span class="${changeClass(item.dayChange)}">${formatChange(item.dayChange)}</span> · 5日 ${formatChange(item.weekChange)} · 20日 ${formatChange(item.monthChange)}`;
     return `<div class="metric marketAsset">
     <span class="pill">${esc(definition.label)}</span>
     <div class="v smallV">${esc(formatMarketValue(item))}</div>
-    <div class="move">1日 <span class="${changeClass(item.dayChange)}">${formatChange(item.dayChange)}</span> · 5日 ${formatChange(item.weekChange)} · 20日 ${formatChange(item.monthChange)}</div>
-    <div class="assetStatus">${esc(signal.status)}</div>
-    <div class="marketJudgment">${esc(signal.judgment)}</div>
+    <div class="marketNote">${esc(definition.note)}</div>
+    <div class="move">${moves}</div>
+    ${definition.referenceOnly?"":`<div class="assetStatus">${esc(signal.status)}</div><div class="marketJudgment">${esc(signal.judgment)}</div>`}
+    ${item.sourceUrl?`<a class="marketMiniLink" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">查看数据口径 →</a>`:""}
   </div>`;
   }).join("");
   const environment=investment.environment||{

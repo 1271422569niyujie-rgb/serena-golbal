@@ -36,10 +36,11 @@ for(const item of data.news){
 
 const market=data.market||{};
 assert.ok(["ok","partial","unavailable"].includes(market.status),"市场状态必须明确为 ok、partial 或 unavailable");
-assert.ok(Array.isArray(market.items)&&market.items.length===4,"市场数据必须保留四个固定观察项");
+assert.ok(Array.isArray(market.items)&&market.items.length===5,"市场数据必须保留四个核心观察项和一个工行实物金参考项");
 for(const item of market.items){
   if(item.value===null||item.value===undefined) continue;
   assert.ok(Number.isFinite(Number(item.value)),`市场数值无效：${item.label||item.key}`);
+  assert.ok(Number(item.value)>0,`市场数值必须大于 0：${item.label||item.key}`);
   assert.ok(validDate(item.asOf),`市场时间无效：${item.label||item.key}`);
   assert.ok(hoursOld(item.asOf)>-1,"市场时间不能来自未来");
   assert.ok(/^https:\/\//.test(item.sourceUrl||""),`市场来源链接无效：${item.label||item.key}`);
