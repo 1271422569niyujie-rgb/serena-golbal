@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-import {buildRuleBasedAnalysis,dedupeCandidates,dedupeCognitions,enforceSelection,isReusableMarketSnapshot,parseGdeltArticles,parseIcbcGoldQuote,similarity} from "../scripts/update-radar.mjs";
+import {buildRuleBasedAnalysis,dedupeCandidates,dedupeCognitions,enforceSelection,isReusableMarketSnapshot,parseGdeltArticles,parseIcbcGoldQuote,priorCognitionHistory,similarity} from "../scripts/update-radar.mjs";
 import {buildMarketOnlyInvestment} from "../scripts/update-market.mjs";
 
 test("相近标题会被识别为同一事件",()=>{
@@ -52,6 +52,16 @@ test("30天内同一核心认知即使换句话说也会被过滤",()=>{
     {cognition:"会复盘的人，成长得更快。",dedupeKey:"复盘习惯>把经验变成下一次判断"}
   ];
   assert.deepEqual(dedupeCognitions(today,history).map(item=>item.dedupeKey),["复盘习惯>把经验变成下一次判断"]);
+});
+
+test("同一天重跑日报不会把今天的认知误删",()=>{
+  const today=new Date().toISOString().slice(0,10);
+  const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
+  const history=[
+    {date:yesterday,cognition:"旧认知"},
+    {date:today,cognition:"今天第一次运行生成的认知"}
+  ];
+  assert.deepEqual(priorCognitionHistory(history,today).map(item=>item.cognition),["旧认知"]);
 });
 
 test("国内县域补充不会挤占国际与大城市主轴",()=>{

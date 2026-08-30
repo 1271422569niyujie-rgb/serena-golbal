@@ -851,6 +851,10 @@ function chinaDate(instant=new Date()){
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
+export function priorCognitionHistory(entries=[],today=chinaDate()){
+  return entries.filter(item=>daysSince(item.date)<=30&&String(item.date||"").slice(0,10)!==today);
+}
+
 export function isReusableMarketSnapshot(market,maxAgeMinutes=30){
   const generatedAt=new Date(market?.generatedAt||0).getTime();
   const ageMinutes=(Date.now()-generatedAt)/60000;
@@ -934,7 +938,7 @@ async function main(){
   const previousData=await readJsonOr(OUTPUT,{});
   const historyFile=await readJsonOr(COGNITION_HISTORY_OUTPUT,{entries:[]});
   const allHistory=Array.isArray(historyFile)?historyFile:(historyFile.entries||[]);
-  const cognitionHistory=allHistory.filter(item=>daysSince(item.date)<=30);
+  const cognitionHistory=priorCognitionHistory(allHistory,chinaDate());
   const outsideRefreshDue=daysSince(previousData.outsideUpdatedAt||previousData.effectiveDate)>=7;
   const {candidates,failures}=await collectCandidates();
   console.log(`候选 ${candidates.length} 条；源失败 ${failures.length} 个`);
@@ -991,7 +995,7 @@ async function main(){
     theme:String(item.dedupeKey||"").split(">")[0]||item.domain,
     conclusion:item.cognition
   }));
-  await writeFile(COGNITION_HISTORY_OUTPUT,`${JSON.stringify({updatedAt:new Date().toISOString(),entries:[...cognitionHistory,...newHistory]},null,2)}\n`,"utf8");
+  await writeFile(COGNITION_HISTORY_OUTPUT,`${JSON.stringify({updatedAt:new Date().toISOString(),entries:[...priorCognitionHistory(allHistory,finalData.effectiveDate),...newHistory]},null,2)}\n`,"utf8");
 }
 
 const invoked=process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href;
