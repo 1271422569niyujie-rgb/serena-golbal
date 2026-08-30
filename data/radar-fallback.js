@@ -1,7 +1,7 @@
 window.__NINI_RADAR_FALLBACK__ = {
   "version": "3.3",
   "status": "ok",
-  "generatedAt": "2026-08-30T09:11:13.711Z",
+  "generatedAt": "2026-08-30T14:24:41.410Z",
   "effectiveDate": "2026-08-30",
   "timezone": "Asia/Shanghai",
   "news": [
@@ -29,27 +29,27 @@ window.__NINI_RADAR_FALLBACK__ = {
       "actionDetail": "打开“虹桥国际中央商务区“十五五”规划发布”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
-      "id": "macro_global-0-576O6IGU5Y",
+      "id": "macro_global-0-5bGl6IGM55",
       "categoryId": "macro_global",
       "category": "重大事件 / 宏观政策",
       "priorityHint": "must",
       "domestic": false,
       "localGrounded": false,
-      "title": "美联储主席：美国通胀仍然过高，物价数据令人担忧",
-      "source": "thepaper.cn",
-      "publishedAt": "2026-08-30T01:37:00.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBzSXN1SXRBVVVZc19xUElTemJHUUwtME1RU3lGNXdYQXBxeFBobk1qb0stY0VEajh5SXM3SURvZVY4aEpsQmd0OXV0bkl2YzBXYXFXQk5DWk5STU44c0I3WA?oc=5",
-      "snippet": "美联储主席：美国通胀仍然过高，物价数据令人担忧 thepaper.cn",
+      "title": "履职百天 沃什让美联储“更安静”",
+      "source": "中国经济网",
+      "publishedAt": "2026-08-29T23:25:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9oYVlHNFhZdWJCM2tIUjhSVFhJLWthTFVFZk1QUWxlalRjRTB3R1k0cm91ZDBJdEZCWUF3X3FxUVYwclJKMmM5MmJlVnM0dWNpS2xBdU5VbFl6dVpkN1ZabQ?oc=5",
+      "snippet": "履职百天 沃什让美联储“更安静” 中国经济网",
       "feedProvider": "Google News RSS",
-      "candidateId": "macro_global-0-576O6IGU5Y",
+      "candidateId": "macro_global-0-5bGl6IGM55",
       "level": "must",
-      "eventKey": "美联储主席美国通胀仍然过高物价数据令人担忧",
+      "eventKey": "履职百天沃什让美联储更安静",
       "qualityScore": 76,
-      "whatHappened": "thepaper.cn在8/30发布了“美联储主席：美国通胀仍然过高，物价数据令人担忧”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "中国经济网在8/30发布了“履职百天 沃什让美联储“更安静””。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
       "relation": "它可能通过利率、汇率与风险偏好影响你的纳指和黄金仓位。基础模式只提示传导方向，不替你猜市场。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“美联储主席：美国通胀仍然过高，物价数据令人…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“履职百天 沃什让美联储“更安静””原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
       "id": "county_local-0-5Y6_5Z-f5r",
@@ -75,27 +75,27 @@ window.__NINI_RADAR_FALLBACK__ = {
       "actionDetail": "先记住“县域消费新观察丨一座鲁北小城的“留客”之道”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "a_share_trends-0-5pif546v56",
+      "id": "a_share_trends-0-5riv6IKhaX",
       "categoryId": "a_share_trends",
       "category": "A股 / 资金 / 市场风潮",
       "priorityHint": "know",
       "domestic": true,
       "localGrounded": false,
-      "title": "星环科技通过IPO聆讯：上半年营收增14%未盈利，董事长孙元浩去年涨薪14%",
-      "source": "凤凰网财经",
-      "publishedAt": "2026-08-30T01:23:53.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9hWDVTV3JDUTZ6dWJ1UGJKc0RtRHkwNk9kUDFYanJlSk5lMGxUSC0tZ0pxWFQzLThkWFh4TkYtdDFCVlZIRkVuRmtCaVZINUMw?oc=5",
-      "snippet": "星环科技通过IPO聆讯：上半年营收增14%未盈利，董事长孙元浩去年涨薪14% 凤凰网财经",
+      "title": "港股IPO周报：正泰电器等多家A股公司递表 AI基建软件商星环科技通过聆讯",
+      "source": "财联社",
+      "publishedAt": "2026-08-30T05:52:24.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5TdTZxQS1fNHJEbG1FTUZ1ZTJzUG1wMUpMeTVuX0wzTXAzWUFUTDZWamNialBnMk1uV09tS21YM1F1UzBENXc?oc=5",
+      "snippet": "港股IPO周报：正泰电器等多家A股公司递表 AI基建软件商星环科技通过聆讯 财联社",
       "feedProvider": "Google News RSS",
-      "candidateId": "a_share_trends-0-5pif546v56",
+      "candidateId": "a_share_trends-0-5riv6IKhaX",
       "level": "know",
-      "eventKey": "星环科技通过ipo聆讯上半年营收增14未盈利董事长孙元浩去年涨薪14",
+      "eventKey": "港股ipo周报正泰电器等多家a股公司递表ai基建软件商星环科技通过聆讯",
       "qualityScore": 76,
-      "whatHappened": "凤凰网财经在8/30发布了“星环科技通过IPO聆讯：上半年营收增14%未盈利，董事长孙元浩去年涨薪14%”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "财联社在8/30发布了“港股IPO周报：正泰电器等多家A股公司递表 AI基建软件商星环科技通过聆讯”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
       "relation": "它能帮助你理解国内客户正在谈论什么市场叙事。面对客户时先核实资金和政策依据，不跟着热度下判断。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“星环科技通过IPO聆讯：上半年营收增14%…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“港股IPO周报：正泰电器等多家A股公司递表…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
       "id": "global_market_narrative-0-576O6IKh5Y",
@@ -197,37 +197,37 @@ window.__NINI_RADAR_FALLBACK__ = {
   "outsideUpdatedAt": "2026-08-27",
   "marketStories": [
     {
-      "candidateId": "macro_global-0-576O6IGU5Y",
+      "candidateId": "macro_global-0-5bGl6IGM55",
       "market": "黄金 / 宏观",
-      "title": "美联储主席：美国通胀仍然过高，物价数据令人担忧",
-      "whatHappened": "thepaper.cn在8/30发布了“美联储主席：美国通胀仍然过高，物价数据令人担忧”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "履职百天 沃什让美联储“更安静”",
+      "whatHappened": "中国经济网在8/30发布了“履职百天 沃什让美联储“更安静””。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
-      "relation": "把它作为“美联储主席：美国通胀仍然过高，物价数据…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBzSXN1SXRBVVVZc19xUElTemJHUUwtME1RU3lGNXdYQXBxeFBobk1qb0stY0VEajh5SXM3SURvZVY4aEpsQmd0OXV0bkl2YzBXYXFXQk5DWk5STU44c0I3WA?oc=5",
-      "source": "thepaper.cn",
-      "publishedAt": "2026-08-30T01:37:00.000Z"
+      "relation": "把它作为“履职百天 沃什让美联储“更安静””的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9oYVlHNFhZdWJCM2tIUjhSVFhJLWthTFVFZk1QUWxlalRjRTB3R1k0cm91ZDBJdEZCWUF3X3FxUVYwclJKMmM5MmJlVnM0dWNpS2xBdU5VbFl6dVpkN1ZabQ?oc=5",
+      "source": "中国经济网",
+      "publishedAt": "2026-08-29T23:25:00.000Z"
     },
     {
-      "candidateId": "markets-0-6buE6YeR5L",
+      "candidateId": "markets-0-5Lit5Zu96b",
       "market": "黄金 / 宏观",
-      "title": "黄金价格暴跌逾3.4% 玉米与小麦价格齐创逾三年新高 | 环球市场",
-      "whatHappened": "财联社在8/30发布了“黄金价格暴跌逾3.4% 玉米与小麦价格齐创逾三年新高 | 环球市场”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "中国黄金上半年营收249亿元 同比降19.93%",
+      "whatHappened": "观点网在8/30发布了“中国黄金上半年营收249亿元 同比降19.93%”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "市场关注它，是因为它可能改变增长、利率或风险溢价预期，需要结合多周期数据确认。",
-      "relation": "把它作为“黄金价格暴跌逾3.4% 玉米与小麦价格…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1CaTFUanc5WjhJVnNtNnRERW5NRFpyLVJWUVdCTncyNDV2aUUxb0VoZklLcklGUzNqbUl2U21SS1Bac1hGM2dVbQ?oc=5",
-      "source": "财联社",
-      "publishedAt": "2026-08-30T01:59:09.000Z"
+      "relation": "把它作为“中国黄金上半年营收249亿元 同比降1…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFA4U0EwMzJfSVFIS3FpVFNyX0JtVnlKUVhBV2JyWTNKa21kLXVsZGZuWTFlS3hsUmJmYUVsVjJIem03Y09CMjNLUmo4Q21qZw?oc=5",
+      "source": "观点网",
+      "publishedAt": "2026-08-30T12:17:17.000Z"
     },
     {
-      "candidateId": "a_share_trends-0-5pif546v56",
+      "candidateId": "a_share_trends-0-5riv6IKhaX",
       "market": "A股",
-      "title": "星环科技通过IPO聆讯：上半年营收增14%未盈利，董事长孙元浩去年涨薪14%",
-      "whatHappened": "凤凰网财经在8/30发布了“星环科技通过IPO聆讯：上半年营收增14%未盈利，董事长孙元浩去年涨薪14%”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "港股IPO周报：正泰电器等多家A股公司递表 AI基建软件商星环科技通过聆讯",
+      "whatHappened": "财联社在8/30发布了“港股IPO周报：正泰电器等多家A股公司递表 AI基建软件商星环科技通过聆讯”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
-      "relation": "把它作为“星环科技通过IPO聆讯：上半年营收增1…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9hWDVTV3JDUTZ6dWJ1UGJKc0RtRHkwNk9kUDFYanJlSk5lMGxUSC0tZ0pxWFQzLThkWFh4TkYtdDFCVlZIRkVuRmtCaVZINUMw?oc=5",
-      "source": "凤凰网财经",
-      "publishedAt": "2026-08-30T01:23:53.000Z"
+      "relation": "把它作为“港股IPO周报：正泰电器等多家A股公司…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5TdTZxQS1fNHJEbG1FTUZ1ZTJzUG1wMUpMeTVuX0wzTXAzWUFUTDZWamNialBnMk1uV09tS21YM1F1UzBENXc?oc=5",
+      "source": "财联社",
+      "publishedAt": "2026-08-30T05:52:24.000Z"
     },
     {
       "candidateId": "global_market_narrative-0-576O6IKh5Y",
@@ -241,10 +241,32 @@ window.__NINI_RADAR_FALLBACK__ = {
       "publishedAt": "2026-08-30T06:28:13.000Z"
     }
   ],
-  "cognitions": [],
+  "cognitions": [
+    {
+      "domain": "世界 / 科技",
+      "cognition": "大事先看传导，别先被情绪带走。",
+      "why": "今天的依据来自 中国经济网 的公开信息，具体新闻仍可从原始来源核对。",
+      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
+      "dedupeKey": "macro_global>大事先看传导别先被情绪带走"
+    },
+    {
+      "domain": "金融 / 职业",
+      "cognition": "真正影响你的，是政策落地后的连锁反应。",
+      "why": "今天的依据来自 中国科技网 的公开信息，具体新闻仍可从原始来源核对。",
+      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
+      "dedupeKey": "domestic_policy>真正影响你的是政策落地后的连锁反应"
+    },
+    {
+      "domain": "个人成长 / 决策",
+      "cognition": "熟悉的环境，也会悄悄限制你的判断。",
+      "why": "今天的依据来自 新华网 的公开信息，具体新闻仍可从原始来源核对。",
+      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
+      "dedupeKey": "county_local>熟悉的环境也会悄悄限制你的判断"
+    }
+  ],
   "market": {
     "status": "ok",
-    "asOf": "2026-08-30T09:02:32.000Z",
+    "asOf": "2026-08-30T14:24:38.000Z",
     "source": "Yahoo Finance + 中国工商银行公开行情（均可能延迟）",
     "items": [
       {
@@ -299,13 +321,13 @@ window.__NINI_RADAR_FALLBACK__ = {
         "dayChange": -3.02,
         "weekChange": null,
         "monthChange": null,
-        "asOf": "2026-08-30T09:02:32.000Z",
+        "asOf": "2026-08-30T14:24:38.000Z",
         "sourceUrl": "https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp",
         "source": "中国工商银行公开贵金属行情",
         "retrievedVia": "Jina Reader 只读转码（原始页面为工商银行）"
       }
     ],
-    "generatedAt": "2026-08-30T09:11:13.711Z",
+    "generatedAt": "2026-08-30T14:24:41.410Z",
     "note": "Nasdaq 100、COMEX 黄金、美元指数和美国 10 年期收益率已核验；工行 Au99.99 作为独立参考，取不到时会单独显示暂不可用。"
   },
   "investment": {

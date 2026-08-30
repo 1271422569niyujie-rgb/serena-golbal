@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T09:11:13.713Z",
+  "updatedAt": "2026-08-30T14:24:41.412Z",
   "entries": [
     {
       "date": "2026-08-27",
@@ -52,26 +52,10 @@
     {
       "date": "2026-08-30",
       "domain": "世界 / 科技",
-      "cognition": "地缘政治紧张背景下…，先看传导链",
-      "dedupeKey": "macro_global>地缘政治紧张背景下普京和习近平及佩泽什基安赴中亚参加区域峰会",
+      "cognition": "大事先看传导，别先被情绪带走。",
+      "dedupeKey": "macro_global>大事先看传导别先被情绪带走",
       "theme": "macro_global",
-      "conclusion": "地缘政治紧张背景下…，先看传导链"
-    },
-    {
-      "date": "2026-08-30",
-      "domain": "金融 / 职业",
-      "cognition": "虹桥国际中央商务区…，先看传导链",
-      "dedupeKey": "domestic_policy>虹桥国际中央商务区十五五规划发布",
-      "theme": "domestic_policy",
-      "conclusion": "虹桥国际中央商务区…，先看传导链"
-    },
-    {
-      "date": "2026-08-30",
-      "domain": "世界 / 科技",
-      "cognition": "离你很远的事，也可能绕道影响资产。",
-      "dedupeKey": "macro_global>离你很远的事也可能绕道影响资产",
-      "theme": "macro_global",
-      "conclusion": "离你很远的事，也可能绕道影响资产。"
+      "conclusion": "大事先看传导，别先被情绪带走。"
     },
     {
       "date": "2026-08-30",
