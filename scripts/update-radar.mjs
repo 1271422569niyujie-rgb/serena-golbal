@@ -275,13 +275,17 @@ async function fetchYahooSeries(definition){
   };
 }
 
-export function parseIcbcGoldQuote(html=""){
-  const price=Number(html.match(/id=["']last_080020000214["'][^>]*>\s*([\d.]+)/i)?.[1]);
-  const previous=Number(html.match(/id=["']lstclose_080020000214["'][^>]*>\s*([\d.]+)/i)?.[1]);
+export function parseIcbcGoldQuote(html="",now=Date.now()){
+  const markdownRow=String(html).split(/\r?\n/).find(line=>/^\|\s*Au99\.99\s*\|/i.test(line));
+  const markdownCells=markdownRow?markdownRow.split("|").map(cell=>cell.trim()):[];
+  const price=Number(html.match(/id=["']last_080020000214["'][^>]*>\s*([\d.]+)/i)?.[1]||markdownCells[2]);
+  const previous=Number(html.match(/id=["']lstclose_080020000214["'][^>]*>\s*([\d.]+)/i)?.[1]||markdownCells[7]);
   const dateMatches=[...html.matchAll(/(20\d{2}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})/g)];
   const latestDate=dateMatches.at(-1);
   const asOf=latestDate?new Date(`${latestDate[1]}T${latestDate[2]}+08:00`).toISOString():"";
   if(!Number.isFinite(price)||price<=0||!asOf) throw new Error("工行 Au99.99 公开报价或更新时间无效");
+  const ageHours=(Number(now)-new Date(asOf).getTime())/36e5;
+  if(ageHours< -1||ageHours>72) throw new Error("工行 Au99.99 公开报价超过 72 小时或时间异常");
   return {
     key:"icbcGold1000g",
     label:"工行 Au99.99（1000g 交割规格参考）",
@@ -297,9 +301,19 @@ export function parseIcbcGoldQuote(html=""){
 }
 
 async function fetchIcbcGold(){
-  const url="https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp";
-  const html=await fetchText(url,{timeoutMs:30000,headers:{Accept:"text/html"}});
-  return parseIcbcGoldQuote(html);
+  const officialUrl="https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp";
+  const endpoints=[
+    {url:officialUrl,retrievedVia:"工商银行官网直连"},
+    {url:`https://r.jina.ai/${officialUrl}`,retrievedVia:"Jina Reader 只读转码（原始页面为工商银行）"}
+  ];
+  const errors=[];
+  for(const endpoint of endpoints){
+    try{
+      const html=await fetchText(endpoint.url,{timeoutMs:35000,headers:{Accept:"text/html,text/plain"}});
+      return {...parseIcbcGoldQuote(html),retrievedVia:endpoint.retrievedVia};
+    }catch(error){errors.push(`${endpoint.retrievedVia}: ${error.message}`);}
+  }
+  throw new Error(errors.join("；"));
 }
 
 export async function collectMarket(){

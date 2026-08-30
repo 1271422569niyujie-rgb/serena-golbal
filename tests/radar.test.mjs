@@ -143,12 +143,22 @@ test("能从工行公开页解析 Au99.99 的 1000g 交割规格参考价",()=>{
     <td id="last_080020000214">965.00</td>
     <td id="lstclose_080020000214">995.05</td>
     <div>更新时间:2026-08-30 16:16:32</div>`;
-  const item=parseIcbcGoldQuote(html);
+  const item=parseIcbcGoldQuote(html,Date.parse("2026-08-30T09:00:00Z"));
   assert.equal(item.key,"icbcGold1000g");
   assert.equal(item.value,965);
   assert.equal(item.unit," 元/克");
   assert.ok(item.dayChange<0);
   assert.equal(item.asOf,"2026-08-30T08:16:32.000Z");
+});
+
+test("工行官网直连失败时的只读转码文本也能按同一口径解析",()=>{
+  const markdown=`
+| Au99.99 | 965.00 | 跌 | -3.0199% | 16420 | 993.00 | 995.05 | 1000.00 | 965.00 |
+更新时间:2026-08-30 17:02:32`;
+  const item=parseIcbcGoldQuote(markdown,Date.parse("2026-08-30T09:10:00Z"));
+  assert.equal(item.value,965);
+  assert.equal(item.dayChange,-3.02);
+  assert.equal(item.asOf,"2026-08-30T09:02:32.000Z");
 });
 
 test("同一次工作流只复用 30 分钟内核心数值有效的行情",()=>{
