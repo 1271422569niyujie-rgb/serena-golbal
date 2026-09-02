@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T22:27:01.243Z",
+  "updatedAt": "2026-09-02T22:28:59.154Z",
   "entries": [
     {
       "date": "2026-08-27",
@@ -80,6 +80,14 @@
       "dedupeKey": "macro_global>离你很远的事也可能绕道影响资产",
       "theme": "macro_global",
       "conclusion": "离你很远的事，也可能绕道影响资产。"
+    },
+    {
+      "date": "2026-09-03",
+      "domain": "金融 / 职业",
+      "cognition": "政策别只看标题，要看最后怎么落地。",
+      "dedupeKey": "domestic_policy>政策别只看标题要看最后怎么落地",
+      "theme": "domestic_policy",
+      "conclusion": "政策别只看标题，要看最后怎么落地。"
     }
   ]
 }
