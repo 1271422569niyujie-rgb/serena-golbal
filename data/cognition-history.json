@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T22:27:34.964Z",
+  "updatedAt": "2026-09-11T22:27:45.722Z",
   "entries": [
     {
       "date": "2026-08-27",
@@ -88,6 +88,14 @@
       "dedupeKey": "domestic_policy>政策别只看标题要看最后怎么落地",
       "theme": "domestic_policy",
       "conclusion": "政策别只看标题，要看最后怎么落地。"
+    },
+    {
+      "date": "2026-09-12",
+      "domain": "个人成长 / 决策",
+      "cognition": "小地方的共识，不等于世界的答案。",
+      "dedupeKey": "county_local>小地方的共识不等于世界的答案",
+      "theme": "county_local",
+      "conclusion": "小地方的共识，不等于世界的答案。"
     }
   ]
 }
