@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T01:19:09.781Z",
+  "updatedAt": "2026-10-02T01:42:31.105Z",
   "entries": [
     {
       "date": "2026-09-03",
@@ -40,6 +40,14 @@
       "dedupeKey": "domestic_policy>真正影响你的是政策落地后的连锁反应",
       "theme": "domestic_policy",
       "conclusion": "真正影响你的，是政策落地后的连锁反应。"
+    },
+    {
+      "date": "2026-10-02",
+      "domain": "世界 / 科技",
+      "cognition": "离你很远的事，也可能绕道影响资产。",
+      "dedupeKey": "macro_global>离你很远的事也可能绕道影响资产",
+      "theme": "macro_global",
+      "conclusion": "离你很远的事，也可能绕道影响资产。"
     }
   ]
 }
