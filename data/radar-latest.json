@@ -1,55 +1,55 @@
 {
   "version": "3.3",
   "status": "ok",
-  "generatedAt": "2026-10-02T01:42:31.104Z",
-  "effectiveDate": "2026-10-02",
+  "generatedAt": "2026-10-03T01:13:23.059Z",
+  "effectiveDate": "2026-10-03",
   "timezone": "Asia/Shanghai",
   "news": [
     {
-      "id": "domestic_policy-0-5Y-X5p2D5Y",
+      "id": "domestic_policy-0-5YWo5Zu955",
       "categoryId": "domestic_policy",
       "category": "国内政策 / 十五五",
       "priorityHint": "must",
       "domestic": true,
       "localGrounded": true,
-      "title": "受权发布丨中共中央办公厅 国务院办公厅印发《文化遗产保护传承“十五五”规划》",
-      "source": "新华网",
-      "publishedAt": "2026-09-29T09:48:30.000Z",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObHlUdzYtczhFUkVzYWgxRmw2Z2RsOFlxcHhtUWdFUjlpVmcyYThXR1lqOUhHakIzQURTOU9fSF9qNzVqOUpjWFNSSmU2RGNJMHgzLTI1UDA3TVR6eTU0M1FNOWVPLWd0Z092Uk1ia2QxSktrOUFURGhaOHFfU1NZbk13dw?oc=5",
-      "snippet": "受权发布丨中共中央办公厅 国务院办公厅印发《文化遗产保护传承“十五五”规划》 新华网",
+      "title": "《全国畜牧兽医行业发展“十五五”规划》发布，2030年我国饲草总产量将达到1.3亿吨",
+      "source": "finance.sina.cn",
+      "publishedAt": "2026-10-02T19:40:24.000Z",
+      "url": "https://news.google.com/rss/articles/CBMi4gNBVV95cUxQVFFkLVdlbTJOMlgzb1RuZlJ1TmxaSXFkeWtRaVIxT2RUaGhhdUQzZXE2bUtyT2l4MHhWbHJPcmV6bEVzWWthcC1xTjFiOGIwSzVxVzNDNWpsaFktRkZjWEhOQ3paVHR5MnBUX3J4SEZpNE9NV0VLZXN5NUxpbXlJU1JySzM5eU1fSTN4UHN6NW1zejVNY3JKMTdZaEdCa2lPaWdNU0RVN1lETGFNRTkyYlJxLWNDWDJ3dkdERnNCanUzdkcwRFdFUktiUVVtaUcxcE9iNGp0S21EaXZNcXBSSDdaWi1CTUlYZ2xfOU4xZ2c0QUtjTGRTMnJGN2Y1cWd6ejA3aUNTRlBSeDU2VUktT25VS0RNcVBISUlVMFJ0czlKbE1WUUt6aUx5U04wdmItcGhpRzRYbzgyR0w3MENwVklSbm44YS1VR0dJYXYzRlVmclZRMWk0UVduMXRzX2tSRHR3dW1CYWVEeVp2WXJkbXQ5cnhBR1BCOEo4RWlNTHl2R2laVTZTTnhMeno4VmFDMmIxWHA2b0tDTGJ2NVVqUEl5Q1M3MmQ2MFZLOGlEbkN6NHQwVTlvMzdUMmhJSzcyMzZIVUhYZGFWSUJSWWpuZi1uYjdzWURKdVBQajZPQ3Jsdw?oc=5",
+      "snippet": "《全国畜牧兽医行业发展“十五五”规划》发布，2030年我国饲草总产量将达到1.3亿吨 finance.sina.cn",
       "feedProvider": "Google News RSS",
-      "candidateId": "domestic_policy-0-5Y-X5p2D5Y",
+      "candidateId": "domestic_policy-0-5YWo5Zu955",
       "level": "must",
-      "eventKey": "受权发布丨中共中央办公厅国务院办公厅印发文化遗产保护传承十五五规划",
+      "eventKey": "全国畜牧兽医行业发展十五五规划发布2030年我国饲草总产量将达到13亿吨",
       "qualityScore": 76,
-      "whatHappened": "新华网在9/29发布了“受权发布丨中共中央办公厅 国务院办公厅印发《文化遗产保护传承“十五五”规划》”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "finance.sina.cn在10/3发布了“《全国畜牧兽医行业发展“十五五”规划》发布，2030年我国饲草总产量将达到1.3亿吨”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "政策真正重要的部分是执行口径，以及它会怎样改变居民、企业和金融机构的选择。",
-      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“受权发布丨中共中央办公厅 国务院办公厅印发《文化遗产保护传…”后续有没有具体实施口径。",
+      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“《全国畜牧兽医行业发展“十五五”规划》发布，2030年我国…”后续有没有具体实施口径。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“受权发布丨中共中央办公厅 国务院办公厅印发…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“《全国畜牧兽医行业发展“十五五”规划》发布…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
-      "id": "macro_global-0-5LqL5YWz5Y",
+      "id": "macro_global-0-56iL5a6e5Y",
       "categoryId": "macro_global",
       "category": "重大事件 / 宏观政策",
       "priorityHint": "must",
       "domestic": false,
       "localGrounded": false,
-      "title": "事关加息，美联储副主席发声",
-      "source": "搜狐网",
-      "publishedAt": "2026-10-02T00:37:00.000Z",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOaFFoQkE2aUhFanltd3htYnY3eHozNG00VjRDXy1IQ25YMU9sR05ZSUdfYm50U1FIQTkxd0NpWmZnNjBBWmpidnVCVWRYRFVPcTgyUi1LNF9aNXlIT1hUR2p0T1BfZTJkb1BWMUdlRU5MeXlUMm9LTXhyOVFPcmtpQW1kNXhXaWpUNTlUaQ?oc=5",
-      "snippet": "事关加息，美联储副主席发声 搜狐网",
+      "title": "程实：全球变局中的中国机遇 | 国庆大咖谈",
+      "source": "finance.sina.cn",
+      "publishedAt": "2026-10-02T17:35:30.000Z",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNUjV2YnpPeHVCQ2RqNVFraHJJbjNmdlZYbThVUzY1NFJTY0wtd2RUeFVpaW83U2VhT0xyOVpSMEYzQWQ2d3pCOHFGbXBhd0Y2YmJnZDhRZXBsdVVJRkt3eW1LRDZDRERUVGJjNGRGWUZ6SklSbHhpb19RaXo5Vk5BMk90MjVQdw?oc=5",
+      "snippet": "程实：全球变局中的中国机遇 | 国庆大咖谈 finance.sina.cn",
       "feedProvider": "Google News RSS",
-      "candidateId": "macro_global-0-5LqL5YWz5Y",
+      "candidateId": "macro_global-0-56iL5a6e5Y",
       "level": "must",
-      "eventKey": "事关加息美联储副主席发声",
+      "eventKey": "程实全球变局中的中国机遇国庆大咖谈",
       "qualityScore": 76,
-      "whatHappened": "搜狐网在10/2发布了“事关加息，美联储副主席发声”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "finance.sina.cn在10/3发布了“程实：全球变局中的中国机遇 | 国庆大咖谈”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
       "relation": "它可能通过利率、汇率与风险偏好影响你的纳指和黄金仓位。基础模式只提示传导方向，不替你猜市场。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“事关加息，美联储副主席发声”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“程实：全球变局中的中国机遇 | 国庆大咖谈”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
       "id": "county_local-0-54m56Imy6L",
@@ -75,27 +75,27 @@
       "actionDetail": "先记住“特色资源激发县域消费新动能”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "a_share_trends-0-aXBv5pyI5o",
+      "id": "a_share_trends-0-5Y-I5LiA5p",
       "categoryId": "a_share_trends",
       "category": "A股 / 资金 / 市场风潮",
       "priorityHint": "know",
       "domestic": true,
       "localGrounded": false,
-      "title": "IPO月报｜9月A股上市新股数创近三年新高 港交所递表数创2024年10月以来月度最低值",
-      "source": "每日经济新闻",
-      "publishedAt": "2026-10-01T15:15:00.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE92XzRxNFZmaWNDVE10U1p4ckh2NjRrUFlUdkNYNTl4eG83NXlHdnZlUTY0UURYYlFZTVAtZDdFN3BvdDZfRVNieTFmMnpvem1EX0NqM0MzWnVncDFlUmZsTzJPekh0dw?oc=5",
-      "snippet": "IPO月报｜9月A股上市新股数创近三年新高 港交所递表数创2024年10月以来月度最低值 每日经济新闻",
+      "title": "又一智驾公司闯关港股IPO！深创投、东方富海参投",
+      "source": "东方财富",
+      "publishedAt": "2026-10-02T11:04:30.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9CMXFnc2RtT2MxSi1qMkY4N003ZVZGSF9oQ2lGZWxrZi1ST1JVcFl1Vnp2WTFPWGFjdnVaV2Y5MlRRSTRzOVZoSlY2N0lWOWVFdnByMDZyZUV6bzUwOURsajlac0Rydw?oc=5",
+      "snippet": "又一智驾公司闯关港股IPO！深创投、东方富海参投 东方财富",
       "feedProvider": "Google News RSS",
-      "candidateId": "a_share_trends-0-aXBv5pyI5o",
+      "candidateId": "a_share_trends-0-5Y-I5LiA5p",
       "level": "know",
-      "eventKey": "ipo月报9月a股上市新股数创近三年新高港交所递表数创2024年10月以来月度最低值",
+      "eventKey": "又一智驾公司闯关港股ipo深创投东方富海参投",
       "qualityScore": 76,
-      "whatHappened": "每日经济新闻在10/1发布了“IPO月报｜9月A股上市新股数创近三年新高 港交所递表数创2024年10月以来月度最低值”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "东方财富在10/2发布了“又一智驾公司闯关港股IPO！深创投、东方富海参投”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
       "relation": "它能帮助你理解国内客户正在谈论什么市场叙事。面对客户时先核实资金和政策依据，不跟着热度下判断。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“IPO月报｜9月A股上市新股数创近三年新高…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“又一智驾公司闯关港股IPO！深创投、东方富…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
       "id": "global_market_narrative-0-MuS4h-S6v-",
@@ -121,27 +121,27 @@
       "actionDetail": "先记住“2万亿美元估值的美股AI泡沫”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "frontier-0-5qyn55uf5p",
+      "id": "frontier-0-6L-Z5Liq5Z",
       "categoryId": "frontier",
       "category": "新行业 / 社会变化",
       "priorityHint": "expand",
       "domestic": false,
       "localGrounded": false,
-      "title": "欧盟方面拟开发经贸领域新工具 中国机电商会发布声明",
-      "source": "证券之星",
-      "publishedAt": "2026-09-30T02:05:07.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5yQTlUMWdFdW9BTHZ5N2J2T3d0dXpKUmIxRnRwQzVBNTNqRkd3dDNqbjN4Vjg5Y1BNTllMdGpMSmE5NVY4SzJLWk1oNVBxa0F1YjNJbDlsR3gwMHcyUmptWQ?oc=5",
-      "snippet": "欧盟方面拟开发经贸领域新工具 中国机电商会发布声明 证券之星",
+      "title": "这个国庆，商圈、景区的人形机器人、机器狗纷纷上岗互动。热闹背后，一个新兴职业悄然兴起——机器人运维师",
+      "source": "每日经济新闻",
+      "publishedAt": "2026-10-02T15:57:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1nWkpXUS1aNTZTYjF3YUttT1RNbHVOVVR2UW5oeFpqOE1kYTRDMG93eU9vTllvTWNDZGIzVGY1bl9tWERWOHpESHd2bVFyQklfT3kxRW1VYVFtNkl4QkhiMWprbjEzQQ?oc=5",
+      "snippet": "这个国庆，商圈、景区的人形机器人、机器狗纷纷上岗互动。热闹背后，一个新兴职业悄然兴起——机器人运维师 每日经济新闻",
       "feedProvider": "Google News RSS",
-      "candidateId": "frontier-0-5qyn55uf5p",
+      "candidateId": "frontier-0-6L-Z5Liq5Z",
       "level": "expand",
-      "eventKey": "欧盟方面拟开发经贸领域新工具中国机电商会发布声明",
+      "eventKey": "这个国庆商圈景区的人形机器人机器狗纷纷上岗互动热闹背后一个新兴职业悄然兴起机器人运维师",
       "qualityScore": 76,
-      "whatHappened": "证券之星在9/30发布了“欧盟方面拟开发经贸领域新工具 中国机电商会发布声明”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "每日经济新闻在10/2发布了“这个国庆，商圈、景区的人形机器人、机器狗纷纷上岗互动。热闹背后，一个新兴职业悄然兴起——机器人运维师”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "新行业和工作方式往往先在少数平台出现，持续一段时间后才会传到更广泛的岗位。",
       "relation": "它暂时更适合作为未来 1–3 年的观察项，用来防止自己的信息边界只停留在县域环境。",
       "actionLevel": "知道即可",
-      "actionDetail": "把“欧盟方面拟开发经贸领域新工具 中国机电商会…”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。"
+      "actionDetail": "把“这个国庆，商圈、景区的人形机器人、机器狗纷…”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。"
     }
   ],
   "outside": [
@@ -197,37 +197,37 @@
   "outsideUpdatedAt": "2026-09-04",
   "marketStories": [
     {
-      "candidateId": "macro_global-0-5LqL5YWz5Y",
-      "market": "黄金 / 宏观",
-      "title": "事关加息，美联储副主席发声",
-      "whatHappened": "搜狐网在10/2发布了“事关加息，美联储副主席发声”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "candidateId": "macro_global-0-56iL5a6e5Y",
+      "market": "美股",
+      "title": "程实：全球变局中的中国机遇 | 国庆大咖谈",
+      "whatHappened": "finance.sina.cn在10/3发布了“程实：全球变局中的中国机遇 | 国庆大咖谈”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
-      "relation": "把它作为“事关加息，美联储副主席发声”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOaFFoQkE2aUhFanltd3htYnY3eHozNG00VjRDXy1IQ25YMU9sR05ZSUdfYm50U1FIQTkxd0NpWmZnNjBBWmpidnVCVWRYRFVPcTgyUi1LNF9aNXlIT1hUR2p0T1BfZTJkb1BWMUdlRU5MeXlUMm9LTXhyOVFPcmtpQW1kNXhXaWpUNTlUaQ?oc=5",
-      "source": "搜狐网",
-      "publishedAt": "2026-10-02T00:37:00.000Z"
+      "relation": "把它作为“程实：全球变局中的中国机遇 | 国庆大…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNUjV2YnpPeHVCQ2RqNVFraHJJbjNmdlZYbThVUzY1NFJTY0wtd2RUeFVpaW83U2VhT0xyOVpSMEYzQWQ2d3pCOHFGbXBhd0Y2YmJnZDhRZXBsdVVJRkt3eW1LRDZDRERUVGJjNGRGWUZ6SklSbHhpb19RaXo5Vk5BMk90MjVQdw?oc=5",
+      "source": "finance.sina.cn",
+      "publishedAt": "2026-10-02T17:35:30.000Z"
     },
     {
-      "candidateId": "markets-0-576O6IKhMT",
+      "candidateId": "markets-0-576O5YWD5o",
       "market": "黄金 / 宏观",
-      "title": "美股10月惊险开门红，美联储二把手放鸽，美债收益率暂别多年高位，美元站上102，油金齐涨",
-      "whatHappened": "华尔街见闻在10/2发布了“美股10月惊险开门红，美联储二把手放鸽，美债收益率暂别多年高位，美元站上102，油金齐涨”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "美元指数2日下跌",
+      "whatHappened": "thepaper.cn在10/3发布了“美元指数2日下跌”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "市场关注它，是因为它可能改变增长、利率或风险溢价预期，需要结合多周期数据确认。",
-      "relation": "把它作为“美股10月惊险开门红，美联储二把手放鸽…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBtTlBVemRpcHcxNC05Y3JpSDlMaGJnQXEtRlV0c3FPLXJyeEo3cW1XOW8yNUJocDcxNkt5WERKQnZBeUo0a3VYY1B1cFpncEZrdDMw?oc=5",
-      "source": "华尔街见闻",
-      "publishedAt": "2026-10-01T22:44:00.000Z"
+      "relation": "把它作为“美元指数2日下跌”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9TRVZ3ZUFkYjNMSENreTJiSE1rTXlGN040ZXFtMGkzaG02UWt4LVAtckRGZE5UYWJHRUttZXdVTmhBVlh3VktYbFRKWVo3ZFBVUXJDbkhmU0dFbHAyTjFZRg?oc=5",
+      "source": "thepaper.cn",
+      "publishedAt": "2026-10-02T20:42:00.000Z"
     },
     {
-      "candidateId": "a_share_trends-0-aXBv5pyI5o",
+      "candidateId": "a_share_trends-0-5Y-I5LiA5p",
       "market": "A股",
-      "title": "IPO月报｜9月A股上市新股数创近三年新高 港交所递表数创2024年10月以来月度最低值",
-      "whatHappened": "每日经济新闻在10/1发布了“IPO月报｜9月A股上市新股数创近三年新高 港交所递表数创2024年10月以来月度最低值”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "又一智驾公司闯关港股IPO！深创投、东方富海参投",
+      "whatHappened": "东方财富在10/2发布了“又一智驾公司闯关港股IPO！深创投、东方富海参投”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
-      "relation": "把它作为“IPO月报｜9月A股上市新股数创近三年…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE92XzRxNFZmaWNDVE10U1p4ckh2NjRrUFlUdkNYNTl4eG83NXlHdnZlUTY0UURYYlFZTVAtZDdFN3BvdDZfRVNieTFmMnpvem1EX0NqM0MzWnVncDFlUmZsTzJPekh0dw?oc=5",
-      "source": "每日经济新闻",
-      "publishedAt": "2026-10-01T15:15:00.000Z"
+      "relation": "把它作为“又一智驾公司闯关港股IPO！深创投、东…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9CMXFnc2RtT2MxSi1qMkY4N003ZVZGSF9oQ2lGZWxrZi1ST1JVcFl1Vnp2WTFPWGFjdnVaV2Y5MlRRSTRzOVZoSlY2N0lWOWVFdnByMDZyZUV6bzUwOURsajlac0Rydw?oc=5",
+      "source": "东方财富",
+      "publishedAt": "2026-10-02T11:04:30.000Z"
     },
     {
       "candidateId": "global_market_narrative-0-MuS4h-S6v-",
@@ -241,62 +241,54 @@
       "publishedAt": "2026-10-02T00:00:00.000Z"
     }
   ],
-  "cognitions": [
-    {
-      "domain": "世界 / 科技",
-      "cognition": "离你很远的事，也可能绕道影响资产。",
-      "why": "今天的依据来自 搜狐网 的公开信息，具体新闻仍可从原始来源核对。",
-      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
-      "dedupeKey": "macro_global>离你很远的事也可能绕道影响资产"
-    }
-  ],
+  "cognitions": [],
   "market": {
     "status": "ok",
-    "asOf": "2026-10-02T01:42:27.000Z",
+    "asOf": "2026-10-03T01:13:19.000Z",
     "source": "Yahoo Finance + 中国工商银行公开行情（均可能延迟）",
     "items": [
       {
         "key": "nasdaq100",
         "label": "Nasdaq 100",
-        "value": 30502,
+        "value": 30808,
         "unit": "点",
-        "dayChange": 0.31,
-        "weekChange": 0.07,
-        "monthChange": 4.66,
-        "asOf": "2026-10-01T13:30:00.000Z",
+        "dayChange": 1,
+        "weekChange": 0.65,
+        "monthChange": 4.5,
+        "asOf": "2026-10-02T13:30:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5ENDX"
       },
       {
         "key": "gold",
         "label": "COMEX 黄金",
-        "value": 4176.4,
+        "value": 4172.1,
         "unit": " 美元/盎司",
-        "dayChange": -0.62,
-        "weekChange": -3.35,
-        "monthChange": -8.01,
-        "asOf": "2026-10-02T01:32:19.000Z",
+        "dayChange": -0.72,
+        "weekChange": -3.45,
+        "monthChange": -8.1,
+        "asOf": "2026-10-02T04:00:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/GC%3DF"
       },
       {
         "key": "dollar",
         "label": "美元指数",
-        "value": 102.12,
+        "value": 101.92,
         "unit": "",
-        "dayChange": 0.02,
-        "weekChange": 1.13,
-        "monthChange": 3.15,
-        "asOf": "2026-10-02T01:32:20.000Z",
+        "dayChange": -0.17,
+        "weekChange": 0.94,
+        "monthChange": 2.95,
+        "asOf": "2026-10-02T04:00:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
       },
       {
         "key": "us10y",
         "label": "美国 10Y",
-        "value": 5.24,
+        "value": 5.28,
         "unit": "%",
-        "dayChange": -1.06,
-        "weekChange": 1.45,
-        "monthChange": 9.2,
-        "asOf": "2026-10-01T12:20:00.000Z",
+        "dayChange": 0.76,
+        "weekChange": 1.79,
+        "monthChange": 10.81,
+        "asOf": "2026-10-02T12:20:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5ETNX"
       },
       {
@@ -307,13 +299,13 @@
         "dayChange": 1.12,
         "weekChange": null,
         "monthChange": null,
-        "asOf": "2026-10-02T01:42:27.000Z",
+        "asOf": "2026-10-03T01:13:19.000Z",
         "sourceUrl": "https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp",
         "source": "中国工商银行公开贵金属行情",
         "retrievedVia": "Jina Reader 只读转码（原始页面为工商银行）"
       }
     ],
-    "generatedAt": "2026-10-02T01:42:31.104Z",
+    "generatedAt": "2026-10-03T01:13:23.059Z",
     "note": "Nasdaq 100、COMEX 黄金、美元指数和美国 10 年期收益率已核验；工行 Au99.99 作为独立参考，取不到时会单独显示暂不可用。"
   },
   "investment": {
@@ -323,9 +315,9 @@
     "amount": "工作日维持纳指 ¥100 定投；黄金不新增战术仓位",
     "cancelIf": "若 20 日波动明显扩大、重大政策改变长期逻辑，或出现尚未理解的风险，暂停额外动作并重新核验。",
     "drivers": [
-      "Nasdaq 100：1日 +0.31%、5日 +0.07%、20日 +4.66%",
-      "黄金：1日 -0.62%、5日 -3.35%、20日 -8.01%",
-      "美国10年期收益率：5日 +1.45%"
+      "Nasdaq 100：1日 +1.00%、5日 +0.65%、20日 +4.50%",
+      "黄金：1日 -0.72%、5日 -3.45%、20日 -8.10%",
+      "美国10年期收益率：5日 +1.79%"
     ],
     "assetSignals": {
       "nasdaq100": {
@@ -345,7 +337,7 @@
     }
   },
   "oneThing": {
-    "task": "用 20 分钟打开“受权发布丨中共中央办公厅 国务院办公厅印发《文…”原文，写下一条它影响客户、职业或资产的传导链。",
+    "task": "用 20 分钟打开“《全国畜牧兽医行业发展“十五五”规划》发布，2…”原文，写下一条它影响客户、职业或资产的传导链。",
     "minutes": 20
   },
   "pipeline": {
