@@ -1,14 +1,6 @@
 {
-  "updatedAt": "2026-10-03T01:13:23.064Z",
+  "updatedAt": "2026-10-04T00:41:36.946Z",
   "entries": [
-    {
-      "date": "2026-09-03",
-      "domain": "金融 / 职业",
-      "cognition": "政策别只看标题，要看最后怎么落地。",
-      "dedupeKey": "domestic_policy>政策别只看标题要看最后怎么落地",
-      "theme": "domestic_policy",
-      "conclusion": "政策别只看标题，要看最后怎么落地。"
-    },
     {
       "date": "2026-09-12",
       "domain": "个人成长 / 决策",
@@ -48,6 +40,14 @@
       "dedupeKey": "macro_global>离你很远的事也可能绕道影响资产",
       "theme": "macro_global",
       "conclusion": "离你很远的事，也可能绕道影响资产。"
+    },
+    {
+      "date": "2026-10-04",
+      "domain": "金融 / 职业",
+      "cognition": "政策别只看标题，要看最后怎么落地。",
+      "dedupeKey": "domestic_policy>政策别只看标题要看最后怎么落地",
+      "theme": "domestic_policy",
+      "conclusion": "政策别只看标题，要看最后怎么落地。"
     }
   ]
 }
