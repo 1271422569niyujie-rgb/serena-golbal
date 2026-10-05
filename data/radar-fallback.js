@@ -1,55 +1,55 @@
 window.__NINI_RADAR_FALLBACK__ = {
   "version": "3.3",
   "status": "ok",
-  "generatedAt": "2026-10-04T00:41:36.900Z",
-  "effectiveDate": "2026-10-04",
+  "generatedAt": "2026-10-05T00:59:11.378Z",
+  "effectiveDate": "2026-10-05",
   "timezone": "Asia/Shanghai",
   "news": [
     {
-      "id": "domestic_policy-0-5Y-X5p2D5Y",
+      "id": "domestic_policy-0-5a2Y5qy-5L",
       "categoryId": "domestic_policy",
       "category": "国内政策 / 十五五",
       "priorityHint": "must",
       "domestic": true,
       "localGrounded": true,
-      "title": "受权发布丨中共中央办公厅 国务院办公厅印发《文化遗产保护传承“十五五”规划》",
-      "source": "新华网",
-      "publishedAt": "2026-09-29T09:48:30.000Z",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObHlUdzYtczhFUkVzYWgxRmw2Z2RsOFlxcHhtUWdFUjlpVmcyYThXR1lqOUhHakIzQURTOU9fSF9qNzVqOUpjWFNSSmU2RGNJMHgzLTI1UDA3TVR6eTU0M1FNOWVPLWd0Z092Uk1ia2QxSktrOUFURGhaOHFfU1NZbk13dw?oc=5",
-      "snippet": "受权发布丨中共中央办公厅 国务院办公厅印发《文化遗产保护传承“十五五”规划》 新华网",
+      "title": "存款保险守护储户“钱袋子”",
+      "source": "新浪财经",
+      "publishedAt": "2026-10-04T21:51:02.000Z",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBqeE44V0RDVTRlcXMxM2N2SHJEX1p4M1dxWHZMdm5rcXNoSHRaam5hQzdmSXh0WGlFOUhzOXZpb05VbzQzMXozd09IdE9hRzVJLWg1Nm9FUHBTNUdqaWlvMmJ0dWtmaTlFTTZLdnhaZkZJa0p1NFpuSg?oc=5",
+      "snippet": "存款保险守护储户“钱袋子” 新浪财经",
       "feedProvider": "Google News RSS",
-      "candidateId": "domestic_policy-0-5Y-X5p2D5Y",
+      "candidateId": "domestic_policy-0-5a2Y5qy-5L",
       "level": "must",
-      "eventKey": "受权发布丨中共中央办公厅国务院办公厅印发文化遗产保护传承十五五规划",
+      "eventKey": "存款保险守护储户钱袋子",
       "qualityScore": 76,
-      "whatHappened": "新华网在9/29发布了“受权发布丨中共中央办公厅 国务院办公厅印发《文化遗产保护传承“十五五”规划》”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "新浪财经在10/5发布了“存款保险守护储户“钱袋子””。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "政策真正重要的部分是执行口径，以及它会怎样改变居民、企业和金融机构的选择。",
-      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“受权发布丨中共中央办公厅 国务院办公厅印发《文化遗产保护传…”后续有没有具体实施口径。",
+      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“存款保险守护储户“钱袋子””后续有没有具体实施口径。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“受权发布丨中共中央办公厅 国务院办公厅印发…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“存款保险守护储户“钱袋子””原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
-      "id": "macro_global-0-5LqL5YWz5Y",
+      "id": "macro_global-0-5pep5oql57",
       "categoryId": "macro_global",
       "category": "重大事件 / 宏观政策",
       "priorityHint": "must",
       "domestic": false,
       "localGrounded": false,
-      "title": "事关加息，美联储副主席发声",
-      "source": "21财经",
-      "publishedAt": "2026-10-02T02:50:00.000Z",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQaTM5SVcwZDFuMHdkbHBGbXNZVDM2ekMySnE5NXdhTm44MmVXNDZLNE13RTRhM3ZnOU5YVl9SUHRtZThGRU9ENHUzcWxVWWRpMFdDdks4X0hmZ3JhelRKQ3VMbjk5UTdmQXBsb0NZZDc0WkZRZTZ1TEdjZnZIcGNqNEZOVUxCenVoZW9RNUxEZw?oc=5",
-      "snippet": "事关加息，美联储副主席发声 21财经",
+      "title": "【早报】美联储放鹰；存储、半导体板块大跌，中概股逆势大涨；油价下跌，黄金收涨；英格兰、比利时晋级世界杯16强",
+      "source": "财联社",
+      "publishedAt": "2026-10-03T09:37:07.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBZRk83dERvMWRQSlcxQUlXRWJxNll1eHlsSEY4Zl9ab1pCWnNTZ2RhNm5vVzBLN3hKbnNPcnh0MDQ0aDRTOWZmeQ?oc=5",
+      "snippet": "【早报】美联储放鹰；存储、半导体板块大跌，中概股逆势大涨；油价下跌，黄金收涨；英格兰、比利时晋级世界杯16强 财联社",
       "feedProvider": "Google News RSS",
-      "candidateId": "macro_global-0-5LqL5YWz5Y",
+      "candidateId": "macro_global-0-5pep5oql57",
       "level": "must",
-      "eventKey": "事关加息美联储副主席发声",
+      "eventKey": "早报美联储放鹰存储半导体板块大跌中概股逆势大涨油价下跌黄金收涨英格兰比利时晋级世界杯16强",
       "qualityScore": 76,
-      "whatHappened": "21财经在10/2发布了“事关加息，美联储副主席发声”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "财联社在10/3发布了“【早报】美联储放鹰；存储、半导体板块大跌，中概股逆势大涨；油价下跌，黄金收涨；英格兰、比利时晋级世界杯16强”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
       "relation": "它可能通过利率、汇率与风险偏好影响你的纳指和黄金仓位。基础模式只提示传导方向，不替你猜市场。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“事关加息，美联储副主席发声”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“【早报】美联储放鹰；存储、半导体板块大跌，…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
       "id": "county_local-0-54m56Imy6L",
@@ -75,73 +75,73 @@ window.__NINI_RADAR_FALLBACK__ = {
       "actionDetail": "先记住“特色资源激发县域消费新动能”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "a_share_trends-0-5YmN5LiJ5a",
+      "id": "a_share_trends-0-5riv6IKhaX",
       "categoryId": "a_share_trends",
       "category": "A股 / 资金 / 市场风潮",
       "priorityHint": "know",
       "domestic": true,
       "localGrounded": false,
-      "title": "前三季度股权融资超7500亿元 IPO募资规模同比大增180%",
-      "source": "21财经",
-      "publishedAt": "2026-10-04T00:18:17.000Z",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTXU3NFpTcFNXQWZCX1ROUzZuNjM0OTZ2Qk4yRXk5RU93V2pLZlQzWUNaMWNCZ3pqUl8xT09hcEF1eEZjZ1ozWTVXQ2YtZ0c4MHZTRGViWEhqVWtPaVdveXRKQ0xVTmoyYkJsWkVEcXlCYjROM3o5NmFJQ2h4ZDJPSkxlbWlpVmx5MUs5STZvUQ?oc=5",
-      "snippet": "前三季度股权融资超7500亿元 IPO募资规模同比大增180% 21财经",
+      "title": "港股IPO周报：九章云极等多家公司递表 欢创科技挂牌首周累涨约九成",
+      "source": "财联社",
+      "publishedAt": "2026-10-04T05:56:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE4wMVZnRk5XZXJ4S1VuT3VTWjd1cDFhbHVfNkhNQlRiN2pqSS03MVZhMXU2WS1odjRTbGllb1FzMGxMY0JFS0hzOA?oc=5",
+      "snippet": "港股IPO周报：九章云极等多家公司递表 欢创科技挂牌首周累涨约九成 财联社",
       "feedProvider": "Google News RSS",
-      "candidateId": "a_share_trends-0-5YmN5LiJ5a",
+      "candidateId": "a_share_trends-0-5riv6IKhaX",
       "level": "know",
-      "eventKey": "前三季度股权融资超7500亿元ipo募资规模同比大增180",
+      "eventKey": "港股ipo周报九章云极等多家公司递表欢创科技挂牌首周累涨约九成",
       "qualityScore": 76,
-      "whatHappened": "21财经在10/4发布了“前三季度股权融资超7500亿元 IPO募资规模同比大增180%”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "财联社在10/4发布了“港股IPO周报：九章云极等多家公司递表 欢创科技挂牌首周累涨约九成”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
       "relation": "它能帮助你理解国内客户正在谈论什么市场叙事。面对客户时先核实资金和政策依据，不跟着热度下判断。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“前三季度股权融资超7500亿元 IPO募资…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“港股IPO周报：九章云极等多家公司递表 欢…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "global_market_narrative-0-576O6IKhcT",
+      "id": "global_market_narrative-0-Y3Rh5a6M5o",
       "categoryId": "global_market_narrative",
       "category": "美股 / 市场叙事",
       "priorityHint": "know",
       "domestic": false,
       "localGrounded": false,
-      "title": "美股Q2财报季前瞻：非科技股盈利韧性凸显科技股“答卷”超预期才能过关",
-      "source": "content.foshanplus.com",
-      "publishedAt": "2026-10-03T12:26:11.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0yN3ZMS2QyMWhVcU9GRWtBZU5tZGRTNDJmcWRKNUxxRW5CZUtzdzJwUWlmV2VsVzhSTmNOdVA4ZGZzdnp1NDZLNGkzSjBVRm1oSVVXSWJQLVVfWUY5em82dGctVEpHUzN5UzJaWk1LNml6MkRjY09xV1p3?oc=5",
-      "snippet": "美股Q2财报季前瞻：非科技股盈利韧性凸显科技股“答卷”超预期才能过关 content.foshanplus.com",
+      "title": "CTA完成罕见仓位清洗 华尔街投行集体转向看多资金流",
+      "source": "新浪财经",
+      "publishedAt": "2026-10-04T05:09:29.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPeC1TM2VEMUstWXpnbWNJb1NQbXpmTDlHb1RiNWxmVkRSVmdSVzBjUG5RMk1yX3BVVnJiSWl6ckxLeGdScmRPNDl4Vmw1WlBMaEZmMkk5eGhxX2RUY0JtOXcxb19xa1ZESWRVS3hJYmdBcnl3dFFnbjBYZDVUakVJa1RuWkpkWjhIV0RB?oc=5",
+      "snippet": "CTA完成罕见仓位清洗 华尔街投行集体转向看多资金流 新浪财经",
       "feedProvider": "Google News RSS",
-      "candidateId": "global_market_narrative-0-576O6IKhcT",
+      "candidateId": "global_market_narrative-0-Y3Rh5a6M5o",
       "level": "know",
-      "eventKey": "美股q2财报季前瞻非科技股盈利韧性凸显科技股答卷超预期才能过关",
+      "eventKey": "cta完成罕见仓位清洗华尔街投行集体转向看多资金流",
       "qualityScore": 76,
-      "whatHappened": "content.foshanplus.com在10/3发布了“美股Q2财报季前瞻：非科技股盈利韧性凸显科技股“答卷”超预期才能过关”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "新浪财经在10/4发布了“CTA完成罕见仓位清洗 华尔街投行集体转向看多资金流”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
       "relation": "它是你理解美股定价逻辑的一条线索。与你的关系是判断长期逻辑有没有变化，而不是追当天涨跌。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“美股Q2财报季前瞻：非科技股盈利韧性凸显科…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“CTA完成罕见仓位清洗 华尔街投行集体转向…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "frontier-0-ZjHmlrnnqI",
+      "id": "frontier-0-5Yi56L2m5b",
       "categoryId": "frontier",
       "category": "新行业 / 社会变化",
       "priorityHint": "expand",
       "domestic": false,
       "localGrounded": false,
-      "title": "F1方程式赛车的工作原理#微博视频号迎新计划# ​",
-      "source": "手机新浪网",
-      "publishedAt": "2026-10-03T08:23:49.000Z",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBzd1ZhcDBBS09rS1VkWEVXSlNEM1VYRkc1SjlnYTdRQkJUR2dvNVoxb3d2RllMV0l1OWZ0N1F3a0Izd2c5NTlONDBOTGFhSlRtRVc2ZHRfUGp0aFBiSEkyc0h6Z0JMXzBadW1iSzZaajZQTGs?oc=5",
-      "snippet": "F1方程式赛车的工作原理#微博视频号迎新计划# ​ 手机新浪网",
+      "title": "刹车工作原理，你看懂了吗？ ​",
+      "source": "sina.cn",
+      "publishedAt": "2026-10-04T15:19:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1BQWFQT0duN0plWWRxdjVMbHBRRnA5dzUxRUlUVk00RmEySmlnNEZzQXZIc3pOdW5QbFp1b1hIVzJ4VVhYYmJSZFlsUllEcGdJVlgyQmptNlZKMkNQTmVaM25Naw?oc=5",
+      "snippet": "刹车工作原理，你看懂了吗？ ​ sina.cn",
       "feedProvider": "Google News RSS",
-      "candidateId": "frontier-0-ZjHmlrnnqI",
+      "candidateId": "frontier-0-5Yi56L2m5b",
       "level": "expand",
-      "eventKey": "f1方程式赛车的工作原理微博视频号迎新计划​",
+      "eventKey": "刹车工作原理你看懂了吗​",
       "qualityScore": 76,
-      "whatHappened": "手机新浪网在10/3发布了“F1方程式赛车的工作原理#微博视频号迎新计划# ​”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "sina.cn在10/4发布了“刹车工作原理，你看懂了吗？ ​”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "新行业和工作方式往往先在少数平台出现，持续一段时间后才会传到更广泛的岗位。",
       "relation": "它暂时更适合作为未来 1–3 年的观察项，用来防止自己的信息边界只停留在县域环境。",
       "actionLevel": "知道即可",
-      "actionDetail": "把“F1方程式赛车的工作原理#微博视频号迎新计…”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。"
+      "actionDetail": "把“刹车工作原理，你看懂了吗？ ​”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。"
     }
   ],
   "outside": [
@@ -197,62 +197,54 @@ window.__NINI_RADAR_FALLBACK__ = {
   "outsideUpdatedAt": "2026-09-04",
   "marketStories": [
     {
-      "candidateId": "macro_global-0-5LqL5YWz5Y",
+      "candidateId": "macro_global-0-5pep5oql57",
       "market": "黄金 / 宏观",
-      "title": "事关加息，美联储副主席发声",
-      "whatHappened": "21财经在10/2发布了“事关加息，美联储副主席发声”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "【早报】美联储放鹰；存储、半导体板块大跌，中概股逆势大涨；油价下跌，黄金收涨；英格兰、比利时晋级世界杯16强",
+      "whatHappened": "财联社在10/3发布了“【早报】美联储放鹰；存储、半导体板块大跌，中概股逆势大涨；油价下跌，黄金收涨；英格兰、比利时晋级世界杯16强”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
-      "relation": "把它作为“事关加息，美联储副主席发声”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQaTM5SVcwZDFuMHdkbHBGbXNZVDM2ekMySnE5NXdhTm44MmVXNDZLNE13RTRhM3ZnOU5YVl9SUHRtZThGRU9ENHUzcWxVWWRpMFdDdks4X0hmZ3JhelRKQ3VMbjk5UTdmQXBsb0NZZDc0WkZRZTZ1TEdjZnZIcGNqNEZOVUxCenVoZW9RNUxEZw?oc=5",
-      "source": "21财经",
-      "publishedAt": "2026-10-02T02:50:00.000Z"
+      "relation": "把它作为“【早报】美联储放鹰；存储、半导体板块大…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBZRk83dERvMWRQSlcxQUlXRWJxNll1eHlsSEY4Zl9ab1pCWnNTZ2RhNm5vVzBLN3hKbnNPcnh0MDQ0aDRTOWZmeQ?oc=5",
+      "source": "财联社",
+      "publishedAt": "2026-10-03T09:37:07.000Z"
     },
     {
-      "candidateId": "markets-0-6YeR6a2C5L",
+      "candidateId": "markets-0-6buE6YeR5L",
       "market": "黄金 / 宏观",
-      "title": "金魂不灭 文脉流长——在文化传承中看清黄金博物馆的前路",
-      "whatHappened": "新浪新闻_手机新浪网在10/4发布了“金魂不灭 文脉流长——在文化传承中看清黄金博物馆的前路”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "黄金交易提醒：金价周线暴跌3%！非农爆冷也救不了多头，4000美元保卫战本周打响？",
+      "whatHappened": "新浪财经在10/5发布了“黄金交易提醒：金价周线暴跌3%！非农爆冷也救不了多头，4000美元保卫战本周打响？”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "市场关注它，是因为它可能改变增长、利率或风险溢价预期，需要结合多周期数据确认。",
-      "relation": "把它作为“金魂不灭 文脉流长——在文化传承中看清…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBZZmNKVEt2Sk9BaDR1aHpuRzBOMjJyWXMxd3ZzaWhNNHpWWUw3OEhxNE94bk9ZOGN1b2RfNzJ0cHM4TlJtZGw2MzRjM0x3ZG5vTXJSaVhRYmlmMzEtMXNUeGVXUm04Wkd3VTNsVWpvOHNialhuMEE?oc=5",
-      "source": "新浪新闻_手机新浪网",
-      "publishedAt": "2026-10-03T21:38:00.000Z"
+      "relation": "把它作为“黄金交易提醒：金价周线暴跌3%！非农爆…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQU1ZuLUJFYndhSkxfS0Vpa3d6UUNfajR0WVBUWk9UbEFzYXNubVpZUFFkNEh0a0x1dVduLVRVdnRQd2NnSVVhWnl2Vzh6cXM1ZExXVlN6Sm5jQmkyY2YydWhCOS00VzNMQ1BmTE5td3ZXcHpqNjNENFE5UHM1ZC1vZzFSQTVrMUo3c2QwY0tPRzkwS0VkTnloSFhMeXgyaXV0dl9wMTBLQQ?oc=5",
+      "source": "新浪财经",
+      "publishedAt": "2026-10-05T00:45:51.000Z"
     },
     {
-      "candidateId": "a_share_trends-0-5YmN5LiJ5a",
+      "candidateId": "a_share_trends-0-5riv6IKhaX",
       "market": "A股",
-      "title": "前三季度股权融资超7500亿元 IPO募资规模同比大增180%",
-      "whatHappened": "21财经在10/4发布了“前三季度股权融资超7500亿元 IPO募资规模同比大增180%”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "港股IPO周报：九章云极等多家公司递表 欢创科技挂牌首周累涨约九成",
+      "whatHappened": "财联社在10/4发布了“港股IPO周报：九章云极等多家公司递表 欢创科技挂牌首周累涨约九成”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
-      "relation": "把它作为“前三季度股权融资超7500亿元 IPO…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTXU3NFpTcFNXQWZCX1ROUzZuNjM0OTZ2Qk4yRXk5RU93V2pLZlQzWUNaMWNCZ3pqUl8xT09hcEF1eEZjZ1ozWTVXQ2YtZ0c4MHZTRGViWEhqVWtPaVdveXRKQ0xVTmoyYkJsWkVEcXlCYjROM3o5NmFJQ2h4ZDJPSkxlbWlpVmx5MUs5STZvUQ?oc=5",
-      "source": "21财经",
-      "publishedAt": "2026-10-04T00:18:17.000Z"
+      "relation": "把它作为“港股IPO周报：九章云极等多家公司递表…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE4wMVZnRk5XZXJ4S1VuT3VTWjd1cDFhbHVfNkhNQlRiN2pqSS03MVZhMXU2WS1odjRTbGllb1FzMGxMY0JFS0hzOA?oc=5",
+      "source": "财联社",
+      "publishedAt": "2026-10-04T05:56:00.000Z"
     },
     {
-      "candidateId": "global_market_narrative-0-576O6IKhcT",
+      "candidateId": "global_market_narrative-0-Y3Rh5a6M5o",
       "market": "美股",
-      "title": "美股Q2财报季前瞻：非科技股盈利韧性凸显科技股“答卷”超预期才能过关",
-      "whatHappened": "content.foshanplus.com在10/3发布了“美股Q2财报季前瞻：非科技股盈利韧性凸显科技股“答卷”超预期才能过关”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "CTA完成罕见仓位清洗 华尔街投行集体转向看多资金流",
+      "whatHappened": "新浪财经在10/4发布了“CTA完成罕见仓位清洗 华尔街投行集体转向看多资金流”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
-      "relation": "把它作为“美股Q2财报季前瞻：非科技股盈利韧性凸…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0yN3ZMS2QyMWhVcU9GRWtBZU5tZGRTNDJmcWRKNUxxRW5CZUtzdzJwUWlmV2VsVzhSTmNOdVA4ZGZzdnp1NDZLNGkzSjBVRm1oSVVXSWJQLVVfWUY5em82dGctVEpHUzN5UzJaWk1LNml6MkRjY09xV1p3?oc=5",
-      "source": "content.foshanplus.com",
-      "publishedAt": "2026-10-03T12:26:11.000Z"
+      "relation": "把它作为“CTA完成罕见仓位清洗 华尔街投行集体…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPeC1TM2VEMUstWXpnbWNJb1NQbXpmTDlHb1RiNWxmVkRSVmdSVzBjUG5RMk1yX3BVVnJiSWl6ckxLeGdScmRPNDl4Vmw1WlBMaEZmMkk5eGhxX2RUY0JtOXcxb19xa1ZESWRVS3hJYmdBcnl3dFFnbjBYZDVUakVJa1RuWkpkWjhIV0RB?oc=5",
+      "source": "新浪财经",
+      "publishedAt": "2026-10-04T05:09:29.000Z"
     }
   ],
-  "cognitions": [
-    {
-      "domain": "金融 / 职业",
-      "cognition": "政策别只看标题，要看最后怎么落地。",
-      "why": "今天的依据来自 新华网 的公开信息，具体新闻仍可从原始来源核对。",
-      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
-      "dedupeKey": "domestic_policy>政策别只看标题要看最后怎么落地"
-    }
-  ],
+  "cognitions": [],
   "market": {
     "status": "ok",
-    "asOf": "2026-10-04T00:41:33.000Z",
+    "asOf": "2026-10-05T00:59:08.000Z",
     "source": "Yahoo Finance + 中国工商银行公开行情（均可能延迟）",
     "items": [
       {
@@ -269,23 +261,23 @@ window.__NINI_RADAR_FALLBACK__ = {
       {
         "key": "gold",
         "label": "COMEX 黄金",
-        "value": 4162.3,
+        "value": 4184.4,
         "unit": " 美元/盎司",
-        "dayChange": -0.95,
-        "weekChange": -3.68,
-        "monthChange": -8.32,
-        "asOf": "2026-10-02T04:00:00.000Z",
+        "dayChange": 0.53,
+        "weekChange": 0.38,
+        "monthChange": -6.53,
+        "asOf": "2026-10-05T00:49:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/GC%3DF"
       },
       {
         "key": "dollar",
         "label": "美元指数",
-        "value": 101.93,
+        "value": 101.97,
         "unit": "",
-        "dayChange": -0.17,
-        "weekChange": 0.95,
-        "monthChange": 2.96,
-        "asOf": "2026-10-02T04:00:00.000Z",
+        "dayChange": 0.04,
+        "weekChange": 0.76,
+        "monthChange": 2.83,
+        "asOf": "2026-10-05T00:49:02.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
       },
       {
@@ -307,13 +299,13 @@ window.__NINI_RADAR_FALLBACK__ = {
         "dayChange": 1.12,
         "weekChange": null,
         "monthChange": null,
-        "asOf": "2026-10-04T00:41:33.000Z",
+        "asOf": "2026-10-05T00:59:08.000Z",
         "sourceUrl": "https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp",
         "source": "中国工商银行公开贵金属行情",
         "retrievedVia": "Jina Reader 只读转码（原始页面为工商银行）"
       }
     ],
-    "generatedAt": "2026-10-04T00:41:36.900Z",
+    "generatedAt": "2026-10-05T00:59:11.378Z",
     "note": "Nasdaq 100、COMEX 黄金、美元指数和美国 10 年期收益率已核验；工行 Au99.99 作为独立参考，取不到时会单独显示暂不可用。"
   },
   "investment": {
@@ -324,7 +316,7 @@ window.__NINI_RADAR_FALLBACK__ = {
     "cancelIf": "若 20 日波动明显扩大、重大政策改变长期逻辑，或出现尚未理解的风险，暂停额外动作并重新核验。",
     "drivers": [
       "Nasdaq 100：1日 +1.00%、5日 +0.65%、20日 +4.50%",
-      "黄金：1日 -0.95%、5日 -3.68%、20日 -8.32%",
+      "黄金：1日 +0.53%、5日 +0.38%、20日 -6.53%",
       "美国10年期收益率：5日 +1.79%"
     ],
     "assetSignals": {
@@ -334,18 +326,18 @@ window.__NINI_RADAR_FALLBACK__ = {
       },
       "gold": {
         "status": "🟢 继续持有",
-        "judgment": "近期偏弱，先检查宏观原因"
+        "judgment": "现有仓位继续持有"
       }
     },
     "environment": {
       "usStocks": "🟡 风险偏好尚可",
       "aShares": "⚪ 看政策与资金信号",
-      "gold": "🟡 短期有所降温",
+      "gold": "🟡 避险需求偏强",
       "summary": "行情已更新；基础模式不猜新闻因果，今天维持既定节奏。"
     }
   },
   "oneThing": {
-    "task": "用 20 分钟打开“受权发布丨中共中央办公厅 国务院办公厅印发《文…”原文，写下一条它影响客户、职业或资产的传导链。",
+    "task": "用 20 分钟打开“存款保险守护储户“钱袋子””原文，写下一条它影响客户、职业或资产的传导链。",
     "minutes": 20
   },
   "pipeline": {
