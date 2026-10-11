@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T01:46:20.400Z",
+  "updatedAt": "2026-10-11T01:02:02.026Z",
   "entries": [
     {
       "date": "2026-09-12",
@@ -48,6 +48,14 @@
       "dedupeKey": "domestic_policy>政策别只看标题要看最后怎么落地",
       "theme": "domestic_policy",
       "conclusion": "政策别只看标题，要看最后怎么落地。"
+    },
+    {
+      "date": "2026-10-11",
+      "domain": "个人成长 / 决策",
+      "cognition": "仓位是计划的结果，不是情绪的出口。",
+      "dedupeKey": "markets>仓位是计划的结果不是情绪的出口",
+      "theme": "markets",
+      "conclusion": "仓位是计划的结果，不是情绪的出口。"
     }
   ]
 }
