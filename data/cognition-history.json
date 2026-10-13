@@ -1,14 +1,6 @@
 {
-  "updatedAt": "2026-10-12T01:22:00.429Z",
+  "updatedAt": "2026-10-13T03:04:08.743Z",
   "entries": [
-    {
-      "date": "2026-09-12",
-      "domain": "个人成长 / 决策",
-      "cognition": "小地方的共识，不等于世界的答案。",
-      "dedupeKey": "county_local>小地方的共识不等于世界的答案",
-      "theme": "county_local",
-      "conclusion": "小地方的共识，不等于世界的答案。"
-    },
     {
       "date": "2026-09-30",
       "domain": "个人成长 / 决策",
@@ -56,6 +48,14 @@
       "dedupeKey": "markets>仓位是计划的结果不是情绪的出口",
       "theme": "markets",
       "conclusion": "仓位是计划的结果，不是情绪的出口。"
+    },
+    {
+      "date": "2026-10-13",
+      "domain": "个人成长 / 决策",
+      "cognition": "小地方的共识，不等于世界的答案。",
+      "dedupeKey": "county_local>小地方的共识不等于世界的答案",
+      "theme": "county_local",
+      "conclusion": "小地方的共识，不等于世界的答案。"
     }
   ]
 }
