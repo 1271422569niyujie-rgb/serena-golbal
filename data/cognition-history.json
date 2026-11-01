@@ -1,22 +1,6 @@
 {
-  "updatedAt": "2026-10-31T01:37:44.671Z",
+  "updatedAt": "2026-11-01T01:15:25.346Z",
   "entries": [
-    {
-      "date": "2026-10-01",
-      "domain": "世界 / 科技",
-      "cognition": "大事先看传导，别先被情绪带走。",
-      "dedupeKey": "macro_global>大事先看传导别先被情绪带走",
-      "theme": "macro_global",
-      "conclusion": "大事先看传导，别先被情绪带走。"
-    },
-    {
-      "date": "2026-10-01",
-      "domain": "金融 / 职业",
-      "cognition": "真正影响你的，是政策落地后的连锁反应。",
-      "dedupeKey": "domestic_policy>真正影响你的是政策落地后的连锁反应",
-      "theme": "domestic_policy",
-      "conclusion": "真正影响你的，是政策落地后的连锁反应。"
-    },
     {
       "date": "2026-10-02",
       "domain": "世界 / 科技",

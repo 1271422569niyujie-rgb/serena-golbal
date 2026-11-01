@@ -1,55 +1,55 @@
 window.__NINI_RADAR_FALLBACK__ = {
   "version": "3.3",
   "status": "ok",
-  "generatedAt": "2026-10-31T01:37:44.665Z",
-  "effectiveDate": "2026-10-31",
+  "generatedAt": "2026-11-01T01:15:25.344Z",
+  "effectiveDate": "2026-11-01",
   "timezone": "Asia/Shanghai",
   "news": [
     {
-      "id": "domestic_policy-0-5aSu6KGM57",
+      "id": "domestic_policy-0-5paw5Y2O56",
       "categoryId": "domestic_policy",
       "category": "国内政策 / 十五五",
       "priorityHint": "must",
       "domestic": true,
       "localGrounded": true,
-      "title": "央行：继续实施适度宽松的货币政策 保持流动性充裕",
-      "source": "东方财富网",
-      "publishedAt": "2026-10-30T23:46:28.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1XVzVtRDNxTGdBdXVvUGdzMjdNbC1yWU1ab3pYT0toWDFWNVBjSEgyTElITms3ekREMVlCeGpZMEtyRjByc1FFWEdIUU9aSjhhYl9HZHRLZERKWkVFYkFCZw?oc=5",
-      "snippet": "央行：继续实施适度宽松的货币政策 保持流动性充裕 东方财富网",
+      "title": "新华社权威快报丨《考古工作“十五五”规划》印发",
+      "source": "新华网",
+      "publishedAt": "2026-10-31T06:08:23.000Z",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQOUxSSzRKRlNXanJDbXgxaVRDMENldTkzTXlUYUxSSDNVcjBtcHdtb21HSTFxLVNLYUdZdl9tbjV4RnYzZ2YtcUV2Y2thVlFjQTg1SVVHMVVvd293WG9KNWprdTFkTHN3elJLdHdadE9iLW5uUS1IbFVzZ2Y0R204RHBVOA?oc=5",
+      "snippet": "新华社权威快报丨《考古工作“十五五”规划》印发 新华网",
       "feedProvider": "Google News RSS",
-      "candidateId": "domestic_policy-0-5aSu6KGM57",
+      "candidateId": "domestic_policy-0-5paw5Y2O56",
       "level": "must",
-      "eventKey": "央行继续实施适度宽松的货币政策保持流动性充裕",
+      "eventKey": "新华社权威快报丨考古工作十五五规划印发",
       "qualityScore": 76,
-      "whatHappened": "东方财富网在10/31发布了“央行：继续实施适度宽松的货币政策 保持流动性充裕”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "新华网在10/31发布了“新华社权威快报丨《考古工作“十五五”规划》印发”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "政策真正重要的部分是执行口径，以及它会怎样改变居民、企业和金融机构的选择。",
-      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“央行：继续实施适度宽松的货币政策 保持流动性充裕”后续有没有具体实施口径。",
+      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“新华社权威快报丨《考古工作“十五五”规划》印发”后续有没有具体实施口径。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“央行：继续实施适度宽松的货币政策 保持流动…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“新华社权威快报丨《考古工作“十五五”规划》…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
-      "id": "macro_global-0-5Lit5Zu96J",
+      "id": "macro_global-0-6KaB5Ye65r",
       "categoryId": "macro_global",
       "category": "重大事件 / 宏观政策",
       "priorityHint": "must",
       "domestic": false,
       "localGrounded": false,
-      "title": "中国蓝观察丨美联储按兵不动，却抛出“地震式”官宣，释放何种信号？",
-      "source": "新蓝网",
-      "publishedAt": "2026-10-30T08:39:00.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBNMEtncFVPOU1UNWZsZDJiS1NubG9HWkU2RkxXV3MzU0RpenVtOUw4TTdmejVGQ0I4VHZ4QUZ3WG1WNkYxZnpHdlJKUjJLaXM?oc=5",
-      "snippet": "中国蓝观察丨美联储按兵不动，却抛出“地震式”官宣，释放何种信号？ 新蓝网",
+      "title": "“要出海，来澄迈” 2026中国·澄迈国际经济贸易洽谈会开幕",
+      "source": "人民网海南频道",
+      "publishedAt": "2026-10-31T13:17:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5heG5HWWZiajRFU1FleWdzbElUUjR6N3ZwZ25FLVBnRW5vbVpsUlFuaXV1RXd3NXh6aHNIMTQ0eVpDNDNoeG9wd19tMVF0Z0lLRnQxX3BBQ1kzN0V2NUhWa3NaMjVvQUdqQVE?oc=5",
+      "snippet": "“要出海，来澄迈” 2026中国·澄迈国际经济贸易洽谈会开幕 人民网海南频道",
       "feedProvider": "Google News RSS",
-      "candidateId": "macro_global-0-5Lit5Zu96J",
+      "candidateId": "macro_global-0-6KaB5Ye65r",
       "level": "must",
-      "eventKey": "中国蓝观察丨美联储按兵不动却抛出地震式官宣释放何种信号",
+      "eventKey": "要出海来澄迈2026中国澄迈国际经济贸易洽谈会开幕",
       "qualityScore": 76,
-      "whatHappened": "新蓝网在10/30发布了“中国蓝观察丨美联储按兵不动，却抛出“地震式”官宣，释放何种信号？”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "人民网海南频道在10/31发布了““要出海，来澄迈” 2026中国·澄迈国际经济贸易洽谈会开幕”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
       "relation": "它可能通过利率、汇率与风险偏好影响你的纳指和黄金仓位。基础模式只提示传导方向，不替你猜市场。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“中国蓝观察丨美联储按兵不动，却抛出“地震式…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开““要出海，来澄迈” 2026中国·澄迈国际…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
       "id": "county_local-0-5oiQ6YO96Z",
@@ -98,27 +98,27 @@ window.__NINI_RADAR_FALLBACK__ = {
       "actionDetail": "先记住“港股IPO市场反转 新股破发不断、多家延期…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "global_market_narrative-0-MjM0ODQx57",
+      "id": "global_market_narrative-0-5LqL5YWz6I",
       "categoryId": "global_market_narrative",
       "category": "美股 / 市场叙事",
       "priorityHint": "know",
       "domestic": false,
       "localGrounded": false,
-      "title": "23:48:41【美股恐慌情绪升温 VIX恐慌指数升至20以上】",
+      "title": "事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪",
       "source": "财联社",
-      "publishedAt": "2026-10-30T15:48:41.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5MTGp2cnZ4TEZ0bHVid29KNXhaeU5HSnlWTEQzODBiOW0xLWhVQW1iQjNJWW1IWjB2XzNFTmN4aG1YR2wyTUJFMA?oc=5",
-      "snippet": "23:48:41【美股恐慌情绪升温 VIX恐慌指数升至20以上】 财联社",
+      "publishedAt": "2026-10-29T18:48:12.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBHLWNoNHlzalBxR2c2bUV0aWNCcTU2d3BHR2xPUWVRVUhFT3Q0M0ZKSXRoa1duTEVTQTVsT2ItLWRQT0Q5bUJidg?oc=5",
+      "snippet": "事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪 财联社",
       "feedProvider": "Google News RSS",
-      "candidateId": "global_market_narrative-0-MjM0ODQx57",
+      "candidateId": "global_market_narrative-0-5LqL5YWz6I",
       "level": "know",
-      "eventKey": "234841美股恐慌情绪升温vix恐慌指数升至20以上",
+      "eventKey": "事关芯市美股财报季启幕今明两份财报或提前定调市场情绪",
       "qualityScore": 76,
-      "whatHappened": "财联社在10/30发布了“23:48:41【美股恐慌情绪升温 VIX恐慌指数升至20以上】”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "财联社在10/30发布了“事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
       "relation": "它是你理解美股定价逻辑的一条线索。与你的关系是判断长期逻辑有没有变化，而不是追当天涨跌。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“23:48:41【美股恐慌情绪升温 VIX…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“事关“芯”市！美股财报季启幕 今明两份财报…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
       "id": "frontier-0-5aSu6KGM6K",
@@ -197,26 +197,26 @@ window.__NINI_RADAR_FALLBACK__ = {
   "outsideUpdatedAt": "2026-09-04",
   "marketStories": [
     {
-      "candidateId": "macro_global-0-5Lit5Zu96J",
-      "market": "黄金 / 宏观",
-      "title": "中国蓝观察丨美联储按兵不动，却抛出“地震式”官宣，释放何种信号？",
-      "whatHappened": "新蓝网在10/30发布了“中国蓝观察丨美联储按兵不动，却抛出“地震式”官宣，释放何种信号？”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "candidateId": "macro_global-0-6KaB5Ye65r",
+      "market": "美股",
+      "title": "“要出海，来澄迈” 2026中国·澄迈国际经济贸易洽谈会开幕",
+      "whatHappened": "人民网海南频道在10/31发布了““要出海，来澄迈” 2026中国·澄迈国际经济贸易洽谈会开幕”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
-      "relation": "把它作为“中国蓝观察丨美联储按兵不动，却抛出“地…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBNMEtncFVPOU1UNWZsZDJiS1NubG9HWkU2RkxXV3MzU0RpenVtOUw4TTdmejVGQ0I4VHZ4QUZ3WG1WNkYxZnpHdlJKUjJLaXM?oc=5",
-      "source": "新蓝网",
-      "publishedAt": "2026-10-30T08:39:00.000Z"
+      "relation": "把它作为““要出海，来澄迈” 2026中国·澄迈…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5heG5HWWZiajRFU1FleWdzbElUUjR6N3ZwZ25FLVBnRW5vbVpsUlFuaXV1RXd3NXh6aHNIMTQ0eVpDNDNoeG9wd19tMVF0Z0lLRnQxX3BBQ1kzN0V2NUhWa3NaMjVvQUdqQVE?oc=5",
+      "source": "人民网海南频道",
+      "publishedAt": "2026-10-31T13:17:00.000Z"
     },
     {
-      "candidateId": "markets-0-576O5YWD5o",
+      "candidateId": "markets-0-5Yqg5oGv6a",
       "market": "黄金 / 宏观",
-      "title": "美元指数30日下跌",
-      "whatHappened": "东方财富在10/31发布了“美元指数30日下跌”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "加息预期“打压”金价？专家：主权债务危机环伺，黄金仍是“北极星”！",
+      "whatHappened": "财联社在10/31发布了“加息预期“打压”金价？专家：主权债务危机环伺，黄金仍是“北极星”！”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "市场关注它，是因为它可能改变增长、利率或风险溢价预期，需要结合多周期数据确认。",
-      "relation": "把它作为“美元指数30日下跌”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9DS0ZFaU51bHNEU3RERUE0c1NNdThRekRuMFJ0bWlsUDNvcUNGdXZyakw5Yms3dl9pRWFhcnI0a2pidkVjQU1ISTBXM1Q2X3JJejZJcVhSYXNHdWFDNzZqeg?oc=5",
-      "source": "东方财富",
-      "publishedAt": "2026-10-30T21:05:57.000Z"
+      "relation": "把它作为“加息预期“打压”金价？专家：主权债务危…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1XRWtYVmJFX1lJX3hyaDJDX0hySWRFaXVWemQ0dGRRT2g2TmRuZXhoY01hR1JuXzZFMk1mWnMzUV9OQkNsYUF0ZQ?oc=5",
+      "source": "财联社",
+      "publishedAt": "2026-10-31T14:10:23.000Z"
     },
     {
       "candidateId": "a_share_trends-0-5riv6IKhaX",
@@ -230,21 +230,21 @@ window.__NINI_RADAR_FALLBACK__ = {
       "publishedAt": "2026-10-29T04:42:00.000Z"
     },
     {
-      "candidateId": "global_market_narrative-0-MjM0ODQx57",
+      "candidateId": "global_market_narrative-0-5LqL5YWz6I",
       "market": "美股",
-      "title": "23:48:41【美股恐慌情绪升温 VIX恐慌指数升至20以上】",
-      "whatHappened": "财联社在10/30发布了“23:48:41【美股恐慌情绪升温 VIX恐慌指数升至20以上】”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪",
+      "whatHappened": "财联社在10/30发布了“事关“芯”市！美股财报季启幕 今明两份财报或提前“定调”市场情绪”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
-      "relation": "把它作为“23:48:41【美股恐慌情绪升温 V…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5MTGp2cnZ4TEZ0bHVid29KNXhaeU5HSnlWTEQzODBiOW0xLWhVQW1iQjNJWW1IWjB2XzNFTmN4aG1YR2wyTUJFMA?oc=5",
+      "relation": "把它作为“事关“芯”市！美股财报季启幕 今明两份…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBHLWNoNHlzalBxR2c2bUV0aWNCcTU2d3BHR2xPUWVRVUhFT3Q0M0ZKSXRoa1duTEVTQTVsT2ItLWRQT0Q5bUJidg?oc=5",
       "source": "财联社",
-      "publishedAt": "2026-10-30T15:48:41.000Z"
+      "publishedAt": "2026-10-29T18:48:12.000Z"
     }
   ],
   "cognitions": [],
   "market": {
     "status": "ok",
-    "asOf": "2026-10-31T01:37:41.000Z",
+    "asOf": "2026-11-01T01:15:22.000Z",
     "source": "Yahoo Finance + 中国工商银行公开行情（均可能延迟）",
     "items": [
       {
@@ -261,22 +261,22 @@ window.__NINI_RADAR_FALLBACK__ = {
       {
         "key": "gold",
         "label": "COMEX 黄金",
-        "value": 3884.9,
+        "value": 3898.9,
         "unit": " 美元/盎司",
-        "dayChange": -3.63,
-        "weekChange": -3.07,
-        "monthChange": -6.66,
+        "dayChange": -3.29,
+        "weekChange": -2.72,
+        "monthChange": -6.33,
         "asOf": "2026-10-30T04:00:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/GC%3DF"
       },
       {
         "key": "dollar",
         "label": "美元指数",
-        "value": 101.96,
+        "value": 101.88,
         "unit": "",
-        "dayChange": -0.07,
-        "weekChange": 0.15,
-        "monthChange": 0.03,
+        "dayChange": -0.16,
+        "weekChange": 0.07,
+        "monthChange": -0.05,
         "asOf": "2026-10-30T04:00:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
       },
@@ -299,13 +299,13 @@ window.__NINI_RADAR_FALLBACK__ = {
         "dayChange": -2.55,
         "weekChange": null,
         "monthChange": null,
-        "asOf": "2026-10-31T01:37:41.000Z",
+        "asOf": "2026-11-01T01:15:22.000Z",
         "sourceUrl": "https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp",
         "source": "中国工商银行公开贵金属行情",
         "retrievedVia": "Jina Reader 只读转码（原始页面为工商银行）"
       }
     ],
-    "generatedAt": "2026-10-31T01:37:44.665Z",
+    "generatedAt": "2026-11-01T01:15:25.344Z",
     "note": "Nasdaq 100、COMEX 黄金、美元指数和美国 10 年期收益率已核验；工行 Au99.99 作为独立参考，取不到时会单独显示暂不可用。"
   },
   "investment": {
@@ -316,7 +316,7 @@ window.__NINI_RADAR_FALLBACK__ = {
     "cancelIf": "若 20 日波动明显扩大、重大政策改变长期逻辑，或出现尚未理解的风险，暂停额外动作并重新核验。",
     "drivers": [
       "Nasdaq 100：1日 -3.46%、5日 -1.98%、20日 -7.87%",
-      "黄金：1日 -3.63%、5日 -3.07%、20日 -6.66%",
+      "黄金：1日 -3.29%、5日 -2.72%、20日 -6.33%",
       "美国10年期收益率：5日 -1.18%"
     ],
     "assetSignals": {
@@ -337,7 +337,7 @@ window.__NINI_RADAR_FALLBACK__ = {
     }
   },
   "oneThing": {
-    "task": "用 20 分钟打开“央行：继续实施适度宽松的货币政策 保持流动性充裕”原文，写下一条它影响客户、职业或资产的传导链。",
+    "task": "用 20 分钟打开“新华社权威快报丨《考古工作“十五五”规划》印发”原文，写下一条它影响客户、职业或资产的传导链。",
     "minutes": 20
   },
   "pipeline": {
