@@ -1,32 +1,32 @@
 window.__NINI_RADAR_FALLBACK__ = {
   "version": "3.3",
   "status": "ok",
-  "generatedAt": "2026-11-04T02:22:59.197Z",
-  "effectiveDate": "2026-11-04",
+  "generatedAt": "2026-11-05T02:30:17.141Z",
+  "effectiveDate": "2026-11-05",
   "timezone": "Asia/Shanghai",
   "news": [
     {
-      "id": "domestic_policy-0-5Zu95a625p",
+      "id": "domestic_policy-0-6Z2S5rW35Y",
       "categoryId": "domestic_policy",
       "category": "国内政策 / 十五五",
       "priorityHint": "must",
       "domestic": true,
       "localGrounded": true,
-      "title": "国家数据局政策和规划司负责人在国家发展改革委奋进“十五五”系列新闻发布会上答记者问",
-      "source": "国家数据局",
-      "publishedAt": "2026-11-03T23:06:57.000Z",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1yS1BoVlN4eE5MNTVpT1N6RjZzZnZMXzlCaFBsQ3RVY0dKcTZ3Rmxjb1pubmlHdDg4MDlPSUlpcHEyOFdIZzQySG9SQXJleE1HVm51Y2NucmVORzJxZS1tdDl6TjJtbjhYLWNtWmNBNGhGRUotZ3NUalA2b2hJUQ?oc=5",
-      "snippet": "国家数据局政策和规划司负责人在国家发展改革委奋进“十五五”系列新闻发布会上答记者问 国家数据局",
+      "title": "青海发布信息通信行业“十五五”规划信息基础设施五年累计投资预计达137亿元-政务公开",
+      "source": "青海省人民政府",
+      "publishedAt": "2026-11-04T21:51:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5adDR4bE9vRVR4U2RKTmR0TWlMRWZ4THZMdE5CbU1IdVpaWDhkYzdsX29OQVp0VjltdXVHMEIwdnR4V0l6YUpSTUtaTXFCS1l1Ujd0cnNic3oxVC1KQTFFYTJLWDVIMFVMNU4zdTNkbWhLZw?oc=5",
+      "snippet": "青海发布信息通信行业“十五五”规划信息基础设施五年累计投资预计达137亿元-政务公开 青海省人民政府",
       "feedProvider": "Google News RSS",
-      "candidateId": "domestic_policy-0-5Zu95a625p",
+      "candidateId": "domestic_policy-0-6Z2S5rW35Y",
       "level": "must",
-      "eventKey": "国家数据局政策和规划司负责人在国家发展改革委奋进十五五系列新闻发布会上答记者问",
+      "eventKey": "青海发布信息通信行业十五五规划信息基础设施五年累计投资预计达137亿元政务公开",
       "qualityScore": 76,
-      "whatHappened": "国家数据局在11/4发布了“国家数据局政策和规划司负责人在国家发展改革委奋进“十五五”系列新闻发布会上答记者问”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "青海省人民政府在11/5发布了“青海发布信息通信行业“十五五”规划信息基础设施五年累计投资预计达137亿元-政务公开”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "政策真正重要的部分是执行口径，以及它会怎样改变居民、企业和金融机构的选择。",
-      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“国家数据局政策和规划司负责人在国家发展改革委奋进“十五五”…”后续有没有具体实施口径。",
+      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“青海发布信息通信行业“十五五”规划信息基础设施五年累计投资…”后续有没有具体实施口径。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“国家数据局政策和规划司负责人在国家发展改革…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“青海发布信息通信行业“十五五”规划信息基础…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
       "id": "macro_global-0-5Lit5Zu95L",
@@ -75,27 +75,27 @@ window.__NINI_RADAR_FALLBACK__ = {
       "actionDetail": "先记住“2026知名高校四川人才活动季暨\"广聚英才…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "a_share_trends-0-5LuK5bm05b",
+      "id": "a_share_trends-0-5aSn5aWH6L",
       "categoryId": "a_share_trends",
       "category": "A股 / 资金 / 市场风潮",
       "priorityHint": "know",
       "domestic": true,
       "localGrounded": false,
-      "title": "今年已有80家企业，终止A股IPO",
-      "source": "https://www.mrjjxw.com/",
-      "publishedAt": "2026-11-03T17:05:03.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBwZnpLRUZDbnY1QW5aQTZuenljQ1M5dWZmb0hyeGJqZVMySU5kU2RRbVZ2QzdYRGRwSDJ0LW9kc3lsN3pCejl5R3F5VHlFRXV4T1l2dDQ1N1FRVm4xTmVMbXVTWTBtUQ?oc=5",
-      "snippet": "今年已有80家企业，终止A股IPO https://www.mrjjxw.com/",
+      "title": "大奇迹日！A股成交额，重回2万亿",
+      "source": "东方财富",
+      "publishedAt": "2026-11-04T17:12:26.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9DREMtS2dBeEhNZHQyTnRGWDlFMkFPekZhUW5ULVVlSWtqamhvaGp6Z0xSMjVWOTVRTjgyV3J0NDRlcENLSXdUVElEXzFSWWZPb3FFaTlTaTFrMHBSYktwNXduRGtBdw?oc=5",
+      "snippet": "大奇迹日！A股成交额，重回2万亿 东方财富",
       "feedProvider": "Google News RSS",
-      "candidateId": "a_share_trends-0-5LuK5bm05b",
+      "candidateId": "a_share_trends-0-5aSn5aWH6L",
       "level": "know",
-      "eventKey": "今年已有80家企业终止a股ipo",
+      "eventKey": "大奇迹日a股成交额重回2万亿",
       "qualityScore": 76,
-      "whatHappened": "https://www.mrjjxw.com/在11/4发布了“今年已有80家企业，终止A股IPO”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "东方财富在11/5发布了“大奇迹日！A股成交额，重回2万亿”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
       "relation": "它能帮助你理解国内客户正在谈论什么市场叙事。面对客户时先核实资金和政策依据，不跟着热度下判断。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“今年已有80家企业，终止A股IPO”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“大奇迹日！A股成交额，重回2万亿”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
       "id": "global_market_narrative-0-6Iu55p6c5o",
@@ -121,27 +121,27 @@ window.__NINI_RADAR_FALLBACK__ = {
       "actionDetail": "先记住“苹果换帅后首份财报引发股价走弱 美股市场熬…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "frontier-0-5Y-M5aGU5Y",
+      "id": "frontier-0-5a6e6K6t6J",
       "categoryId": "frontier",
       "category": "新行业 / 社会变化",
       "priorityHint": "expand",
       "domestic": false,
       "localGrounded": false,
-      "title": "双塔区推行“2+1”工作模式 全面提升新兴领域党建工作质效",
-      "source": "新浪财经",
-      "publishedAt": "2026-11-03T13:08:35.000Z",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPblp0NVdfblR2R1B0NjVWaUF0dVBtTUVZM1BDaUxnVWFqQ2czS1gzMlNHaDhWWFZIeHBVbGdUSnJtY3V3T1EycjhpLWF4aDZOSjdOajduVmxKWXQzT0llX0V1WFV0T0Z1WE96Vmc4MFVSMjVmTFB4WmQ4WlFWdkhaejR5X0k?oc=5",
-      "snippet": "双塔区推行“2+1”工作模式 全面提升新兴领域党建工作质效 新浪财经",
+      "title": "实训营园地｜AI不是魔法，是新工具",
+      "source": "湖北日报传媒集团",
+      "publishedAt": "2026-11-04T06:58:34.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE44NGd6bzk1ZkFkX196UlJfeFpwQ3pfUm5VcnVuclJybUtNcUpXbjRZSnlEaW12SjZ1d3o1X3o4VmdadU1GWHJSVEJKVkJpTWNJT0hHYlc4NUU?oc=5",
+      "snippet": "实训营园地｜AI不是魔法，是新工具 湖北日报传媒集团",
       "feedProvider": "Google News RSS",
-      "candidateId": "frontier-0-5Y-M5aGU5Y",
+      "candidateId": "frontier-0-5a6e6K6t6J",
       "level": "expand",
-      "eventKey": "双塔区推行21工作模式全面提升新兴领域党建工作质效",
+      "eventKey": "实训营园地ai不是魔法是新工具",
       "qualityScore": 76,
-      "whatHappened": "新浪财经在11/3发布了“双塔区推行“2+1”工作模式 全面提升新兴领域党建工作质效”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "湖北日报传媒集团在11/4发布了“实训营园地｜AI不是魔法，是新工具”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "新行业和工作方式往往先在少数平台出现，持续一段时间后才会传到更广泛的岗位。",
       "relation": "它暂时更适合作为未来 1–3 年的观察项，用来防止自己的信息边界只停留在县域环境。",
       "actionLevel": "知道即可",
-      "actionDetail": "把“双塔区推行“2+1”工作模式 全面提升新兴…”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。"
+      "actionDetail": "把“实训营园地｜AI不是魔法，是新工具”当作县域之外的观察样本，下周若仍有独立来源持续报道，再判断是否值得投入时间。"
     }
   ],
   "outside": [
@@ -208,26 +208,26 @@ window.__NINI_RADAR_FALLBACK__ = {
       "publishedAt": "2026-11-03T14:10:00.000Z"
     },
     {
-      "candidateId": "markets-0-6buE6YeR6L",
+      "candidateId": "markets-0-6buE6YeR5a",
       "market": "黄金 / 宏观",
-      "title": "黄金跌破4000美元，全球央行却在悄悄扫货！321吨买盘背后，63%竟未公开",
-      "whatHappened": "黄金网在11/4发布了“黄金跌破4000美元，全球央行却在悄悄扫货！321吨买盘背后，63%竟未公开”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "黄金大跌30%背后暗藏危机？华尔街揭示四大原因，更大的风险还在后面？_金市直播",
+      "whatHappened": "黄金网在11/5发布了“黄金大跌30%背后暗藏危机？华尔街揭示四大原因，更大的风险还在后面？_金市直播”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "市场关注它，是因为它可能改变增长、利率或风险溢价预期，需要结合多周期数据确认。",
-      "relation": "把它作为“黄金跌破4000美元，全球央行却在悄悄…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5GN09JNEVUdEtiUlVRYTRXdElIRnBQSkEteTFOM2F5ZU1INmg5Vk9ETVZXRGVBNDdkRFZEbFVBZUxrUllyYUhRSjZJZ1lDVml6Y2RqUzlic3FTR0NsbDd3eVVERnh0bWYz?oc=5",
+      "relation": "把它作为“黄金大跌30%背后暗藏危机？华尔街揭示…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE51d2d2anN4anRDVHlGNWZXc2NNU2RiRll0RGsycjJxTm1JaEhHcTRNZjFxNGJScHQ1bGEwSDJmamlmWkNraDQxOTYxSzNaZU52VW9CNGFKRUFBTHljaDdfOU1SU0FHNnpV?oc=5",
       "source": "黄金网",
-      "publishedAt": "2026-11-04T00:18:02.000Z"
+      "publishedAt": "2026-11-05T01:03:02.000Z"
     },
     {
-      "candidateId": "a_share_trends-0-5LuK5bm05b",
+      "candidateId": "a_share_trends-0-5aSn5aWH6L",
       "market": "A股",
-      "title": "今年已有80家企业，终止A股IPO",
-      "whatHappened": "https://www.mrjjxw.com/在11/4发布了“今年已有80家企业，终止A股IPO”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "大奇迹日！A股成交额，重回2万亿",
+      "whatHappened": "东方财富在11/5发布了“大奇迹日！A股成交额，重回2万亿”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
-      "relation": "把它作为“今年已有80家企业，终止A股IPO”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBwZnpLRUZDbnY1QW5aQTZuenljQ1M5dWZmb0hyeGJqZVMySU5kU2RRbVZ2QzdYRGRwSDJ0LW9kc3lsN3pCejl5R3F5VHlFRXV4T1l2dDQ1N1FRVm4xTmVMbXVTWTBtUQ?oc=5",
-      "source": "https://www.mrjjxw.com/",
-      "publishedAt": "2026-11-03T17:05:03.000Z"
+      "relation": "把它作为“大奇迹日！A股成交额，重回2万亿”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9DREMtS2dBeEhNZHQyTnRGWDlFMkFPekZhUW5ULVVlSWtqamhvaGp6Z0xSMjVWOTVRTjgyV3J0NDRlcENLSXdUVElEXzFSWWZPb3FFaTlTaTFrMHBSYktwNXduRGtBdw?oc=5",
+      "source": "东方财富",
+      "publishedAt": "2026-11-04T17:12:26.000Z"
     },
     {
       "candidateId": "global_market_narrative-0-6Iu55p6c5o",
@@ -241,86 +241,71 @@ window.__NINI_RADAR_FALLBACK__ = {
       "publishedAt": "2026-11-03T13:28:12.000Z"
     }
   ],
-  "cognitions": [
-    {
-      "domain": "世界 / 科技",
-      "cognition": "离你很远的事，也可能绕道影响资产。",
-      "why": "今天的依据来自 南开大学新闻网 的公开信息，具体新闻仍可从原始来源核对。",
-      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
-      "dedupeKey": "macro_global>离你很远的事也可能绕道影响资产"
-    },
-    {
-      "domain": "金融 / 职业",
-      "cognition": "政策别只看标题，要看最后怎么落地。",
-      "why": "今天的依据来自 国家数据局 的公开信息，具体新闻仍可从原始来源核对。",
-      "meaning": "以后碰到类似情况，先用这句话帮自己停一下，再决定要不要行动。",
-      "dedupeKey": "domestic_policy>政策别只看标题要看最后怎么落地"
-    }
-  ],
+  "cognitions": [],
   "market": {
     "status": "ok",
-    "asOf": "2026-11-04T02:22:55.000Z",
+    "asOf": "2026-11-05T02:30:14.000Z",
     "source": "Yahoo Finance + 中国工商银行公开行情（均可能延迟）",
     "items": [
       {
         "key": "nasdaq100",
         "label": "Nasdaq 100",
-        "value": 28180,
+        "value": 28437,
         "unit": "点",
-        "dayChange": 0.68,
-        "weekChange": -4.96,
-        "monthChange": -9.75,
-        "asOf": "2026-11-03T14:30:00.000Z",
+        "dayChange": 0.91,
+        "weekChange": -4.62,
+        "monthChange": -8.74,
+        "asOf": "2026-11-04T14:30:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5ENDX"
       },
       {
         "key": "gold",
         "label": "COMEX 黄金",
-        "value": 3951.4,
+        "value": 4135.6,
         "unit": " 美元/盎司",
-        "dayChange": 0.28,
-        "weekChange": -2.47,
-        "monthChange": -4.57,
-        "asOf": "2026-11-04T02:12:45.000Z",
+        "dayChange": 1.54,
+        "weekChange": 2.58,
+        "monthChange": -0.51,
+        "asOf": "2026-11-05T02:20:05.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/GC%3DF"
       },
       {
         "key": "dollar",
         "label": "美元指数",
-        "value": 101.43,
+        "value": 101.32,
         "unit": "",
-        "dayChange": -0.43,
-        "weekChange": -0.74,
-        "monthChange": -0.79,
-        "asOf": "2026-11-04T02:12:47.000Z",
+        "dayChange": -0.19,
+        "weekChange": -0.71,
+        "monthChange": -0.81,
+        "asOf": "2026-11-05T02:20:08.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
       },
       {
         "key": "us10y",
         "label": "美国 10Y",
-        "value": 4.95,
+        "value": 4.89,
         "unit": "%",
-        "dayChange": 1.19,
-        "weekChange": -0.82,
-        "monthChange": -6.02,
-        "asOf": "2026-11-03T13:20:00.000Z",
+        "dayChange": -1.17,
+        "weekChange": -2.99,
+        "monthChange": -7.26,
+        "asOf": "2026-11-04T13:20:00.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5ETNX"
       },
       {
         "key": "icbcGold1000g",
         "label": "工行 Au99.99（1000g 交割规格参考）",
-        "value": 847.8,
+        "value": 886.58,
         "unit": " 元/克",
-        "dayChange": 0.93,
+        "dayChange": 2.64,
         "weekChange": null,
         "monthChange": null,
-        "asOf": "2026-11-04T02:22:55.000Z",
+        "asOf": "2026-11-05T02:30:14.000Z",
         "sourceUrl": "https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/realgold_query_out.jsp",
         "source": "中国工商银行公开贵金属行情",
         "retrievedVia": "Jina Reader 只读转码（原始页面为工商银行）"
       }
     ],
-    "generatedAt": "2026-11-04T02:22:59.197Z",
+    "generatedAt": "2026-11-05T02:30:17.141Z",
     "note": "Nasdaq 100、COMEX 黄金、美元指数和美国 10 年期收益率已核验；工行 Au99.99 作为独立参考，取不到时会单独显示暂不可用。"
   },
   "investment": {
@@ -330,9 +315,9 @@ window.__NINI_RADAR_FALLBACK__ = {
     "amount": "工作日维持纳指 ¥100 定投；黄金不新增战术仓位",
     "cancelIf": "若 20 日波动明显扩大、重大政策改变长期逻辑，或出现尚未理解的风险，暂停额外动作并重新核验。",
     "drivers": [
-      "Nasdaq 100：1日 +0.68%、5日 -4.96%、20日 -9.75%",
-      "黄金：1日 +0.28%、5日 -2.47%、20日 -4.57%",
-      "美国10年期收益率：5日 -0.82%"
+      "Nasdaq 100：1日 +0.91%、5日 -4.62%、20日 -8.74%",
+      "黄金：1日 +1.54%、5日 +2.58%、20日 -0.51%",
+      "美国10年期收益率：5日 -2.99%"
     ],
     "assetSignals": {
       "nasdaq100": {
@@ -347,12 +332,12 @@ window.__NINI_RADAR_FALLBACK__ = {
     "environment": {
       "usStocks": "🟡 波动偏谨慎",
       "aShares": "⚪ 看政策与资金信号",
-      "gold": "🟡 短期有所降温",
+      "gold": "🟡 避险需求偏强",
       "summary": "行情已更新；基础模式不猜新闻因果，今天维持既定节奏。"
     }
   },
   "oneThing": {
-    "task": "用 20 分钟打开“国家数据局政策和规划司负责人在国家发展改革委奋…”原文，写下一条它影响客户、职业或资产的传导链。",
+    "task": "用 20 分钟打开“青海发布信息通信行业“十五五”规划信息基础设施…”原文，写下一条它影响客户、职业或资产的传导链。",
     "minutes": 20
   },
   "pipeline": {
