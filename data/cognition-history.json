@@ -1,14 +1,6 @@
 {
-  "updatedAt": "2026-11-12T03:04:25.951Z",
+  "updatedAt": "2026-11-13T02:39:17.419Z",
   "entries": [
-    {
-      "date": "2026-10-13",
-      "domain": "个人成长 / 决策",
-      "cognition": "小地方的共识，不等于世界的答案。",
-      "dedupeKey": "county_local>小地方的共识不等于世界的答案",
-      "theme": "county_local",
-      "conclusion": "小地方的共识，不等于世界的答案。"
-    },
     {
       "date": "2026-11-02",
       "domain": "世界 / 科技",
@@ -48,6 +40,14 @@
       "dedupeKey": "domestic_policy>政策别只看标题要看最后怎么落地",
       "theme": "domestic_policy",
       "conclusion": "政策别只看标题，要看最后怎么落地。"
+    },
+    {
+      "date": "2026-11-13",
+      "domain": "个人成长 / 决策",
+      "cognition": "小地方的共识，不等于世界的答案。",
+      "dedupeKey": "county_local>小地方的共识不等于世界的答案",
+      "theme": "county_local",
+      "conclusion": "小地方的共识，不等于世界的答案。"
     }
   ]
 }
