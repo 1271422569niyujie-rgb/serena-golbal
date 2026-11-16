@@ -1,32 +1,32 @@
 {
   "version": "3.3",
   "status": "ok",
-  "generatedAt": "2026-11-15T01:57:26.290Z",
-  "effectiveDate": "2026-11-15",
+  "generatedAt": "2026-11-16T02:12:22.674Z",
+  "effectiveDate": "2026-11-16",
   "timezone": "Asia/Shanghai",
   "news": [
     {
-      "id": "domestic_policy-0-6KeE5YiS5p",
+      "id": "domestic_policy-0-5Lit5Zu955",
       "categoryId": "domestic_policy",
       "category": "国内政策 / 十五五",
       "priorityHint": "must",
       "domestic": true,
       "localGrounded": true,
-      "title": "规划来了！“十五五”时期，云南省文化和旅游发展这样干",
-      "source": "新浪财经",
-      "publishedAt": "2026-11-14T14:58:07.000Z",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOS1kyT3dnTDFPZERJb3RfUk9SVktITlE0eEdZS1ZoSFYtUGVUUWFkU1VYWjRPQXoyLUl5SklEeVlOZl93SzVJeFNXaVY5ZkpNRjNQdHJXUnNDeldoNmZoVm9yZzVYanl4RkhDM0VPeTJkTTFEalJSZC0wek94cnRfZjVSc1BzWnZPV2xiNnl1X05nYW9waVNBOA?oc=5",
-      "snippet": "规划来了！“十五五”时期，云南省文化和旅游发展这样干 新浪财经",
+      "title": "中国的“十五五”规划如何擦亮亚太新招牌？",
+      "source": "央视网",
+      "publishedAt": "2026-11-15T22:33:44.000Z",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4zMjZyNUl6UzloSmZjcFFtMDlkZWNJcDlvNzQtVDJ5TjBEMS10S2VxU1Z0VTA2Z2lRTTdISnJ6WHlqUktvaGxydU1sSzVnRFRBVjZhSjlLQzB6cjdMRW9zTDdwVERCWWpPVEFqSUJ0N3ZnLXdsZ1dZQw?oc=5",
+      "snippet": "中国的“十五五”规划如何擦亮亚太新招牌？ 央视网",
       "feedProvider": "Google News RSS",
-      "candidateId": "domestic_policy-0-6KeE5YiS5p",
+      "candidateId": "domestic_policy-0-5Lit5Zu955",
       "level": "must",
-      "eventKey": "规划来了十五五时期云南省文化和旅游发展这样干",
+      "eventKey": "中国的十五五规划如何擦亮亚太新招牌",
       "qualityScore": 76,
-      "whatHappened": "新浪财经在11/14发布了“规划来了！“十五五”时期，云南省文化和旅游发展这样干”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "央视网在11/16发布了“中国的“十五五”规划如何擦亮亚太新招牌？”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "政策真正重要的部分是执行口径，以及它会怎样改变居民、企业和金融机构的选择。",
-      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“规划来了！“十五五”时期，云南省文化和旅游发展这样干”后续有没有具体实施口径。",
+      "relation": "它可能通过政策执行、客户预期或银行业务要求传到县域网点。你暂时不用背结论，先看“中国的“十五五”规划如何擦亮亚太新招牌？”后续有没有具体实施口径。",
       "actionLevel": "加入观察清单",
-      "actionDetail": "打开“规划来了！“十五五”时期，云南省文化和旅游…”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
+      "actionDetail": "打开“中国的“十五五”规划如何擦亮亚太新招牌？”原始来源，先核对正文中的主体、时间和实施范围；本周只记录一条可能影响客户或资产的传导链。"
     },
     {
       "id": "macro_global-0-5Li65YWo55",
@@ -35,17 +35,17 @@
       "priorityHint": "must",
       "domestic": false,
       "localGrounded": false,
-      "title": "“为全球经济稳定发展作出积极贡献”（APEC中国年：开放创新合作） --国际",
-      "source": "人民网",
-      "publishedAt": "2026-11-14T21:40:00.000Z",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81dG1sbnplUUF5YnBDTTF0YTBUOUhWTkF3NVRBcXZ0WWJqVWZnczlTdjIwMFR4THQzZzNzcTVrenJOLWQ2Nmt2b01kaVlsS21zRmxoVkR5dlhRazYxN2pPUWllWkdFREY5cmk3Vw?oc=5",
-      "snippet": "“为全球经济稳定发展作出积极贡献”（APEC中国年：开放创新合作） --国际 人民网",
+      "title": "“为全球经济稳定发展作出积极贡献”（APEC中国年：开放 创新 合作）",
+      "source": "中国日报网",
+      "publishedAt": "2026-11-15T13:04:57.000Z",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MT2UzcUlnUkdrSkM4azJtTGMwM0FtWVFGRW02cU81UnVETUNURHBXeFUzUUFfVHMzbFBsX0ZtSDZwTG9uRldRU0NLb0hRMllPN2NyM3FrUHdBMEI5OXJiSDNKRHlJMHhueVhBaXc4bTNKbjQ3NW8xSDg2RC0?oc=5",
+      "snippet": "“为全球经济稳定发展作出积极贡献”（APEC中国年：开放 创新 合作） 中国日报网",
       "feedProvider": "Google News RSS",
       "candidateId": "macro_global-0-5Li65YWo55",
       "level": "must",
-      "eventKey": "为全球经济稳定发展作出积极贡献apec中国年开放创新合作国际",
+      "eventKey": "为全球经济稳定发展作出积极贡献apec中国年开放创新合作",
       "qualityScore": 76,
-      "whatHappened": "人民网在11/15发布了““为全球经济稳定发展作出积极贡献”（APEC中国年：开放创新合作） --国际”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "中国日报网在11/15发布了““为全球经济稳定发展作出积极贡献”（APEC中国年：开放 创新 合作）”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
       "relation": "它可能通过利率、汇率与风险偏好影响你的纳指和黄金仓位。基础模式只提示传导方向，不替你猜市场。",
       "actionLevel": "加入观察清单",
@@ -75,50 +75,50 @@
       "actionDetail": "先记住“做好金融 “五篇大文章”，四川多措并举夯实…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "a_share_trends-0-6KeI5a-M5p",
+      "id": "a_share_trends-0-5riv6IKhaX",
       "categoryId": "a_share_trends",
       "category": "A股 / 资金 / 市场风潮",
       "priorityHint": "know",
       "domestic": true,
       "localGrounded": false,
-      "title": "览富数据：A股IPO动态数据周报（截至2026年11月14日）",
-      "source": "中金在线",
-      "publishedAt": "2026-11-15T01:42:01.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBoLVNDcGRXbmNBN0wtUlQtM0xDNmQ3UTl4N1EzTElLSk9lQVpPWVlubF84elQ0ODZlcWwtOEJkMkVLeUlZSzRUbUs3My1MSjJBQjVmcWhGdzRVb04xTHc5TnpsRWR3c2wx?oc=5",
-      "snippet": "览富数据：A股IPO动态数据周报（截至2026年11月14日） 中金在线",
+      "title": "港股IPO早播报：放射性药物企业先通国际开启招股",
+      "source": "财联社",
+      "publishedAt": "2026-11-16T01:52:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBYb25Qbk1NUk41MHFrRXpvYUkyanpNRHByWHpKcTI5dWlITUNCX3ZzVFZvT3ItQjFjdDlGeVV6V09hRDRGN3FmTA?oc=5",
+      "snippet": "港股IPO早播报：放射性药物企业先通国际开启招股 财联社",
       "feedProvider": "Google News RSS",
-      "candidateId": "a_share_trends-0-6KeI5a-M5p",
+      "candidateId": "a_share_trends-0-5riv6IKhaX",
       "level": "know",
-      "eventKey": "览富数据a股ipo动态数据周报截至2026年11月14日",
+      "eventKey": "港股ipo早播报放射性药物企业先通国际开启招股",
       "qualityScore": 76,
-      "whatHappened": "中金在线在11/15发布了“览富数据：A股IPO动态数据周报（截至2026年11月14日）”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "财联社在11/16发布了“港股IPO早播报：放射性药物企业先通国际开启招股”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
       "relation": "它能帮助你理解国内客户正在谈论什么市场叙事。面对客户时先核实资金和政策依据，不跟着热度下判断。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“览富数据：A股IPO动态数据周报（截至20…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“港股IPO早播报：放射性药物企业先通国际开…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
-      "id": "global_market_narrative-0-5by65Yqy6L",
+      "id": "global_market_narrative-0-5LiA5ZGo5Y",
       "categoryId": "global_market_narrative",
       "category": "美股 / 市场叙事",
       "priorityHint": "know",
       "domestic": false,
       "localGrounded": false,
-      "title": "强劲财报之后，AI投资疲态与中期选举风险令美股明年盈利蒙阴",
-      "source": "Moomoo",
-      "publishedAt": "2026-11-14T18:19:22.000Z",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOekZfbmJCdVR3NEFKN1pRd3pkNDVpX2RNWk5TS0FoNzBYazZRLUZiSmlUNVg5bm9RdmFZSU1IRlVjZWZiZ3ZCeXFwWjdqeC1PQVR2d0hlZVlOdmlEYW5HSXpCZ1FFQnhCdEEydjhNR2tNajZ6SFlZVkVFS2xxbEIyc2gzOFVrdHB3Y0JjOHhFRXp1WkZ1NG5HWm5FMXFydENBSnZ2M3JITHNzazdPVE5iRWw0MjJqVjlC?oc=5",
-      "snippet": "强劲财报之后，AI投资疲态与中期选举风险令美股明年盈利蒙阴 Moomoo",
+      "title": "一周前瞻丨APEC峰会启幕；Anthropic登陆美股；Q3财报超级周来袭，英伟达迎财报大考，腾讯、阿里、拼多多等密集放榜；美联储会议纪要公布",
+      "source": "东方财富",
+      "publishedAt": "2026-11-16T02:03:45.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9OM2hwTzV1RHJETXY4Yk9zQTRKRHEtSFdzQk5MamQ1YXNRQVFzdkNmRm1NSUFBNE41UDRLUklZZHRXV1JYZy1CV1BhMkcyQmlaOWdHbUlQNl9FNlZEb25QTVRCNjlDZw?oc=5",
+      "snippet": "一周前瞻丨APEC峰会启幕；Anthropic登陆美股；Q3财报超级周来袭，英伟达迎财报大考，腾讯、阿里、拼多多等密集放榜；美联储会议纪要公布 东方财富",
       "feedProvider": "Google News RSS",
-      "candidateId": "global_market_narrative-0-5by65Yqy6L",
+      "candidateId": "global_market_narrative-0-5LiA5ZGo5Y",
       "level": "know",
-      "eventKey": "强劲财报之后ai投资疲态与中期选举风险令美股明年盈利蒙阴",
+      "eventKey": "一周前瞻丨apec峰会启幕anthropic登陆美股q3财报超级周来袭英伟达迎财报大考腾讯阿里拼多多等密集放榜美联储会议纪要公布",
       "qualityScore": 76,
-      "whatHappened": "Moomoo在11/15发布了“强劲财报之后，AI投资疲态与中期选举风险令美股明年盈利蒙阴”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "东方财富在11/16发布了“一周前瞻丨APEC峰会启幕；Anthropic登陆美股；Q3财报超级周来袭，英伟达迎财报大考，腾讯、阿里、拼多多等密集放榜；美联储会议纪要公布”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyImportant": "美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
       "relation": "它是你理解美股定价逻辑的一条线索。与你的关系是判断长期逻辑有没有变化，而不是追当天涨跌。",
       "actionLevel": "知道即可",
-      "actionDetail": "先记住“强劲财报之后，AI投资疲态与中期选举风险令…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
+      "actionDetail": "先记住“一周前瞻丨APEC峰会启幕；Anthrop…”这个信号；只有后续出现正式政策、连续数据或岗位要求变化时，再升级为行动项。"
     },
     {
       "id": "frontier-0-56iz5YC65b",
@@ -199,52 +199,52 @@
     {
       "candidateId": "macro_global-0-5Li65YWo55",
       "market": "美股",
-      "title": "“为全球经济稳定发展作出积极贡献”（APEC中国年：开放创新合作） --国际",
-      "whatHappened": "人民网在11/15发布了““为全球经济稳定发展作出积极贡献”（APEC中国年：开放创新合作） --国际”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "“为全球经济稳定发展作出积极贡献”（APEC中国年：开放 创新 合作）",
+      "whatHappened": "中国日报网在11/15发布了““为全球经济稳定发展作出积极贡献”（APEC中国年：开放 创新 合作）”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "宏观事件会通过利率、美元和风险偏好影响多类资产，单日涨跌只是结果，不是完整原因。",
       "relation": "把它作为““为全球经济稳定发展作出积极贡献”（A…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81dG1sbnplUUF5YnBDTTF0YTBUOUhWTkF3NVRBcXZ0WWJqVWZnczlTdjIwMFR4THQzZzNzcTVrenJOLWQ2Nmt2b01kaVlsS21zRmxoVkR5dlhRazYxN2pPUWllWkdFREY5cmk3Vw?oc=5",
-      "source": "人民网",
-      "publishedAt": "2026-11-14T21:40:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MT2UzcUlnUkdrSkM4azJtTGMwM0FtWVFGRW02cU81UnVETUNURHBXeFUzUUFfVHMzbFBsX0ZtSDZwTG9uRldRU0NLb0hRMllPN2NyM3FrUHdBMEI5OXJiSDNKRHlJMHhueVhBaXc4bTNKbjQ3NW8xSDg2RC0?oc=5",
+      "source": "中国日报网",
+      "publishedAt": "2026-11-15T13:04:57.000Z"
     },
     {
       "candidateId": "markets-0-5Yqg5oGv6a",
       "market": "黄金 / 宏观",
       "title": "加息预期“打压”金价？专家：主权债务危机环伺，黄金仍是“北极星”！",
-      "whatHappened": "财联社在11/14发布了“加息预期“打压”金价？专家：主权债务危机环伺，黄金仍是“北极星”！”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "whatHappened": "财联社在11/16发布了“加息预期“打压”金价？专家：主权债务危机环伺，黄金仍是“北极星”！”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "市场关注它，是因为它可能改变增长、利率或风险溢价预期，需要结合多周期数据确认。",
       "relation": "把它作为“加息预期“打压”金价？专家：主权债务危…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
       "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1XRWtYVmJFX1lJX3hyaDJDX0hySWRFaXVWemQ0dGRRT2g2TmRuZXhoY01hR1JuXzZFMk1mWnMzUV9OQkNsYUF0ZQ?oc=5",
       "source": "财联社",
-      "publishedAt": "2026-11-14T14:28:50.000Z"
+      "publishedAt": "2026-11-15T17:43:57.000Z"
     },
     {
-      "candidateId": "a_share_trends-0-6KeI5a-M5p",
+      "candidateId": "a_share_trends-0-5riv6IKhaX",
       "market": "A股",
-      "title": "览富数据：A股IPO动态数据周报（截至2026年11月14日）",
-      "whatHappened": "中金在线在11/15发布了“览富数据：A股IPO动态数据周报（截至2026年11月14日）”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "title": "港股IPO早播报：放射性药物企业先通国际开启招股",
+      "whatHappened": "财联社在11/16发布了“港股IPO早播报：放射性药物企业先通国际开启招股”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "A股风潮能反映国内资金偏好，但热度只有得到政策、业绩或持续资金支持才可能延续。",
-      "relation": "把它作为“览富数据：A股IPO动态数据周报（截至…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBoLVNDcGRXbmNBN0wtUlQtM0xDNmQ3UTl4N1EzTElLSk9lQVpPWVlubF84elQ0ODZlcWwtOEJkMkVLeUlZSzRUbUs3My1MSjJBQjVmcWhGdzRVb04xTHc5TnpsRWR3c2wx?oc=5",
-      "source": "中金在线",
-      "publishedAt": "2026-11-15T01:42:01.000Z"
+      "relation": "把它作为“港股IPO早播报：放射性药物企业先通国…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBYb25Qbk1NUk41MHFrRXpvYUkyanpNRHByWHpKcTI5dWlITUNCX3ZzVFZvT3ItQjFjdDlGeVV6V09hRDRGN3FmTA?oc=5",
+      "source": "财联社",
+      "publishedAt": "2026-11-16T01:52:00.000Z"
     },
     {
-      "candidateId": "global_market_narrative-0-5by65Yqy6L",
-      "market": "美股",
-      "title": "强劲财报之后，AI投资疲态与中期选举风险令美股明年盈利蒙阴",
-      "whatHappened": "Moomoo在11/15发布了“强劲财报之后，AI投资疲态与中期选举风险令美股明年盈利蒙阴”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
+      "candidateId": "global_market_narrative-0-5LiA5ZGo5Y",
+      "market": "黄金 / 宏观",
+      "title": "一周前瞻丨APEC峰会启幕；Anthropic登陆美股；Q3财报超级周来袭，英伟达迎财报大考，腾讯、阿里、拼多多等密集放榜；美联储会议纪要公布",
+      "whatHappened": "东方财富在11/16发布了“一周前瞻丨APEC峰会启幕；Anthropic登陆美股；Q3财报超级周来袭，英伟达迎财报大考，腾讯、阿里、拼多多等密集放榜；美联储会议纪要公布”。基础模式目前只确认标题、来源和发布时间，不补写尚未读取到的正文细节。",
       "whyMarketCares": "美股叙事变化会影响估值和资金集中度，对长期定投者比一日涨跌更值得观察。",
-      "relation": "把它作为“强劲财报之后，AI投资疲态与中期选举风…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOekZfbmJCdVR3NEFKN1pRd3pkNDVpX2RNWk5TS0FoNzBYazZRLUZiSmlUNVg5bm9RdmFZSU1IRlVjZWZiZ3ZCeXFwWjdqeC1PQVR2d0hlZVlOdmlEYW5HSXpCZ1FFQnhCdEEydjhNR2tNajZ6SFlZVkVFS2xxbEIyc2gzOFVrdHB3Y0JjOHhFRXp1WkZ1NG5HWm5FMXFydENBSnZ2M3JITHNzazdPVE5iRWw0MjJqVjlC?oc=5",
-      "source": "Moomoo",
-      "publishedAt": "2026-11-14T18:19:22.000Z"
+      "relation": "把它作为“一周前瞻丨APEC峰会启幕；Anthr…”的观察线索；未读完原文前，不据此临时改变定投或追涨。",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9OM2hwTzV1RHJETXY4Yk9zQTRKRHEtSFdzQk5MamQ1YXNRQVFzdkNmRm1NSUFBNE41UDRLUklZZHRXV1JYZy1CV1BhMkcyQmlaOWdHbUlQNl9FNlZEb25QTVRCNjlDZw?oc=5",
+      "source": "东方财富",
+      "publishedAt": "2026-11-16T02:03:45.000Z"
     }
   ],
   "cognitions": [],
   "market": {
     "status": "ok",
-    "asOf": "2026-11-13T14:30:00.000Z",
+    "asOf": "2026-11-16T02:02:16.000Z",
     "source": "Yahoo Finance + 中国工商银行公开行情（均可能延迟）",
     "items": [
       {
@@ -261,12 +261,12 @@
       {
         "key": "gold",
         "label": "COMEX 黄金",
-        "value": 3886.3,
+        "value": 3878.3,
         "unit": " 美元/盎司",
-        "dayChange": 0.03,
-        "weekChange": -4.63,
-        "monthChange": -7.05,
-        "asOf": "2026-11-13T05:00:00.000Z",
+        "dayChange": -0.21,
+        "weekChange": -5.74,
+        "monthChange": -6.77,
+        "asOf": "2026-11-16T02:02:15.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/GC%3DF"
       },
       {
@@ -274,10 +274,10 @@
         "label": "美元指数",
         "value": 103.41,
         "unit": "",
-        "dayChange": 0.23,
-        "weekChange": 1.09,
-        "monthChange": 1.54,
-        "asOf": "2026-11-13T05:00:00.000Z",
+        "dayChange": 0,
+        "weekChange": 1.73,
+        "monthChange": 1.4,
+        "asOf": "2026-11-16T02:02:16.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
       },
       {
@@ -304,7 +304,7 @@
         "source": "中国工商银行公开贵金属行情"
       }
     ],
-    "generatedAt": "2026-11-15T01:57:26.290Z",
+    "generatedAt": "2026-11-16T02:12:22.674Z",
     "note": "Nasdaq 100、COMEX 黄金、美元指数和美国 10 年期收益率已核验；工行 Au99.99 作为独立参考，取不到时会单独显示暂不可用。"
   },
   "investment": {
@@ -315,7 +315,7 @@
     "cancelIf": "若 20 日波动明显扩大、重大政策改变长期逻辑，或出现尚未理解的风险，暂停额外动作并重新核验。",
     "drivers": [
       "Nasdaq 100：1日 -1.22%、5日 +3.53%、20日 -4.26%",
-      "黄金：1日 +0.03%、5日 -4.63%、20日 -7.05%",
+      "黄金：1日 -0.21%、5日 -5.74%、20日 -6.77%",
       "美国10年期收益率：5日 +6.07%"
     ],
     "assetSignals": {
@@ -336,7 +336,7 @@
     }
   },
   "oneThing": {
-    "task": "用 20 分钟打开“规划来了！“十五五”时期，云南省文化和旅游发展…”原文，写下一条它影响客户、职业或资产的传导链。",
+    "task": "用 20 分钟打开“中国的“十五五”规划如何擦亮亚太新招牌？”原文，写下一条它影响客户、职业或资产的传导链。",
     "minutes": 20
   },
   "pipeline": {
